@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: 200px;
+    height: 200px;
+}
+body {
+    font-size: 62.5%;
+}
+
+p {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+#wrapper {
+    padding: 20px 50px 20px 50px;
+    margin: 20px auto;
+}
+
+#question-area {
+    width: 600px;
+    height: 300px;
+    margin-top: 25px;
+}
+
+#question-area input,
+#question-area textarea {
+    padding: 5px;
+    width: 471px;
+    font-size: 1.4em;
+    margin: 0px 0px 10px 0px;
+    border: 2px solid #ccc;
+}
+
+#question-area textarea {
+    height: 90px;
+}
+
+#question-area input.submit-button {
+    width: 100px;
+    float: right;
+}
+
+label {
+    float: left;
+    text-align: right;
+    margin-right: 15px;
+    width: 100px;
+    padding-top: 5px;
+    font-size: 1.4em;
+}
