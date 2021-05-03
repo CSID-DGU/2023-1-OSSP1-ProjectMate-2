@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th= "http://www.thymeleaf.org">
 
 <head>
 
@@ -228,6 +228,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Question</th>
+                                            <th>writer</th>
                                             <th>date</th>
                                             <th>check</th>
                                         </tr>
@@ -235,9 +236,9 @@
 
                                     <!--데이터는 db에서 불러오기
                                     그리고 해당 question을 클릭하면 상세 페이지로 넘어갈 수 있도록
-                                    설정해 놓을 것--!>
+                                    설정해 놓을 것-->
                                     <tbody>
-                                        <tr>
+                                        <!--<tr>
                                             <td>gayoung</td>
                                             <td>인문대 논술 고사장이 어디에요?</td>
                                             <td>2021/04/25</td>
@@ -248,6 +249,14 @@
                                             <td>올해 입시설명회 진행 하나요?</td>
                                             <td>2021/02/25</td>
                                             <td>check</td>
+                                        </tr>-->
+                                        <!-- TODO Thymeleaf 사용영역 -->
+                                        <tr th:each="VO : ${result}">
+                                            <td>[[${VO.bno}]]</td>
+                                            <td>[[${VO.content}]]</td>
+                                            <td>[[${VO.name}]]</td>
+                                            <td>[[${VO.regDate}]]</td>
+                                            <td>#</td>
                                         </tr>
                                     </tbody>
                                 </table>
