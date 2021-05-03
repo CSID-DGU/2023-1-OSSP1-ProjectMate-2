@@ -20,16 +20,16 @@ public class MainController {
     private FirebaseService fbservice;
 
     /*TODO list페이지 작성*/
-    @GetMapping("/list")
+    @GetMapping("/tables")
     public String list(BoardVO board, Model model){
 
-        return "list";
+        return "tables";
     }
 
-    /*TODO 질문 ask 페이지 작성*/
-    @GetMapping("/ask")
+    /*TODO 질문 question 페이지 작성*/
+    @GetMapping("/question")
     public String list(){
-        return "ask";
+        return "questionDetail";
     }
 
 }
