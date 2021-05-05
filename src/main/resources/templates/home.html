@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th= "http://www.thymeleaf.org">
 
 <head>
 
@@ -34,7 +34,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index">
             <div class="sidebar-brand-icon rotate-n-15">
                 <img class="elephant" src="img/ako50.png" alt = "....">
                 <!--아코봇 마크 -->
@@ -47,7 +47,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-            <a class="nav-link" href="login.html"> <!--질문페이지로 이동 -->
+            <a class="nav-link" href="login"> <!--질문페이지로 이동 -->
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>질문게시판</span></a>
         </li>
@@ -62,8 +62,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">아코 Question</h6>
-                    <a class="collapse-item" href="buttons.html">누적 키워드 BEST</a>
-                    <a class="collapse-item" href="cards.html">이번 달 키워드 BEST</a>
+                    <a class="collapse-item" href="buttons">누적 키워드 BEST</a>
+                    <a class="collapse-item" href="cards">이번 달 키워드 BEST</a>
                 </div>
             </div>
         </li>
@@ -101,7 +101,7 @@
         <li class="nav-item">
             <!--a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                 aria-expanded="true" aria-controls="collapsePages"-->
-            <a class="nav-link" href="Manual.html">
+            <a class="nav-link" href="manual">
                 <i class="fas fa-fw fa-folder"></i> <!--이용 방법 관련 아이콘-->
                 <span>아코봇 이용방법</span>
             </a>
@@ -121,7 +121,7 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="charts.html">
+            <a class="nav-link" href="charts">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>주간 상담률</span></a>
         </li>
@@ -163,7 +163,7 @@
                     </button>
                 </form>
                 <div align="right">
-                    <button type = "button" class="navyBtn" onClick="location.href='login.html'"><input type="button" class="btn float-right" name="login" value="Login"></button>
+                    <button type = "button" class="navyBtn" onClick="location.href='login'"><input type="button" class="btn float-right" name="login" value="Login"></button>
                 </div>
             </nav>
             <!-- End of Topbar -->
@@ -712,7 +712,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="login">Logout</a>
             </div>
         </div>
     </div>
