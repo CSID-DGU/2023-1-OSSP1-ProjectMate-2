@@ -41,5 +41,20 @@ public class MainController {
         return "questionDetail";
     }
 
+    /*TODO Home.html 로그인 하기전 홈 화면(login 버튼 -> 클릭 시 login.html로 이동) */
+    @GetMapping("/home")
+    public String home(){
+        return "Home";
+    }
+    /*TODO Login.html —> bootstrap에 있던 로그인 페이지(일단 그대로 따옴)*/
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+    /*TODO Manual.html —> 아코봇 사용방법이 앞으로 등재될 페이지*/
+    @GetMapping("/manual")
+    public String manual(){
+        return "Manual";
+    }
 
 }

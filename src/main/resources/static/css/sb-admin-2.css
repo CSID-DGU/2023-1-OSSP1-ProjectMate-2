@@ -2352,6 +2352,13 @@ fieldset:disabled a.btn {
   border-color: #4e73df;
 }
 
+
+.btn-login{
+  color : #fff;
+  background-color: #5a5c69;
+  border-color: #1c606a;
+}
+
 .btn-primary:hover {
   color: #fff;
   background-color: #2e59d9;
