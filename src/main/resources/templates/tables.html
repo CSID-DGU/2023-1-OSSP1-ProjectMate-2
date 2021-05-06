@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th= "http://www.thymeleaf.org">
 
 <head>
 
@@ -9,13 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - questionDetail </title>
+    <title>SB Admin 2 - Tables</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-            rel="stylesheet">
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -34,7 +34,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
             <div class="sidebar-brand-icon rotate-n-15">
                 <img class="elephant" src="img/ako50.png" alt = "....">
                 <!--아코봇 마크 -->
@@ -47,7 +47,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-            <a class="nav-link" href="tables.html"> <!--질문페이지로 이동 -->
+            <a class="nav-link" href="tables"> <!--질문페이지로 이동 -->
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>질문게시판</span></a>
         </li>
@@ -110,7 +110,7 @@
         <li class="nav-item">
             <!--a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                 aria-expanded="true" aria-controls="collapsePages"-->
-            <a class="nav-link" href="Manual.html">
+            <a class="nav-link" href="manual">
                 <i class="fas fa-fw fa-folder"></i> <!--이용 방법 관련 아이콘-->
                 <span>아코봇 이용방법</span>
             </a>
@@ -155,6 +155,7 @@
 
     </ul>
     <!-- End of Sidebar -->
+
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -172,6 +173,7 @@
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Nav Item - User Information -->
+                    <!-- TODO later -->
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -206,110 +208,125 @@
 
             <!-- End of Topbar -->
 
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
 
-                <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">질문 상세 조회 - 답변 페이지</h1>
-                <p class="mb-4">학생들로 부터 들어온 미해결 질문에 대한 조회 게시판입니다!<br>
-                    미해결 질문에 대한 답변을 달아주세요.<br>
-                    입력하신 답변은 챗봇에게 전달되어 학습됩니다.
-                </p>
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">질문 조회 게시판</h1>
+                    <p class="mb-4">학생들로 부터 들어온 미해결 질문에 대한 조회 게시판입니다!<br>
+                        미해결 질문에 대한 답변을 달아주세요.</p>
 
-                <!-- 질문 상세 조회- 답변 구성 --!>
-                <!-- 데이터 연동성 고려해서 고칠것 --!>
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <!-- 질문 끌어올것 --!>
-                        <h6 class="m-0 font-weight-bold text-primary">yyyy-mm-dd hh-mm에 등록된 미해결 질문입니다</h6>
-                    </div>
-                    <div class="card-body">
-                        <!-- 질문 끌어올것 --!>
-                        <p>질문: </p>
-                        <p>질문 끌어오기....</p>
-                        <br><br><br>
-                        <p class="mb-0">답변 등록:</p>
-                        <div id="question-area">
-                            <form method="post" action="">
-                                <!--액션 설정해줄것-->
-                                <label for="Answer">Answer:</label><br />
-                                <textarea name="Answer" rows="15" cols="100" id="Answer"></textarea>
-                                <br>
-                                <input
-                                        type="submit"
-                                        name="submit"
-                                        value="등록"
-                                        class="submit-button"
-                                />
-                            </form>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Question</th>
+                                            <th>writer</th>
+                                            <th>date</th>
+                                            <th>check</th>
+                                        </tr>
+                                    </thead>
+
+                                    <!--데이터는 db에서 불러오기
+                                    그리고 해당 question을 클릭하면 상세 페이지로 넘어갈 수 있도록
+                                    설정해 놓을 것-->
+                                    <tbody>
+                                        <!--<tr>
+                                            <td>gayoung</td>
+                                            <td>인문대 논술 고사장이 어디에요?</td>
+                                            <td>2021/04/25</td>
+                                            <td>non-check</td>
+                                        </tr>
+                                        <tr>
+                                            <td>yoon</td>
+                                            <td>올해 입시설명회 진행 하나요?</td>
+                                            <td>2021/02/25</td>
+                                            <td>check</td>
+                                        </tr>-->
+                                        <!-- TODO Thymeleaf 사용영역 -->
+                                        <tr th:each="VO : ${result}">
+                                            <td>[[${VO.bno}]]</td>
+                                            <td>[[${VO.content}]]</td>
+                                            <td>[[${VO.name}]]</td>
+                                            <td>[[${VO.regDate}]]</td>
+                                            <td>#</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
+                <!-- /.container-fluid -->
 
             </div>
-            <!-- /.container-fluid -->
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
         </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2020</span>
-                </div>
-            </div>
-        </footer>
-        <!-- End of Footer -->
+        <!-- End of Content Wrapper -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Page Wrapper -->
 
-</div>
-<!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
-<!-- Page level plugins -->
-<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-<!-- Page level custom scripts -->
-<script src="js/demo/datatables-demo.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
