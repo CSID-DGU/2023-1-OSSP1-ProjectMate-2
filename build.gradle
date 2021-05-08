@@ -12,6 +12,11 @@ configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
+	/* DevTool 의존성 주입을 위해 */
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
 }
 
 repositories {
@@ -27,6 +32,9 @@ dependencies {
 
 	/* firebase 개발 환경 설정*/
 	implementation 'com.google.firebase:firebase-admin:7.1.1'
+
+	/* DevTool 의존성 주입*/
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
 
 	/* JUnit 5 의존성 주입하기 */
 }
