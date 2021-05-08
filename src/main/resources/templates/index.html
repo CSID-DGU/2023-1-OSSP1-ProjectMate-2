@@ -27,10 +27,34 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <h1 class="h3 mb-0 text-gray-800">아코봇 관리 페이지에 오신걸 환영합니다!</h1>
+                    </div>
+                    <!-- 이미지 슬라이드 JS 코드 -->
+                    <div class="imgaeSlide">
+                        <img id=mainImage alt="img" th:src="@{/img/dgu1.jpg}">
+                        <script type="text/javascript">
+                            const myImage=document.getElementById("mainImage");
+                            const imageArray=["img/dgu1.jpg","img/dgu2.jpg","img/dgu3.jpg"];
+                            let imageIndex=0;
 
+                            function changeImage(){
+                                myImage.setAttribute("src",imageArray[imageIndex]);
+                                imageIndex++;
+                                if(imageIndex>=imageArray.length){
+                                    imageIndex=0;
+                                }
+                            }
+                            setInterval(changeImage,3000);
+                        </script>
                     </div>
                 </div>
+                <!-- 가영
+                - "오늘 들어온 질문" 상위 5개 출력
+                - "현재 답변이 달리지 않은 질문의 개수" 보여주는 배너
+                - "이번 주 누적 질문 개수" 보여주는 배너
+                - "이번 달 누적 질문 개수" 보여주는 배너
+                일요일 작업 할 부분
+                 -->
                 <!-- End of Main Content -->
 
                 <!-- Footer -->
