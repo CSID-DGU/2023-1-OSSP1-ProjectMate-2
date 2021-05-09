@@ -4565,7 +4565,7 @@ input[type="button"].btn-block {
   padding: 1.25rem;
   border-radius: calc(0.35rem - 1px);
 }
-
+.
 .card-img,
 .card-img-top,
 .card-img-bottom {
@@ -9963,6 +9963,10 @@ a:focus {
 
 .text-lg {
   font-size: 1.2rem;
+}
+
+.text-orange-800{
+  color: #fd7e14
 }
 
 .text-gray-100 {

@@ -1,9 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <!-- thymeleaf 적용 -->
 <head th:replace="common_codes/fragments.html:: fragment-header(title='SB Admin 2 - Dashboard')"></head>
-
+<!--배경 문구에 적용한 애니메이션-->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Pen+Script&display=swap');
+    .loading span {
+        font-family: 'Jua', serif;
+        display: inline-block;
+        animation: loading .7s infinite alternate;
+        font-size: 300%;
+        font-weight: bold;
+        color: orange;
+    }
+    .loading span:nth-child(2) {
+        animation-delay: .1s;
+    }
+    .loading span:nth-child(3) {
+        animation-delay: .2s;
+    }
+    .loading span:nth-child(4) {
+        animation-delay: .3s;
+    }
+    .loading span:nth-child(5) {
+        animation-delay: .4s;
+    }
+    .loading span:nth-child(6) {
+        animation-delay: .5s;
+    }
+    .loading span:nth-child(7) {
+        animation-delay: .6s;
+    }
+    .loading span:nth-child(8) {
+        animation-delay: .7s;
+    }
+    .loading span:nth-child(9) {
+        animation-delay: .8s;
+    }
+    .loading span:nth-child(10) {
+        animation-delay: .9s;
+    }
+    .loading span:nth-child(11) {
+        animation-delay: .10s;
+    }
+    @keyframes loading {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(0.8);
+        }
+    }
+</style>
 
 <body id="page-top">
 
@@ -23,149 +71,47 @@
                 <th:block th:replace="~{/common_codes/topbar.html}"></th:block>
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <!--배경 문구-->
+                <div class="loading">
+                    <span>무</span>
+                    <span>엇</span>
+                    <span>을</span>
+                    <span> </span>
+                    <span>도</span>
+                    <span>와</span>
+                    <span>드</span>
+                    <span>릴</span>
+                    <span>까</span>
+                    <span>요</span>
+                    <span>?</span>
 
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">아코봇 관리 페이지에 오신걸 환영합니다!</h1>
-                    </div>
-                    <div class="row">
-                        <!-- 이미지 슬라이드 JS 코드 -->
-                        <div class="imgaeSlide">
-                            <img id=mainImage alt="img" th:src="@{/img/dgu1.jpg}">
-                            <script type="text/javascript">
-                                const myImage=document.getElementById("mainImage");
-                                const imageArray=["img/dgu1.jpg","img/dgu2.jpg","img/dgu3.jpg"];
-                                let imageIndex=0;
+                    <!-- 이미지 슬라이드 JS 코드 -->
+                    <div class="imgaeSlide">
+                        <img id=mainImage alt="img" th:src="@{/img/dgu1.jpg}">
+                        <script type="text/javascript">
+                            const myImage=document.getElementById("mainImage");
+                            const imageArray=["img/dgu1.jpg","img/dgu2.jpg","img/dgu3.jpg"];
+                            let imageIndex=0;
 
-                                function changeImage(){
-                                    myImage.setAttribute("src",imageArray[imageIndex]);
-                                    imageIndex++;
-                                    if(imageIndex>=imageArray.length){
-                                        imageIndex=0;
-                                    }
+                            function changeImage(){
+                                myImage.setAttribute("src",imageArray[imageIndex]);
+                                imageIndex++;
+                                if(imageIndex>=imageArray.length){
+                                    imageIndex=0;
                                 }
-                                setInterval(changeImage,3000);
-                            </script>
-                        </div>
+                            }
+                            setInterval(changeImage,3000);
+                        </script>
                     </div>
-                    <br>
-
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4" id="todayTable">
-                        <h3>Issue table</h3>
-                    </div>
-
-                   <div class="row">
-                       <!-- 현재 답변이 달리지 않은 질문의 개수  -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Number of Non-Check Question </div>
-                                            <!-- 실제 data 개수 받아오는 부분 -->
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                       <!-- 이번주 누적 질문 개수  -->
-                       <div class="col-xl-3 col-md-6 mb-4">
-                           <div class="card border-left-success shadow h-100 py-2">
-                               <div class="card-body">
-                                   <div class="row no-gutters align-items-center">
-                                       <div class="col mr-2">
-                                           <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                               Number of this Week questions</div>
-                                           <div class="h5 mb-0 font-weight-bold text-gray-800">50</div>
-                                       </div>
-                                       <div class="col-auto">
-                                           <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-
-                       <div class="col-xl-3 col-md-6 mb-4">
-                           <div class="card border-left-primary shadow h-100 py-2">
-                               <div class="card-body">
-                                   <div class="row no-gutters align-items-center">
-                                       <div class="col mr-2">
-                                           <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                               Number of this Month questions</div>
-                                           <div class="h5 mb-0 font-weight-bold text-gray-800">150</div>
-                                       </div>
-                                       <div class="col-auto">
-                                           <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-
-                   </div>
-
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h3>Today's Question List</h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="todayQuestionTable" width="100%" cellspacing="0">
-                                <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Question</th>
-                                    <th>check</th>
-                                </tr>
-                                </thead>
-                                <!-- db 연결 -->
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>인문대 논술 고사장이 어디에요?</td>
-                                    <td>non-check</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>올해 입시설명회 진행 하나요?</td>
-                                    <td>check</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>올해 입시설명회 진행 하나요?</td>
-                                    <td>check</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>올해 입시설명회 진행 하나요?</td>
-                                    <td>check</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>올해 입시설명회 진행 하나요?</td>
-                                    <td>check</td>
-                                </tr>
-                                <!-- TODO Thymeleaf 사용영역 -->
-                                <!--
-                                <tr th:each="VO : ${result}">
-                                    <td>[[${VO.bno}]]</td>
-                                    <td>[[${VO.content}]]</td>
-                                    <td>#</td>
-                                </tr>
-                                -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
+                </div>
+                </div>
+                <!-- 가영
+                - "오늘 들어온 질문" 상위 5개 출력
+                - "현재 답변이 달리지 않은 질문의 개수" 보여주는 배너
+                - "이번 주 누적 질문 개수" 보여주는 배너
+                - "이번 달 누적 질문 개수" 보여주는 배너
+                일요일 작업 할 부분
+                 -->
                 <!-- End of Main Content -->
 
                 <!-- Footer -->
