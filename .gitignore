@@ -6,7 +6,7 @@ build/
 !**/src/test/**/build/
 
 ### FIREBASE KEY ###
-.serviceAccountKey.json
+serviceAccountKey.json
 
 ### STS ###
 .apt_generated
