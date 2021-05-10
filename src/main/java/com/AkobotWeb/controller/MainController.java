@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -34,7 +35,7 @@ public class MainController {
         return "home";
     }
 
-    /*TODO list페이지 작성*/
+    /* 질문 게시판 */
     @GetMapping("/tables")
     public String tables(BoardVO boardVO, Model model) throws Exception {
         /* log 이용하는 방식으로 변경할 것*/
@@ -43,11 +44,21 @@ public class MainController {
         return "tables";
     }
 
-    /*TODO 질문 question 페이지 작성*/
-    @GetMapping("/question")
+   /* 질문 question 페이지 작성 */
+    /* @GetMapping("/question")
     public String list() {
         return "questionDetail";
+    }*/
+    /* 0510 질문 상세 정보 조회*/
+    @GetMapping("/questionDetail")
+    public void read(long bno, Model model) throws Exception {
+        //TODO log
+        model.addAttribute("result", fbservice.read(bno));
     }
+
+
+
+
 
     /*TODO Login.html —> bootstrap에 있던 로그인 페이지(일단 그대로 따옴)*/
     @GetMapping("/login")
