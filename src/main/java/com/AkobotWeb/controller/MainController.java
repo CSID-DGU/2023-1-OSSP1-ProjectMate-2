@@ -31,7 +31,7 @@ public class MainController {
 
     /*일단은 /home 요청해서 view 읽도록 함 */
     @GetMapping("/home")
-    public String home(){
+    public String home() {
         return "home";
     }
 
@@ -44,7 +44,7 @@ public class MainController {
         return "tables";
     }
 
-   /* 질문 question 페이지 작성 */
+    /* 질문 question 페이지 작성 */
     /* @GetMapping("/question")
     public String list() {
         return "questionDetail";
@@ -57,18 +57,18 @@ public class MainController {
     }
 
 
-
-
-
-    /*TODO Login.html —> bootstrap에 있던 로그인 페이지(일단 그대로 따옴)*/
+    /* Login.html —> bootstrap에 있던 로그인 페이지(일단 그대로 따옴)*/
     @GetMapping("/login")
-    public String login(){
+    public String login() {
         return "login";
     }
-    /*TODO manual.html —> 아코봇 사용방법이 앞으로 등재될 페이지*/
+
+    /* manual.html —> 아코봇 사용방법이 앞으로 등재될 페이지*/
     @GetMapping("/manual")
-    public String manual(){
+    public String manual() {
         return "manual";
     }
+
+
 
 }
