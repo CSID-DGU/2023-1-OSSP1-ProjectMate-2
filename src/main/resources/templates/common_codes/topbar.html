@@ -1,15 +1,43 @@
 <!--공통된 topbar - 로그인 관련부 -->
 <!DOCTYPE html>
 <!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" id="topNav">
 
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
         <i class="fa fa-bars"></i>
     </button>
 
+    <script>
+        <!--important tag는 function 으로 change-->
+        function changeDark(){
+            let x=document.querySelectorAll('#topNav');
+            x[0].setAttribute('style','background-color: black !important');
+        }
+        function changeLight(){
+            let x=document.querySelectorAll('#topNav');
+            x[0].setAttribute('style','background-color: #fff !important');
+        }
+    </script>
+
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
+        <!--dark mode toggle -->
+        <input id="changeDark" type="button" value="Dark" onclick="
+        if(document.querySelector('#changeDark').value === 'Dark'){ // 지금 상태가 light 모드 , Dark로 바꾸려면
+            changeDark();
+            document.querySelector('#content').style.background='#232324';
+            document.querySelector('#content').style.color='white';
+            document.querySelector('#accordionSidebar').style.background='#323234';
+            document.querySelector('#changeDark').value='Light';
+        }else{
+            changeLight();
+            document.querySelector('#content').style.background='white';
+            document.querySelector('#content').style.color='black';
+            document.querySelector('#accordionSidebar').style.background='#4e73df';
+            document.querySelector('#changeDark').value='Dark';
+        }
+        ">
         <!-- Nav Item - User Information -->
         <!-- TODO 차후 유저에 맞게 변화될 수 있도록 0503-->
         <li class="nav-item dropdown no-arrow">
