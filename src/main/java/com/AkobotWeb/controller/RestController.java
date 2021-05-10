@@ -27,5 +27,11 @@ public class RestController {
         return firebaseService.getMemberDetail(name);
     }
 
+    /* mk dummy */
+    /*@GetMapping("/mkDummy")
+    public void mkDummy() throws Exception {
+        firebaseService.mkDummy();
+    }*/
+
 
 }

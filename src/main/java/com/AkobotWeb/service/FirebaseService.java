@@ -22,6 +22,11 @@ public interface FirebaseService {
     /* 0510 questionDetails 질문 등록된 내용 가져옴*/
     public BoardVO read(Long bno) throws Exception;
 
-    /* 0504 테스트*/
+
+    /**
+     * 테스트 관련
+     * */
+    /* 0510 make Dummy Collections */
+    public void mkDummy() throws Exception;
 
 }
