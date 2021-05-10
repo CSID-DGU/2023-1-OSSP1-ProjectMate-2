@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 public class BoardVO {
-    private int bno;
+    private Long bno;
     private String content;
     private String name;
     private Timestamp regDate;

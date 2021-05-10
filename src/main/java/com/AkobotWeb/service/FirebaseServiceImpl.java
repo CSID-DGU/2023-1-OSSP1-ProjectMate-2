@@ -60,4 +60,35 @@ public class FirebaseServiceImpl implements FirebaseService {
 
         return list;
     }
+
+    /* TODO 0510 */
+    @Override
+    public Long insert(BoardVO board) throws Exception {
+
+
+        return 1L;
+    }
+
+    /* TODO 0510 */
+    @Override
+    public BoardVO read(Long bno) throws Exception {
+        firestore = FirestoreClient.getFirestore();
+        BoardVO boardVO;
+        // Create a reference to the collection
+        CollectionReference ref = firestore.collection(COLLECTION_NAME);
+
+        // Create a query against the collection.
+        Query query = ref.whereEqualTo("bno", bno);
+
+        // retrieve  query results asynchronously using query.get()
+        ApiFuture<QuerySnapshot> querySnapshot = query.get();
+        DocumentSnapshot document = querySnapshot.get().getDocuments().get(0); // 리스트의 0번쨰 요소를 가져오도록
+
+        boardVO = document.toObject(BoardVO.class);
+
+        /* TODO log */
+        /*System.out.println(boardVO.toString());*/
+
+        return boardVO;
+    }
 }
