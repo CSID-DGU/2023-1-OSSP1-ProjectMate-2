@@ -69,6 +69,16 @@ public class MainController {
         return "manual";
     }
 
+    /* 아코봇에서 미해결 질문 등록하는 페이지*/
+    @GetMapping("/ask")
+    public String ask(){
+        return "ask";
+    }
 
+    /* 아코봇을 띄워주는 가상 동국대 입학처 페이지 연결*/
+    @GetMapping("/dongguk")
+    public String dongguk(){
+        return "dongguk";
+    }
 
 }
