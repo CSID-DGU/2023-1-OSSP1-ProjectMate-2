@@ -28,10 +28,10 @@ public class RestController {
     }
 
     /* mk dummy */
-    /*@GetMapping("/mkDummy")
+    @GetMapping("/mkDummy")
     public void mkDummy() throws Exception {
         firebaseService.mkDummy();
-    }*/
+    }
 
 
 }

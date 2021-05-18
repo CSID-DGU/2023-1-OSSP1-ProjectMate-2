@@ -8,6 +8,9 @@ build/
 ### FIREBASE KEY ###
 serviceAccountKey.json
 
+### LOG ###
+LOG_DIR_IS_UNDEFINED
+
 ### STS ###
 .apt_generated
 .classpath
