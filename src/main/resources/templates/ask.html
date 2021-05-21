@@ -3,40 +3,124 @@
 <head>
     <title>Akobot question form</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
+<style>
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 170vh;
+        background: #301e4e;
+    }
+    .content {
+        font-family: system-ui, serif;
+        font-size: 1rem;
+        padding: 2rem;
+        border-radius: 2rem;
+        background: #ff6e6c;
+    }
+    button {
+        background-color: #F9B514;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal .bg {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modalBox {
+        position: absolute;
+        background-color: #fff;
+        width: 400px;
+        height: 200px;
+        padding: 15px;
+    }
+
+    .modalBox button {
+        display: block;
+        width: 80px;
+        margin: 0 auto;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
 <body>
-    <div id="wrapper">
-        <img src="img/logo.png"/>
+<div class="wrapper" >
+    <div class = "content" style="text-align : center;">
+        <img src="img/aaaakkkbo.png"/>
         <p>
             위 질문을 등록하면, 관리자가 답변 후 적어주신 연락처로 답변을 드립니다.
         </p>
         <p>
-            더 빠른 답변을 원하시면 동국대학교 입학처 02-2260-8861 으로 연락주시면
-            됩니다
+            더 빠른 답변을 원하시면 동국대학교 입학처 02-2260-8861 으로 연락주시면 됩니다
         </p>
         <p>여러분의 합격을 응원합니다!</p>
-    </div>
-    <div id="question-area">
-        <form method="post" action="/add">
+        <!--form method="post" action="/add"-->
             <!--액션 설정해줄것-->
-            <label for="Name">Name:</label>
+            <div class = "content" style="text-align : left;">
+            <label for="Name">이     름 : </label>
             <input type="text" name="name" id="Name"/>
-
-            <label for="Phone">Phone:</label>
+            <br><br>
+            <label for="Phone">전화번호 : </label>
             <input type="text" name="phone" id="Phone"/>
+            <br><br>
+            <label for="Question">질문</label><br>
+            <textarea name="content" rows="10" cols="100" id="Question"></textarea>
+            <br>
+                <button class="openBtn">제출</button>
+                <div class="modal hidden">
+                    <div class="bg"></div>
+                    <div class="modalBox">
+                        <div class ="modal-header">
+                            <p style="font-size:24px">정말로 제출 하시겠습니까?<br><hr color="#DCDCDC"/></p>
+                            <div class = "modal-body">제출하시려면 "확인"버튼을 누르십시오</div>
+                            <br><br>
+                            <div class = "modal-footer">
+                                <button type="button" style="float:left" onClick="location
+                                .href='dongguk'">확인</button>
+                                <button class="closeBtn" style="float:left">취소</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <label for="Question">Question:</label><br/>
-            <textarea name="content" rows="20" cols="20" id="Question"></textarea>
+                <script>
+                    const open = () => {
+                        document.querySelector(".modal").classList.remove("hidden");
+                    }
 
-            <input
-                    type="submit"
-                    name="submit"
-                    value="Submit"
-                    class="submit-button"
-            />
-        </form>
+                    const close = () => {
+                        document.querySelector(".modal").classList.add("hidden");
+                    }
+
+                    document.querySelector(".openBtn").addEventListener("click", open);
+                    document.querySelector(".closeBtn").addEventListener("click", close);
+                    document.querySelector(".bg").addEventListener("click", close);
+
+                </script>
+            </div>
+        </div>
     </div>
+</div>
 </body>
 </html>
