@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -79,5 +80,17 @@ public class MainController {
     public String dongguk(){
         return "dongguk";
     }
+
+    /* 사용자가 질문 등록*/
+    /*@PostMapping("/add")
+    public void add(BoardVO board) throws Exception {
+        fbservice.add(board);
+        *//*rttr.addFlashAttribute("bno" , board.getBno());*//*
+     *//*return "ask";*//*
+    }*/
+    /*@GetMapping("/add")
+    public String goback() throws Exception{
+        return "ask";
+    }*/
 
 }

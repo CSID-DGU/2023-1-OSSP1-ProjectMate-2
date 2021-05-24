@@ -8,6 +8,9 @@ build/
 ### FIREBASE KEY ###
 serviceAccountKey.json
 
+### GOOGLE LOGIN ###
+application-oauth.properties
+
 ### LOG ###
 LOG_DIR_IS_UNDEFINED
 

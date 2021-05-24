@@ -18,5 +18,6 @@ public class BoardVO {
     private Long bno;
     private String content;
     private String name;
+    private String phone;
     private Timestamp regDate;
 }

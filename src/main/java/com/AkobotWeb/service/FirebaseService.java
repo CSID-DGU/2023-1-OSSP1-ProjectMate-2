@@ -8,8 +8,6 @@ import java.util.List;
 
 public interface FirebaseService {
 
-    /*TODO 좀 더 정밀하게 */
-    public String add(BoardVO board) throws Exception;
 
     public BoardVO getMemberDetail(String id) throws Exception;
 
@@ -29,4 +27,6 @@ public interface FirebaseService {
     /* 0510 make Dummy Collections */
     public void mkDummy() throws Exception;
 
+    /*TODO 좀 더 정밀하게 */
+    public void add(BoardVO board) throws Exception;
 }
