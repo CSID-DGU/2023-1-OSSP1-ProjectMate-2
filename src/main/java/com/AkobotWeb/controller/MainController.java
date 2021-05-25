@@ -39,7 +39,9 @@ public class MainController {
         }
         return "index";
     }
-    /*public String index(Model model, @LoginUser SessionUser user) {
+    /*
+    *   중복코드 최소화 하는 방법이지만, NULL EXCEPTION 이 일어남..
+    public String index(Model model, @LoginUser SessionUser user) {
         // .............
         // 사용자 정보: 위의 @LoginUser 어노테이션으로 대체
         // SessionUser user = (SessionUser) httpSession.getAttribute("user");
@@ -61,6 +63,12 @@ public class MainController {
     /* 질문 게시판 */
     @GetMapping("/tables")
     public String tables(BoardVO boardVO, Model model) throws Exception {
+        /* 세션 정보 */
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null){
+            model.addAttribute("userName",user.getName());
+            model.addAttribute("userImg",user.getPicture());
+        }
         /* log 이용하는 방식으로 변경할 것*/
         /*System.out.println(boardVO);*/
         model.addAttribute("result", fbservice.getBoardVO());
@@ -69,6 +77,11 @@ public class MainController {
     /* DB 관리 게시판*/
     @GetMapping("/manage")
     public String manage(BoardVO boardVO, Model model) throws Exception {
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null){
+            model.addAttribute("userName",user.getName());
+            model.addAttribute("userImg",user.getPicture());
+        }
         /* log 이용하는 방식으로 변경할 것*/
         /*System.out.println(boardVO);*/
         /*model.addAttribute("result", fbservice.getBoardVO());*/
@@ -82,6 +95,11 @@ public class MainController {
     /* 0510 질문 상세 정보 조회*/
     @GetMapping("/questionDetail")
     public void read(long bno, Model model) throws Exception {
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null){
+            model.addAttribute("userName",user.getName());
+            model.addAttribute("userImg",user.getPicture());
+        }
         //TODO log
         model.addAttribute("result", fbservice.read(bno));
     }
@@ -95,7 +113,12 @@ public class MainController {
 
     /* manual.html —> 아코봇 사용방법이 앞으로 등재될 페이지*/
     @GetMapping("/manual")
-    public String manual() {
+    public String manual(Model model) {
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null){
+            model.addAttribute("userName",user.getName());
+            model.addAttribute("userImg",user.getPicture());
+        }
         return "manual";
     }
 
