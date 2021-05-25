@@ -33,7 +33,7 @@
         <!-- Nav Item - User Information -->
         <!-- TODO 차후 유저에 맞게 변화될 수 있도록 0503-->
         <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+            <a class="nav-link dropdown-toggle" href="" id="userDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <!--img class = 'img-profile square' src="img/Calen.png" hspace = 30-->
                 <img class="img-profile rounded-circle" src="img/Person.png" width = "100" height="100">
@@ -41,10 +41,25 @@
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                  aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <!-- 로그인 -->
+                <div class="row">
+                    <div class="col-md-10">
+                        <div th:if="${not #strings.isEmpty(userName)}">
+                            <img style="width:45px; height:45px" src="" th:src="${userImg}"
+                                 class="rounded-circle img-thumbnail img-responsive">
+                            <span id="login-user" th:text="${userName}">사용자</span> 님, 안녕하세요.
+                            <a href="/logout" class="btn btn-sm btn-info active" role="button">Logout</a>
+                        </div>
+                        <div th:if="${#strings.isEmpty(userName)}">
+                            <!-- 스프링 시큐리티에서 기본 제공하는 URL - 별도 컨트롤러 작성 필요 없음 -->
+                            <a href="/oauth2/authorization/google" role="button">로그인 하기</a>
+                        </div>
+                    </div>
+                </div>
+                <!--<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     로그아웃
-                </a>
+                </a>-->
                 <a class = "dropdown-item">
                     <input id="changeDark" type="button" value="DarkMode" onclick="
         if(document.querySelector('#changeDark').value === 'DarkMode'){ // 지금 상태가 light 모드 , Dark로 바꾸려면
