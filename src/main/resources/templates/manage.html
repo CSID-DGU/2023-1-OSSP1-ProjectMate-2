@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th= "http://www.thymeleaf.org">
+<head th:replace="common_codes/fragments.html:: fragment-header(title='SB Admin 2 - tables')"></head>
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <th:block th:replace="~{/common_codes/sidebar.html}"></th:block>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <th:block th:replace="~{/common_codes/topbar.html}"></th:block>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <div class="treeview-animated w-20 border mx-4 my-4">
+                    <h6 class="pt-3 pl-3">아코봇 DB 구조</h6>
+                    <hr>
+                    <ul class="treeview-animated-list mb-3">
+                        <li class="treeview-animated-items">
+                            <a class="closed">
+                                <i class="fas fa-angle-right"></i>
+                                <span><i class="far fa-envelope-open ic-w mx-1"></i>Mail</span>
+                            </a>
+                            <ul class="nested">
+                                <li>
+                                    <div class="treeview-animated-element"><i class="far fa-bell ic-w mr-1"></i>Offers
+                                </li>
+                                <li>
+                                    <div class="treeview-animated-element"><i class="far fa-address-book ic-w mr-1"></i>Contacts
+                                </li>
+                                <li class="treeview-animated-items">
+                                    <a class="closed"><i class="fas fa-angle-right"></i>
+                                        <span><i class="far fa-calendar-alt ic-w mx-1"></i>Calendar</span></a>
+                                    <ul class="nested">
+                                        <li>
+                                            <div class="treeview-animated-element"><i class="far fa-clock ic-w mr-1"></i>Deadlines
+                                        </li>
+                                        <li>
+                                            <div class="treeview-animated-element"><i class="fas fa-users ic-w mr-1"></i>Meetings
+                                        </li>
+                                        <li>
+                                            <div class="treeview-animated-element"><i class="fas fa-basketball-ball ic-w mr-1"></i>Workouts
+                                        </li>
+                                        <li>
+                                            <div class="treeview-animated-element"><i class="fas fa-mug-hot ic-w mr-1"></i>Events
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="treeview-animated-items">
+                            <a class="closed">
+                                <i class="fas fa-angle-right"></i>
+                                <span><i class="far fa-folder-open ic-w mx-1"></i>Inbox</span>
+                            </a>
+                            <ul class="nested">
+                                <li>
+                                    <div class="treeview-animated-element"><i class="far fa-folder-open ic-w mr-1"></i>Admin
+                                </li>
+                                <li>
+                                    <div class="treeview-animated-element"><i class="far fa-folder-open ic-w mr-1"></i>Corporate
+                                </li>
+                                <li>
+                                    <div class="treeview-animated-element"><i class="far fa-folder-open ic-w mr-1"></i>Finance
+                                </li>
+                                <li>
+                                    <div class="treeview-animated-element"><i class="far fa-folder-open ic-w mr-1"></i>Other
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="treeview-animated-items">
+                            <a class="closed">
+                                <i class="fas fa-angle-right"></i>
+                                <span><i class="far fa-gem mx-1"></i>Favourites</span>
+                            </a>
+                            <ul class="nested">
+                                <li>
+                                    <div class="treeview-animated-element"><i class="fas fa-pepper-hot ic-w mr-1"></i>Restaurants
+                                </li>
+                                <li>
+                                    <div class="treeview-animated-element"><i class="far fa-eye ic-w mr-1"></i>Places
+                                </li>
+                                <li>
+                                    <div class="treeview-animated-element"><i class="fas fa-gamepad ic-w mr-1"></i>Games
+                                </li>
+                                <li>
+                                    <div class="treeview-animated-element"><i class="fas fa-cocktail ic-w mr-1"></i>Coctails
+                                </li>
+                                <li>
+                                    <div class="treeview-animated-element"><i class="fas fa-pizza-slice ic-w mr-1"></i>Food
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="treeview-animated-element"><i class="far fa-comment ic-w mr-1"></i>Notes
+                        </li>
+                        <li>
+                            <div class="treeview-animated-element"><i class="fas fa-cogs ic-w mr-1"></i>Settings
+                        </li>
+                        <li>
+                            <div class="treeview-animated-element"><i class="fas fa-desktop ic-w mr-1"></i>Devices
+                        </li>
+                        <li>
+                            <div class="treeview-animated-element"><i class="fas fa-trash-alt ic-w mr-1"></i>Deleted Items
+                        </li>
+                    </ul>
+                </div>
+
+                <script>
+                    // Treeview Initialization
+                    $(document).ready(function () {
+                        $('.treeview').mdbTreeview();
+                    });
+                </script>
+
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <th:block th:replace="~{/common_codes/footer.html}"></th:block>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<th:block th:replace="~{/common_codes/logout_modal.html}"></th:block>
+
+<!-- footer를 그대로 inlcude-->
+<footer th:replace="common_codes/fragments.html :: footer"></footer>
+
+</body>
+
+</html>

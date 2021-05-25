@@ -5,28 +5,54 @@ package com.AkobotWeb.controller;
  *
  * */
 
+import com.AkobotWeb.config.auth.LoginUser;
+import com.AkobotWeb.config.auth.dto.SessionUser;
 import com.AkobotWeb.domain.BoardVO;
 import com.AkobotWeb.service.FirebaseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
+@RequiredArgsConstructor
 @Controller
 @RequestMapping("/*")
 public class MainController {
     /*TODO Service 작성 */
     @Autowired
     private FirebaseService fbservice;
+    private final HttpSession httpSession;
 
-    /*TODO home.html을 기본페이지? 관습적으로 index.html을 기본페이지로 하는데..*/
-    /* home.html 로그인 하기전 홈 화면(login 버튼 -> 클릭 시 login.html로 이동) */
-   /* @GetMapping("/")
-    public String home(){
-        return "home";
+
+    /* 로그인 전이라면 로그인하라하고, 로그인하면 구글 로그인 정보 보여줌 */
+    @GetMapping("/")
+    public String index(Model model){
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null){
+            model.addAttribute("userName",user.getName());
+            model.addAttribute("userImg",user.getPicture());
+        }
+        return "index";
     }
-    *//* index.html..*/
+    /*
+    *   중복코드 최소화 하는 방법이지만, NULL EXCEPTION 이 일어남..
+    public String index(Model model, @LoginUser SessionUser user) {
+        // .............
+        // 사용자 정보: 위의 @LoginUser 어노테이션으로 대체
+        // SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null) {
+            model.addAttribute("userName", user.getName());
+            model.addAttribute("userImg", user.getPicture());
+        }
+        return "index";
+    }*/
+
+    //* index.html..*/
 
     /*일단은 /home 요청해서 view 읽도록 함 */
     @GetMapping("/home")
@@ -37,12 +63,30 @@ public class MainController {
     /* 질문 게시판 */
     @GetMapping("/tables")
     public String tables(BoardVO boardVO, Model model) throws Exception {
+        /* 세션 정보 */
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null){
+            model.addAttribute("userName",user.getName());
+            model.addAttribute("userImg",user.getPicture());
+        }
         /* log 이용하는 방식으로 변경할 것*/
         /*System.out.println(boardVO);*/
         model.addAttribute("result", fbservice.getBoardVO());
         return "tables";
     }
-
+    /* DB 관리 게시판*/
+    @GetMapping("/manage")
+    public String manage(BoardVO boardVO, Model model) throws Exception {
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null){
+            model.addAttribute("userName",user.getName());
+            model.addAttribute("userImg",user.getPicture());
+        }
+        /* log 이용하는 방식으로 변경할 것*/
+        /*System.out.println(boardVO);*/
+        /*model.addAttribute("result", fbservice.getBoardVO());*/
+        return "manage";
+    }
     /* 질문 question 페이지 작성 */
     /* @GetMapping("/question")
     public String list() {
@@ -51,6 +95,11 @@ public class MainController {
     /* 0510 질문 상세 정보 조회*/
     @GetMapping("/questionDetail")
     public void read(long bno, Model model) throws Exception {
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null){
+            model.addAttribute("userName",user.getName());
+            model.addAttribute("userImg",user.getPicture());
+        }
         //TODO log
         model.addAttribute("result", fbservice.read(bno));
     }
@@ -64,20 +113,37 @@ public class MainController {
 
     /* manual.html —> 아코봇 사용방법이 앞으로 등재될 페이지*/
     @GetMapping("/manual")
-    public String manual() {
+    public String manual(Model model) {
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null){
+            model.addAttribute("userName",user.getName());
+            model.addAttribute("userImg",user.getPicture());
+        }
         return "manual";
     }
 
     /* 아코봇에서 미해결 질문 등록하는 페이지*/
     @GetMapping("/ask")
-    public String ask(){
+    public String ask() {
         return "ask";
     }
 
     /* 아코봇을 띄워주는 가상 동국대 입학처 페이지 연결*/
     @GetMapping("/dongguk")
-    public String dongguk(){
+    public String dongguk() {
         return "dongguk";
     }
+
+    /* 사용자가 질문 등록*/
+    /*@PostMapping("/add")
+    public void add(BoardVO board) throws Exception {
+        fbservice.add(board);
+        *//*rttr.addFlashAttribute("bno" , board.getBno());*//*
+     *//*return "ask";*//*
+    }*/
+    /*@GetMapping("/add")
+    public String goback() throws Exception{
+        return "ask";
+    }*/
 
 }

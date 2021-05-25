@@ -7,6 +7,7 @@ import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,13 +20,6 @@ public class FirebaseServiceImpl implements FirebaseService {
     public static final String COLLECTION_NAME = "TBL_ASK_DUMMY"; // cloud firestore의 collection name
 
     Firestore firestore;
-
-    @Override
-    public String add(BoardVO board) throws Exception {
-        firestore = FirestoreClient.getFirestore();
-        ApiFuture<com.google.cloud.firestore.WriteResult> apiFuture = firestore.collection(COLLECTION_NAME).document(board.getName()).set(board);
-        return apiFuture.get().getUpdateTime().toString();
-    }
 
     @Override
     public BoardVO getMemberDetail(String name) throws Exception {
@@ -97,9 +91,37 @@ public class FirebaseServiceImpl implements FirebaseService {
     public void mkDummy(){
         firestore= FirestoreClient.getFirestore();
         for(int i=1; i<=25; i++){
-            BoardVO boardVO = new BoardVO(Integer.toUnsignedLong(i),"dummy content","dummy", Timestamp.now());
+            BoardVO boardVO = new BoardVO(Integer.toUnsignedLong(i),"dummy content","dummy","010-0000-0000", Timestamp.now());
             ApiFuture<DocumentReference> future = firestore.collection(COLLECTION_NAME).add(boardVO);
         }
         System.out.println("Done");
+    }
+
+    @Override
+    public void add(@ModelAttribute BoardVO board) throws Exception {
+
+        /*firestore= FirestoreClient.getFirestore();
+        firestore.collection(COLLECTION_NAME).get(
+        CollectionReference ref = firestore.collection(COLLECTION_NAME);
+
+        //현재 db의 bno max값을 가져온다
+        Query query = ref.orderBy("bno", Query.Direction.DESCENDING).limit(0);
+
+        long bno = query;
+        // bno ++; 하고 새로운 BoardVO객체를 만들어서 전달한다.
+
+        firestore = FirestoreClient.getFirestore();
+        ApiFuture<WriteResult> apiFuture = firestore.collection(COLLECTION_NAME).document(board.getName()).set(board);
+        return apiFuture.get().getUpdateTime().toString();*/
+
+        //TODO 0520
+        System.out.println(board.toString());
+
+        board.setBno(28L);
+        board.setRegDate(Timestamp.now());
+
+        ApiFuture<DocumentReference> future = firestore.collection(COLLECTION_NAME).add(board);
+
+
     }
 }
