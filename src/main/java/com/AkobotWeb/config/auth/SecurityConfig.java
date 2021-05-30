@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers().frameOptions().disable() // h2-console 화면 사용하기 위해
                 .and()
                 .authorizeRequests() // URL 별 권환 관리 설정
-                .antMatchers("/","/dongguk","/login","/ask" ,"/vendor/**","/css/**", "/img/**", "/js/**", "/h2/**", "/h2-console/**").permitAll()
+                .antMatchers("/","/dongguk","/login","/ask","/add" ,"/vendor/**","/css/**", "/img/**", "/js/**", "/h2/**", "/h2-console/**").permitAll()
                 .antMatchers("/api/v1/**").hasRole(Role.USER.name()) //andMatcher 권환 관리 대상을 지정하는 옵션 p181
                 .anyRequest().authenticated() // 설정값들 외 나머지 URL // 인증된 사용자들에게만 허용
                 .and()

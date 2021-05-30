@@ -114,14 +114,25 @@ public class FirebaseServiceImpl implements FirebaseService {
         ApiFuture<WriteResult> apiFuture = firestore.collection(COLLECTION_NAME).document(board.getName()).set(board);
         return apiFuture.get().getUpdateTime().toString();*/
 
-        //TODO 0520
-        System.out.println(board.toString());
-
-        board.setBno(28L);
+        /* 마지막 bno을 읽어와 ++bno 값으로 새 도큐먼트를 DB에 삽입*/
+        long bno = getBno();
+        board.setBno(++bno);
         board.setRegDate(Timestamp.now());
 
         ApiFuture<DocumentReference> future = firestore.collection(COLLECTION_NAME).add(board);
 
+    }
 
+    @Override
+    public long getBno() throws Exception {
+        firestore= FirestoreClient.getFirestore();
+        // Create a reference to the collection
+        CollectionReference ref = firestore.collection(COLLECTION_NAME);
+
+        // Create a query against the collection.
+        Query query = ref.orderBy("bno", Query.Direction.DESCENDING).limit(1);
+        ApiFuture<QuerySnapshot> querySnapshot = query.get();
+        DocumentSnapshot document = querySnapshot.get().getDocuments().get(0);
+        return document.getLong("bno");
     }
 }

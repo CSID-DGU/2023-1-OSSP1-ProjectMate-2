@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
@@ -39,7 +40,7 @@ public class MainController {
         }
         return "index";
     }
-    /*
+    /**
     *   중복코드 최소화 하는 방법이지만, NULL EXCEPTION 이 일어남..
     public String index(Model model, @LoginUser SessionUser user) {
         // .............
@@ -52,9 +53,7 @@ public class MainController {
         return "index";
     }*/
 
-    //* index.html..*/
-
-    /*일단은 /home 요청해서 view 읽도록 함 */
+    /*일단은 /home 요청해서 view 읽도록 함 -> index.html을 기본으로 */
     @GetMapping("/home")
     public String home() {
         return "home";
@@ -74,6 +73,7 @@ public class MainController {
         model.addAttribute("result", fbservice.getBoardVO());
         return "tables";
     }
+
     /* DB 관리 게시판*/
     @GetMapping("/manage")
     public String manage(BoardVO boardVO, Model model) throws Exception {
@@ -87,11 +87,7 @@ public class MainController {
         /*model.addAttribute("result", fbservice.getBoardVO());*/
         return "manage";
     }
-    /* 질문 question 페이지 작성 */
-    /* @GetMapping("/question")
-    public String list() {
-        return "questionDetail";
-    }*/
+
     /* 0510 질문 상세 정보 조회*/
     @GetMapping("/questionDetail")
     public void read(long bno, Model model) throws Exception {
@@ -134,16 +130,11 @@ public class MainController {
         return "dongguk";
     }
 
-    /* 사용자가 질문 등록*/
-    /*@PostMapping("/add")
-    public void add(BoardVO board) throws Exception {
+    /* 질문 사용자가 직접 등록*/
+    @PostMapping("/add")
+    public String add(BoardVO board) throws Exception {
         fbservice.add(board);
-        *//*rttr.addFlashAttribute("bno" , board.getBno());*//*
-     *//*return "ask";*//*
-    }*/
-    /*@GetMapping("/add")
-    public String goback() throws Exception{
-        return "ask";
-    }*/
-
+        /*rttr.addFlashAttribute("bno" , board.getBno());*/
+        return "redirect:dongguk"; // dongguk으로 redirect
+    }
 }
