@@ -29,4 +29,7 @@ public interface FirebaseService {
 
     /*TODO 좀 더 정밀하게 */
     public void add(BoardVO board) throws Exception;
+
+    /* getBno*/
+    public long getBno() throws Exception;
 }
