@@ -62,6 +62,8 @@
                             <input type="text" class="form-control" name="bno" th:value="${result.phone}" readonly>
                         </div>
                         <p> 알림 메세지 보내기 </p>
+                    </div>
+                    <div class = "card-body">
                         <th:block th:replace="~{SMS/sendSMSform.html}"></th:block>
                         <p>질문 끌어오기....</p>
                         <br><br><br>
