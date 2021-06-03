@@ -135,6 +135,6 @@ public class MainController {
     public String add(BoardVO board) throws Exception {
         fbservice.add(board);
         /*rttr.addFlashAttribute("bno" , board.getBno());*/
-        return "redirect:dongguk"; // dongguk으로 redirect
+        return "redirect:ask"; // dongguk으로 redirect
     }
 }
