@@ -9,6 +9,7 @@ import com.AkobotWeb.config.auth.LoginUser;
 import com.AkobotWeb.config.auth.dto.SessionUser;
 import com.AkobotWeb.domain.BoardVO;
 import com.AkobotWeb.service.FirebaseService;
+import com.AkobotWeb.service.SMSService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -139,5 +140,10 @@ public class MainController {
     }
 
     /* SMS 등록 처리*/
-
+    @PostMapping("/smsService")
+    public String sms(){
+        SMSService smsService = new SMSService();
+        //smsService.dealingSMS();
+        return "redirect:questionDetail";
+    }
 }

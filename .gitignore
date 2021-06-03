@@ -11,6 +11,9 @@ serviceAccountKey.json
 ### GOOGLE LOGIN ###
 application-oauth.properties
 
+### CAFE24 SMS MESSAGE ###
+sms-key.properties
+
 ### LOG ###
 LOG_DIR_IS_UNDEFINED
 

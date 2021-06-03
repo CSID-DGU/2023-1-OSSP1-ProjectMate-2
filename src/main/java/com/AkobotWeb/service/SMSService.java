@@ -7,6 +7,8 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import java.util.Base64;
+
 public class SMSService {
     private final static String apiUrl = "https://sslsms.cafe24.com/smsSenderPhone.php";
     private final static String userAgent = "Mozilla/5.0";
@@ -31,7 +33,7 @@ public class SMSService {
             String postParams = "userId=ajchoi9709&passwd=" + str;
             // test 모드일 때 SMS 발송 NONO
             /*if (isTest) {
-                postParams += "&testflag" + BASE64Util.base64Encode("Y");
+                postParams += "&testflag" + base64Util.base64Encode("Y");
             }*/
 
             // For POST only - START
@@ -63,4 +65,25 @@ public class SMSService {
 
         }
     }
+
+    public static String nullcheck(String str, String Defaultvalue) throws Exception {
+        String ReturnDefault = "";
+        if (str == null) {
+            ReturnDefault = Defaultvalue;
+        } else if (str == "") {
+            ReturnDefault = Defaultvalue;
+        } else {
+            ReturnDefault = str;
+        }
+        return ReturnDefault;
+    }
+    public static String base64Encode(String str)  throws java.io.IOException {
+        Base64.Encoder encoder = null;
+        byte[] strByte = str.getBytes();
+        String result = encoder.encode(strByte).toString();
+        return result ;
+    }
+
+
+
 }
