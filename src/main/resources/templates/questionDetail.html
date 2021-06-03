@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th= "http://www.thymeleaf.org">
 <head th:replace="common_codes/fragments.html:: fragment-header(title='SB Admin 2 - qusetionDetail')"></head>
-<body id="page-top">
+<script src="js/SMS/SendSMS.js"></script>
+<body id="page-top" onload="loadJSON()" >
 
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -56,7 +57,12 @@
                             <label>질문 작성자</label>
                             <input type="text" class="form-control" name="bno" th:value="${result.name}" readonly>
                         </div>
-
+                        <div class="form-group">
+                            <label>질문 작성자 핸드폰 번호</label>
+                            <input type="text" class="form-control" name="bno" th:value="${result.phone}" readonly>
+                        </div>
+                        <p> 알림 메세지 보내기 </p>
+                        <th:block th:replace="~{SMS/sendSMSform.html}"></th:block>
                         <p>질문 끌어오기....</p>
                         <br><br><br>
                         <p class="mb-0">답변 등록:</p>
