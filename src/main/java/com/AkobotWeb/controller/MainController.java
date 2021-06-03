@@ -137,4 +137,7 @@ public class MainController {
         /*rttr.addFlashAttribute("bno" , board.getBno());*/
         return "redirect:dongguk"; // dongguk으로 redirect
     }
+
+    /* SMS 등록 처리*/
+
 }
