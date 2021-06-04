@@ -5,16 +5,16 @@ package com.AkobotWeb.controller;
  *
  * */
 
-import com.AkobotWeb.config.auth.LoginUser;
 import com.AkobotWeb.config.auth.dto.SessionUser;
 import com.AkobotWeb.domain.BoardVO;
+import com.AkobotWeb.domain.SMS.SMSDTO;
 import com.AkobotWeb.service.FirebaseService;
+import com.AkobotWeb.service.SMS.SMSService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -136,5 +136,14 @@ public class MainController {
         fbservice.add(board);
         /*rttr.addFlashAttribute("bno" , board.getBno());*/
         return "redirect:dongguk"; // dongguk으로 redirect
+    }
+
+    /* SMS 등록 처리*/
+    @PostMapping("/smsService")
+    public String sms(SMSDTO smsdto){
+        SMSService smsService = new SMSService();
+        smsService.dealingSMS(smsdto);
+        //smsService.dealingSMS();
+        return "redirect:tables";
     }
 }
