@@ -8,16 +8,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SMSDTO {
-    private String smsType;
-    private String subject;
     private String msg;
     private String rphone;
-    private String destination; // 필요없을듯
-    private String sphone; // 보내는 번호
-    private String rdate; //
-    private String rtime;
-    private String returnurl;
+    private String sphone1; // 보내는 번호 010
+    private String sphone2; // 보내는 번호 000
+    private String sphone3; // 보내는 번호 0000
     private String testflag;
-    private String nointeractive;
-    private String repeatFlag;
+    private String smsType;
+
 }

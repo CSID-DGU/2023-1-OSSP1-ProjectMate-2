@@ -1,14 +1,15 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <div class="card shadow mb-4">
     <div class="card-body">
         <h3>답변 메세지 보내기</h3>
         <form method="post" name="smsForm" action="/smsService">
             <input type="hidden" name="action" value="go"> 발송타입
             <span>
-          <input type="radio" name="smsType" value="S">단문(SMS)</span>
+          <input type="radio" id="short" name="smsType" value="S">단문(SMS)</span>
             <span>
-          <input type="radio" name="smsType" value="L">장문(LMS)</span>
+          <input type="radio" id="long" name="smsType" value="L">장문(LMS)</span>
             <br/>
             <div class="form-group">제목 :
                 <input type="text" id="limit_reply_title" class="form-control" name="subject"
@@ -27,7 +28,7 @@
                 <br/>
                 <br/>
                 <div class="form-group">받는 번호
-                    <input type="text" class="form-control" name="rphone" th:value="${result.phone}"> <br/>예)
+                    <input type="text" id="Rphone" class="form-control" name="rphone" th:value="${result.phone}"> <br/>예)
                     011-011-111 , '-' 포함해서 입력.
                 </div>
                 <br/>
@@ -91,7 +92,9 @@
                     </select>분마다
                 </div>
                 <br>-->
-                <input type="submit" class="form-control" value="전송">
+                <button type="submit" id="submit" class="btn btn-outline-primary">전송</button>
+                <button type="reset" class="btn btn-outline-secondary">리셋</button>
+                <button type="button" class="btn btn-outline-success"><a style="text-decoration:none" href="/tables">취소</a></button>
                 <br/>이통사 정책에 따라 발신번호와 수신번호가 같은 경우 발송되지 않습니다.
             </div>
         </form>
@@ -99,4 +102,6 @@
 </div>
 
 <script src="js/TextArea/limit-textarea.js"></script>
+<script src="js/SMS/formAlert.js"></script>
+
 
