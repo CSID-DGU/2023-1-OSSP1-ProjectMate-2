@@ -1,11 +1,13 @@
 package com.AkobotWeb.service;
 
 import com.AkobotWeb.domain.BoardVO;
+import com.AkobotWeb.domain.SolveVO.SolveVO;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -13,11 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+@Slf4j
 @Service
 public class FirebaseServiceImpl implements FirebaseService {
     /*public static final String COLLECTION_NAME="TBL_BOARD"; // cloud firestore의 collection name*/
     public static final String COLLECTION_NAME = "TBL_ASK_DUMMY"; // cloud firestore의 collection name
+    public static final String SOLVE_COLLECTION ="TBL_SOLVED";
 
     Firestore firestore;
 
@@ -59,7 +62,6 @@ public class FirebaseServiceImpl implements FirebaseService {
     @Override
     public Long insert(BoardVO board) throws Exception {
 
-
         return 1L;
     }
 
@@ -97,6 +99,7 @@ public class FirebaseServiceImpl implements FirebaseService {
         System.out.println("Done");
     }
 
+    /* bno 읽어와 bno 갱신한 새 도큐먼트 DB에 삽입*/
     @Override
     public void add(@ModelAttribute BoardVO board) throws Exception {
 
@@ -123,6 +126,7 @@ public class FirebaseServiceImpl implements FirebaseService {
 
     }
 
+    /* getBno */
     @Override
     public long getBno() throws Exception {
         firestore= FirestoreClient.getFirestore();
@@ -134,5 +138,58 @@ public class FirebaseServiceImpl implements FirebaseService {
         ApiFuture<QuerySnapshot> querySnapshot = query.get();
         DocumentSnapshot document = querySnapshot.get().getDocuments().get(0);
         return document.getLong("bno");
+    }
+
+    /* 해결 질문 게시판 전체 조회 */
+    @Override
+    public List<SolveVO> getSolveVO() throws Exception{
+        log.info("해결 질문 게시판 조회 처리 시작");
+        List<SolveVO> list = new ArrayList<>();
+        firestore = FirestoreClient.getFirestore();
+
+        ApiFuture<QuerySnapshot> future = firestore.collection(SOLVE_COLLECTION).get();
+        List<QueryDocumentSnapshot> documents = future.get().getDocuments();
+
+        for (QueryDocumentSnapshot document : documents) {
+            log.info(document.getId() + " -> "+ document.toObject(SolveVO.class));
+            list.add(document.toObject(SolveVO.class));
+        }
+        log.info("해결 질문 게시판 전체 조회 완료");
+        return list;
+    }
+
+    /* 해결 질문 게시판 개별 조회 */
+    @Override
+    public SolveVO readSolve(Long bno) throws Exception {
+        firestore = FirestoreClient.getFirestore();
+        SolveVO solveVO;
+        // Create a reference to the collection
+        CollectionReference ref = firestore.collection(SOLVE_COLLECTION);
+
+        // Create a query against the collection.
+        Query query = ref.whereEqualTo("bno", bno);
+
+        // retrieve  query results asynchronously using query.get()
+        ApiFuture<QuerySnapshot> querySnapshot = query.get();
+        DocumentSnapshot document = querySnapshot.get().getDocuments().get(0); // 리스트의 0번쨰 요소를 가져오도록
+
+        solveVO = document.toObject(SolveVO.class);
+
+        log.info("해결 상세 질문 조회  "+solveVO.toString());
+        return solveVO;
+    }
+
+    /* TODO 미해결 -> 해결 질문 게시판으로 처리 */
+    @Override
+    public void migrate(Long bno) throws Exception {
+        //BoardVO 객체 정보 가져온다
+
+        //SolveVO 객체 정보로 옮긴다
+
+        //해당 DB의 콜렉션에 새 도큐먼트로 추가한다
+
+        //질문 해결 시간을 등록해준다.
+
+        log.info("migrate 구현해야해");
     }
 }

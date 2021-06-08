@@ -11,6 +11,7 @@ import com.AkobotWeb.domain.SMS.SMSDTO;
 import com.AkobotWeb.service.FirebaseService;
 import com.AkobotWeb.service.SMS.SMSService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 
+@Slf4j
 @RequiredArgsConstructor
 @Controller
 @RequestMapping("/*")
@@ -62,15 +64,19 @@ public class MainController {
     /* 질문 게시판 */
     @GetMapping("/tables")
     public String tables(BoardVO boardVO, Model model) throws Exception {
+        long start = System.nanoTime();
         /* 세션 정보 */
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if(user != null){
             model.addAttribute("userName",user.getName());
             model.addAttribute("userImg",user.getPicture());
         }
-        /* log 이용하는 방식으로 변경할 것*/
-        /*System.out.println(boardVO);*/
+
+        log.info("GET Request to tables.html : "+boardVO.toString());
+
         model.addAttribute("result", fbservice.getBoardVO());
+        long end = System.nanoTime();
+        log.info("Finished GET Request to solve.html --- " + (end-start)/1000000000.0+"sec");
         return "tables";
     }
 
@@ -82,8 +88,8 @@ public class MainController {
             model.addAttribute("userName",user.getName());
             model.addAttribute("userImg",user.getPicture());
         }
-        /* log 이용하는 방식으로 변경할 것*/
-        /*System.out.println(boardVO);*/
+
+        log.info("GET Request to manage.html : "+boardVO.toString());
         /*model.addAttribute("result", fbservice.getBoardVO());*/
         return "manage";
     }
@@ -96,10 +102,39 @@ public class MainController {
             model.addAttribute("userName",user.getName());
             model.addAttribute("userImg",user.getPicture());
         }
-        //TODO log
         model.addAttribute("result", fbservice.read(bno));
+        log.info("GET Request to questionDetail.html with parameters bno:"+ bno+ " model:"+model.toString());
     }
 
+    /* 아코봇에서 해결 질문 처리 */
+    @GetMapping("/solve")
+    public String solve(BoardVO boardVO, Model model) throws Exception{
+        long start = System.nanoTime();
+        /* 세션 정보 */
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null){
+            model.addAttribute("userName",user.getName());
+            model.addAttribute("userImg",user.getPicture());
+        }
+
+        /*TODO 해결질문게시판 서비스 구성*/
+        model.addAttribute("result", fbservice.getSolveVO());
+        long end = System.nanoTime();
+        log.info("Finished GET Request to solve.html --- " + (end-start)/1000000000.0+"sec");
+        return "solve";
+    }
+
+    @GetMapping("/solvedDetail")
+    public void solveRead(long bno, Model model) throws Exception {
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null){
+            model.addAttribute("userName",user.getName());
+            model.addAttribute("userImg",user.getPicture());
+        }
+        /*TODO 해결 질문 게시판 조회 서비스 구성*/
+        model.addAttribute("result", fbservice.readSolve(bno));
+        log.info("GET Request to questionDetail.html with parameters bno:"+ bno+ " model:"+model.toString());
+    }
 
     /* Login.html —> bootstrap에 있던 로그인 페이지(일단 그대로 따옴)*/
     @GetMapping("/login")
@@ -143,7 +178,7 @@ public class MainController {
     public String sms(SMSDTO smsdto){
         SMSService smsService = new SMSService();
         smsService.dealingSMS(smsdto);
-        //smsService.dealingSMS();
+        /*TODO 정상처리시 미해결 질문 게시판에서 해결 질문 게시판으로 옮기기*/
         return "redirect:tables";
     }
 }
