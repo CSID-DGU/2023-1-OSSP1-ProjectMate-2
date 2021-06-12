@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.net.HttpURLConnection;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -175,10 +176,20 @@ public class MainController {
 
     /* SMS 등록 처리*/
     @PostMapping("/smsService")
-    public String sms(SMSDTO smsdto){
+    public String sms(SMSDTO smsdto,long bno) throws Exception {
+        log.info(smsdto.toString());
+        log.info(String.valueOf(bno));
+
         SMSService smsService = new SMSService();
-        smsService.dealingSMS(smsdto);
-        /*TODO 정상처리시 미해결 질문 게시판에서 해결 질문 게시판으로 옮기기*/
+        if(smsService.dealingSMS(smsdto) == HttpURLConnection.HTTP_OK){ // HTTP STATUS OK : 200 일 때
+            /*TODO 정상처리시 미해결 질문 게시판에서 해결 질문 게시판으로 옮기기*/
+            fbservice.migrate(smsdto, bno);
+            log.info("답변 완료 - 미해결 질문 게시판에서 -> 해결 질문 게시판으로 이동 완료");
+        }
+        else{
+            log.info("SMS 처리 실패");
+        }
+
         return "redirect:tables";
     }
 }

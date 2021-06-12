@@ -1,6 +1,7 @@
 package com.AkobotWeb.service;
 
 import com.AkobotWeb.domain.BoardVO;
+import com.AkobotWeb.domain.SMS.SMSDTO;
 import com.AkobotWeb.domain.SolveVO.SolveVO;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.Timestamp;
@@ -38,7 +39,10 @@ public class FirebaseServiceImpl implements FirebaseService {
             return null;
         }
     }
-
+    /**
+     * 미해결 질문 게시판 관련
+     *
+     * */
     /* 0503 질문 게시글 전체 조회 기능 구현 */
     @Override
     public List<BoardVO> getBoardVO() throws Exception {
@@ -139,7 +143,11 @@ public class FirebaseServiceImpl implements FirebaseService {
         DocumentSnapshot document = querySnapshot.get().getDocuments().get(0);
         return document.getLong("bno");
     }
+    /* getSolvedBno */
 
+    /**
+     * 해결질문게시판 관련
+     * */
     /* 해결 질문 게시판 전체 조회 */
     @Override
     public List<SolveVO> getSolveVO() throws Exception{
@@ -179,17 +187,46 @@ public class FirebaseServiceImpl implements FirebaseService {
         return solveVO;
     }
 
-    /* TODO 미해결 -> 해결 질문 게시판으로 처리 */
+    /* TODO 미해결 -> 해결 질문 게시판으로 처리 - smsService 메소드에서 호출 */
     @Override
-    public void migrate(Long bno) throws Exception {
-        //BoardVO 객체 정보 가져온다
+    public void migrate(SMSDTO smsdto, Long bno) throws Exception {
+        //I. 미해결 질문 게시판으로 부터
+        // 1) 해당 bno를 갖는 BoardVO 객체 정보 가져온다
+        firestore = FirestoreClient.getFirestore();
+        CollectionReference ref = firestore.collection(COLLECTION_NAME);
+        Query query = ref.whereEqualTo("bno", bno);
+        ApiFuture<QuerySnapshot> querySnapshot = query.get();
+        DocumentSnapshot document = querySnapshot.get().getDocuments().get(0); // 리스트의 0번쨰 요소를 가져오도록
 
-        //SolveVO 객체 정보로 옮긴다
+        // 2) SMSDTO로 부터 cloud firstore에 저장되는 SolveVO 인스턴로 옮긴다
+        SolveVO temp = document.toObject(SolveVO.class);
+        long sol_bno = getSolBno();
+        temp.setBno(++sol_bno);
+        temp.setAnswer(smsdto.getMsg());
+        temp.setRegDate(Timestamp.now());
+        log.info("migrate stemp 2 - SolveVO instance info : " + temp.toString());
 
-        //해당 DB의 콜렉션에 새 도큐먼트로 추가한다
+        // 3) 기존의 DB컬렉션에서 해당 도큐먼트 삭제한다
+        String docName = document.getId();
+        log.info("migrate step 3 - docRef : " + docName);
+        ApiFuture<WriteResult> writeResult = ref.document(docName).delete(); // asynchronously delete a document
 
-        //질문 해결 시간을 등록해준다.
+        // 4) 해당 DB의 콜렉션에 새 도큐먼트로 추가한다
+        ref = firestore.collection(SOLVE_COLLECTION);
+        ApiFuture<DocumentReference> future = ref.add(temp);
+        log.info("migrate step 4 - 옮기기 완료");
 
-        log.info("migrate 구현해야해");
+    }
+    @Override
+    public long getSolBno() throws Exception{
+        firestore= FirestoreClient.getFirestore();
+
+        CollectionReference ref = firestore.collection(SOLVE_COLLECTION);
+
+        Query query = ref.orderBy("bno", Query.Direction.DESCENDING).limit(1);
+        ApiFuture<QuerySnapshot> querySnapshot = query.get();
+        DocumentSnapshot document = querySnapshot.get().getDocuments().get(0);
+
+        return document.getLong("bno");
     }
 }
