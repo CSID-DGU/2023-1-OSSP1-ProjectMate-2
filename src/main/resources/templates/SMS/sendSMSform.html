@@ -5,6 +5,9 @@
     <div class="card-body">
         <h3>답변 메세지 보내기</h3>
         <form method="post" name="smsForm" action="/smsService">
+            <!-- bno 넘겨주려고 -->
+            <input type="hidden" class="form-control" name="bno" th:value="${result.bno}">
+
             <input type="hidden" name="action" value="go"> 발송타입
             <span>
           <input type="radio" id="short" name="smsType" value="S">단문(SMS)</span>
