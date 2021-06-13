@@ -1,28 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th= "http://www.thymeleaf.org">
 <head th:replace="common_codes/fragments.html:: fragment-header(title='SB Admin 2 - qusetionDetail')"></head>
-<script src="js/SMS/SendSMS.js"></script>
-<body id="page-top" onload="loadJSON()" >
-<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
-
-<script>
-    var firebaseConfig = {
-        apiKey: "AIzaSyDog6MArLvsaMT52LiO1Z2M-zfEPGtgOZw",
-        authDomain: "akobotweb.firebaseapp.com",
-        projectId: "akobotweb",
-        storageBucket: "akobotweb.appspot.com",
-        messagingSenderId: "613637346623",
-        appId: "1:613637346623:web:a0729be3489c95b60fef8a",
-        measurementId: "G-128T9Q1LBN"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-</script>
+<body id="page-top">
 
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -81,67 +60,17 @@
                             <label>질문 답변 내용 </label>
                             <input type="text" class="form-control" name="answer" th:value="${result.answer}" readonly>
                         </div>
-
-                        <textarea name="Answer" rows="15" cols="100" id="Answer"></textarea>
-
                         <p> DB 수정하기 </p>
                     </div>
                     <div class = "card-body">
                         <!-- TODO 해결 질문 게시판, DB 구조 보여주기 -->
                         <th:block th:replace="~{/DB/showDB.html}"></th:block>
-                        <button type="submit" class="btn btn-outline-primary" onclick="btn_enrollment_click();">등록</button>
-                        <button type="reset" class="btn btn-outline-secondary">리셋</button>
-                        <button type="button" class="btn btn-outline-success"><a style="text-decoration:none" href="/tables">취소</a></button>
                     </div>
                 </div>
             </div>
             <!-- /.container-fluid -->
         </div>
         <!-- End of Main Content -->
-
-        <script>
-            function btn_enrollment_click(){ //제출 버튼 클릭시
-                console.log("버튼클릭");
-                let user_radio_value;
-                let user_array;
-                let user_collection;
-                let user_doc;
-                let user_field;
-                user_radio_value=$('input:radio[name=radio_input]:checked').val(); //선택된 라디오 버튼 값 가져옴
-                user_array=user_radio_value.split('_');
-                user_collection=user_array[0];
-                user_doc=user_array[1];
-
-                user_field="elseData";
-                let elseDataElement=document.getElementById("Answer").value; // answer text area에서 받아온 내용을 입력
-
-                //save the data to the firebase
-                var db = firebase.database();
-
-                /*
-                db.collection(user_collection).doc(user_doc).set({
-                    elseData: elseDataElement
-                })
-                    .then(() => {
-                        console.log("Document successfully written!");
-                    })
-                    .catch((error) => {
-                        console.error("Error writing document: ", error);
-                    });
-                 */
-                var dbref=db.collection(user_collection).doc(user_doc);
-
-                return dbref.update({
-                    elseData:elseDataElement
-                })
-                    .then(function(){
-                    console.log("Document successfully updated");
-                    })
-                    .catch(function(error){
-                    console.log("Error updating document");
-                });
-            }
-        </script>
 
         <!-- Footer -->
         <th:block th:replace="~{/common_codes/footer.html}"></th:block>

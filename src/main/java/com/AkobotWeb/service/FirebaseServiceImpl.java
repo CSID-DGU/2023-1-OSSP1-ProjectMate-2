@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class FirebaseServiceImpl implements FirebaseService {
     /*public static final String COLLECTION_NAME="TBL_BOARD"; // cloud firestore의 collection name*/
     public static final String COLLECTION_NAME = "TBL_ASK_DUMMY"; // cloud firestore의 collection name
-    public static final String SOLVE_COLLECTION ="TBL_SOLVED";
+    public static final String SOLVE_COLLECTION = "TBL_SOLVED";
 
     Firestore firestore;
 
@@ -39,10 +39,10 @@ public class FirebaseServiceImpl implements FirebaseService {
             return null;
         }
     }
+
     /**
      * 미해결 질문 게시판 관련
-     *
-     * */
+     */
     /* 0503 질문 게시글 전체 조회 기능 구현 */
     @Override
     public List<BoardVO> getBoardVO() throws Exception {
@@ -94,10 +94,10 @@ public class FirebaseServiceImpl implements FirebaseService {
 
     /* 0510 mkDummy */
     @Override
-    public void mkDummy(){
-        firestore= FirestoreClient.getFirestore();
-        for(int i=1; i<=25; i++){
-            BoardVO boardVO = new BoardVO(Integer.toUnsignedLong(i),"dummy content","dummy","010-0000-0000", Timestamp.now());
+    public void mkDummy() {
+        firestore = FirestoreClient.getFirestore();
+        for (int i = 1; i <= 25; i++) {
+            BoardVO boardVO = new BoardVO(Integer.toUnsignedLong(i), "dummy content", "dummy", "010-0000-0000", Timestamp.now());
             ApiFuture<DocumentReference> future = firestore.collection(COLLECTION_NAME).add(boardVO);
         }
         System.out.println("Done");
@@ -133,7 +133,7 @@ public class FirebaseServiceImpl implements FirebaseService {
     /* getBno */
     @Override
     public long getBno() throws Exception {
-        firestore= FirestoreClient.getFirestore();
+        firestore = FirestoreClient.getFirestore();
         // Create a reference to the collection
         CollectionReference ref = firestore.collection(COLLECTION_NAME);
 
@@ -147,10 +147,10 @@ public class FirebaseServiceImpl implements FirebaseService {
 
     /**
      * 해결질문게시판 관련
-     * */
+     */
     /* 해결 질문 게시판 전체 조회 */
     @Override
-    public List<SolveVO> getSolveVO() throws Exception{
+    public List<SolveVO> getSolveVO() throws Exception {
         log.info("해결 질문 게시판 조회 처리 시작");
         List<SolveVO> list = new ArrayList<>();
         firestore = FirestoreClient.getFirestore();
@@ -159,7 +159,7 @@ public class FirebaseServiceImpl implements FirebaseService {
         List<QueryDocumentSnapshot> documents = future.get().getDocuments();
 
         for (QueryDocumentSnapshot document : documents) {
-            log.info(document.getId() + " -> "+ document.toObject(SolveVO.class));
+            log.info(document.getId() + " -> " + document.toObject(SolveVO.class));
             list.add(document.toObject(SolveVO.class));
         }
         log.info("해결 질문 게시판 전체 조회 완료");
@@ -183,7 +183,7 @@ public class FirebaseServiceImpl implements FirebaseService {
 
         solveVO = document.toObject(SolveVO.class);
 
-        log.info("해결 상세 질문 조회  "+solveVO.toString());
+        log.info("해결 상세 질문 조회  " + solveVO.toString());
         return solveVO;
     }
 
@@ -217,9 +217,10 @@ public class FirebaseServiceImpl implements FirebaseService {
         log.info("migrate step 4 - 옮기기 완료");
 
     }
+
     @Override
-    public long getSolBno() throws Exception{
-        firestore= FirestoreClient.getFirestore();
+    public long getSolBno() throws Exception {
+        firestore = FirestoreClient.getFirestore();
 
         CollectionReference ref = firestore.collection(SOLVE_COLLECTION);
 
@@ -228,5 +229,23 @@ public class FirebaseServiceImpl implements FirebaseService {
         DocumentSnapshot document = querySnapshot.get().getDocuments().get(0);
 
         return document.getLong("bno");
+    }
+
+    /**
+     * 관리자 챗봇 DB 수정 관련
+     */
+    @Override
+    public void updateCB(String collection, String doc, String update) throws Exception {
+        firestore = FirestoreClient.getFirestore();
+        // Update an existing document
+        DocumentReference docRef = firestore.collection(collection).document(doc);
+
+        // (async) Update one field
+        ApiFuture<WriteResult> future = docRef.update("elseData", update);
+
+        // ...
+        WriteResult result = future.get();
+        log.info("챗봇 DB 수정 완료 : " + result);
+
     }
 }

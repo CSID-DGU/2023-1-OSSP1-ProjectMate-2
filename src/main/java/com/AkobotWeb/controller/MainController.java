@@ -7,6 +7,7 @@ package com.AkobotWeb.controller;
 
 import com.AkobotWeb.config.auth.dto.SessionUser;
 import com.AkobotWeb.domain.BoardVO;
+import com.AkobotWeb.domain.DB.UpdateDTO;
 import com.AkobotWeb.domain.SMS.SMSDTO;
 import com.AkobotWeb.service.FirebaseService;
 import com.AkobotWeb.service.SMS.SMSService;
@@ -191,5 +192,22 @@ public class MainController {
         }
 
         return "redirect:tables";
+    }
+
+    /* DB 관리자 챗봇 수정 처리*/
+    @PostMapping("/updateDB")
+    public String updateDB(UpdateDTO updateDTO) throws Exception {
+        // TODO 파라미터 파싱
+        String collection="";
+        String doc="";
+        log.info("DB update input: " +updateDTO.toString());
+        String[] temp = updateDTO.getRadio_input().split("_");
+        if(temp.length != 0 ){
+            collection = temp[0];
+            doc = temp[1];
+        }
+        // 호출
+        fbservice.updateCB(collection, doc, updateDTO.getAnswer());
+        return "redirect:solve";
     }
 }

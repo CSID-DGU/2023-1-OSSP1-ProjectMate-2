@@ -46,5 +46,8 @@ public interface FirebaseService {
     /* 해결 질문 게시판 getBno*/
     public long getSolBno() throws Exception;
 
-
+    /**
+     *  관리자 DB 수정 관련
+     */
+    public void updateCB(String collection, String doc, String update) throws Exception;
 }
