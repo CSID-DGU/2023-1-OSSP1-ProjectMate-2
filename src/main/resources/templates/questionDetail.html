@@ -44,7 +44,6 @@
                         <!--<p th:text="${#temporals.formatISO(result.regDate)}"></p>-->
                     </div>
                     <div class="card-body">
-                        <!-- TODO 질문 끌어올것 -->
                         <div class="form-group">
                             <label>게시글 번호</label>
                             <input type="text" class="form-control" name="bno" th:value="${result.bno}" readonly>
@@ -58,31 +57,14 @@
                             <input type="text" class="form-control" name="bno" th:value="${result.name}" readonly>
                         </div>
                         <div class="form-group">
-                            <label>질문 작성자 핸드폰 번호</label>
+                            <label>작성자 이메일</label>
                             <input type="text" class="form-control" name="bno" th:value="${result.phone}" readonly>
                         </div>
-                        <p> 알림 메세지 보내기 </p>
                     </div>
                     <div class = "card-body">
-                        <th:block th:replace="~{SMS/sendSMSform.html}"></th:block>
-                        <!--<p>질문 끌어오기....</p>
-                        <br><br><br>
-                        <p class="mb-0">답변 등록:</p>
-                        <div id="question-area">
-                           &lt;!&ndash; <form method="post" action="">
-                                &lt;!&ndash;액션 설정해줄것&ndash;&gt;
-                                <label for="Answer">Answer:</label><br />
-                                <textarea name="Answer" rows="15" cols="100" id="Answer"></textarea>
-                                <br>
-                                &lt;!&ndash; TODO 추후 개선 &ndash;&gt;
-                                <button type="submit" class="btn btn-outline-primary">등록</button>
-                                <button type="reset" class="btn btn-outline-secondary">리셋</button>
-                                <button type="button" class="btn btn-outline-success"><a style="text-decoration:none" href="/tables">취소</a></button>
-                            </form>&ndash;&gt;
-                        </div>-->
+                        <th:block th:replace="~{Mail/sendMailform.html}"></th:block>
                     </div>
                 </div>
-
 
             </div>
             <!-- /.container-fluid -->

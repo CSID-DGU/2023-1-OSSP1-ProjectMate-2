@@ -21,7 +21,7 @@ public class InsertDummy  {
     public void insertDummy(){
         firestore= FirestoreClient.getFirestore();
         for(int i=1; i<1000; i++){
-            BoardVO boardVO = new BoardVO(Integer.toUnsignedLong(i),"dummy content","dummy","010-0000-0000",Timestamp.now());
+            BoardVO boardVO = new BoardVO(Integer.toUnsignedLong(i),"dummy content","dummy","010-0000-0000","example@akobot.com",Timestamp.now());
             ApiFuture<DocumentReference> future = firestore.collection(COLLECTION_NAME).add(boardVO);
         }
         System.out.println("Done");

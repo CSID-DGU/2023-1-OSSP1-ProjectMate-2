@@ -8,7 +8,9 @@ package com.AkobotWeb.controller;
 import com.AkobotWeb.config.auth.dto.SessionUser;
 import com.AkobotWeb.domain.BoardVO;
 import com.AkobotWeb.domain.DB.UpdateDTO;
+import com.AkobotWeb.domain.Mail.MailDTO;
 import com.AkobotWeb.domain.SMS.SMSDTO;
+import com.AkobotWeb.service.Email.MailService;
 import com.AkobotWeb.service.FirebaseService;
 import com.AkobotWeb.service.SMS.SMSService;
 import lombok.RequiredArgsConstructor;
@@ -31,6 +33,7 @@ public class MainController {
     /*TODO Service 작성 */
     @Autowired
     private FirebaseService fbservice;
+    private final MailService mailService;
     private final HttpSession httpSession;
 
 
@@ -207,7 +210,12 @@ public class MainController {
         return "redirect:dongguk"; // dongguk으로 redirect
     }
 
-    /* SMS 등록 처리*/
+    /**
+     * SMS 및 EMAIL 발신 처리
+     *
+     * */
+
+    /* SMS 등록 처리 */
     @PostMapping("/smsService")
     public String sms(SMSDTO smsdto,long bno) throws Exception {
         log.info(smsdto.toString());
@@ -216,11 +224,28 @@ public class MainController {
         SMSService smsService = new SMSService();
         if(smsService.dealingSMS(smsdto) == HttpURLConnection.HTTP_OK){ // HTTP STATUS OK : 200 일 때
             /*TODO 정상처리시 미해결 질문 게시판에서 해결 질문 게시판으로 옮기기*/
-            fbservice.migrate(smsdto, bno);
+            fbservice.migrateSMS(smsdto, bno);
             log.info("답변 완료 - 미해결 질문 게시판에서 -> 해결 질문 게시판으로 이동 완료");
         }
         else{
             log.info("SMS 처리 실패");
+        }
+
+        return "redirect:tables";
+    }
+    /* E-Mail 등록 처리 */
+    @PostMapping("/mailService")
+    public String email(MailDTO mailDTO,long bno) throws Exception{
+        log.info(mailDTO.toString());
+        log.info(String.valueOf(bno));
+
+        /* TODO EMAIL */
+        try {
+            mailService.mailSend(mailDTO);
+            fbservice.migrateEmail(mailDTO, bno);
+            log.info("답변 완료 - 미해결 질문 게시판에서 -> 해결 질문 게시판으로 이동 완료");
+        }catch(Exception e){
+            log.info("메일 발송 실패 : " + e.getMessage());
         }
 
         return "redirect:tables";
