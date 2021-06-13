@@ -50,15 +50,16 @@ public class SMSService {
             log.info(key);
             log.info(smsdto.toString());
 
-            String postParams = "user_id" + base64Encode("ajchoi9709")
-                    + "&secure=" + base64Encode(key)
-                    + "&msg=" + base64Encode(smsdto.getMsg())
-                    + "&rphone=" + base64Encode(smsdto.getRphone())
-                    + "&sphone1=" + base64Encode(smsdto.getSphone1())
-                    + "&sphone2=" + base64Encode(smsdto.getSphone2())
-                    + "&sphone3=" + base64Encode(smsdto.getSphone3())
-                    + "&mode=" + base64Encode("1")
-                    + "&smsType=" + base64Encode(smsdto.getSmsType());
+            String postParams =
+                            "user_id=" + base64Encode("ajchoi9709")
+                            + "&secure=" + base64Encode(key)
+                            + "&msg=" + base64Encode(smsdto.getMsg())
+                            + "&rphone=" + base64Encode(smsdto.getRphone())
+                            + "&sphone1=" + base64Encode(smsdto.getSphone1())
+                            + "&sphone2=" + base64Encode(smsdto.getSphone2())
+                            + "&sphone3=" + base64Encode(smsdto.getSphone3())
+                            + "&mode=" + base64Encode("1")
+                            + "&smsType=" + base64Encode(smsdto.getSmsType());
 
             log.info("postParams 확인 " + postParams);
 
@@ -116,19 +117,16 @@ public class SMSService {
 
     public static String base64Encode(String str) throws IOException {
         //0613 테스트
-
-
-
         /* base64 encoding */
         byte[] encodedBytes = Base64.encodeBase64(str.getBytes()); /* base64 decoding */
         byte[] decodedBytes = Base64.decodeBase64(encodedBytes);
-
-
         /*Base64.encodeBase encoder = null;
         byte[] strByte = str.getBytes();
         assert encoder != null;
         String result = encoder.encode(strByte).toString();*/
-        return encodedBytes.toString();
+        //System.out.println(new String(encodedBytes));
+
+        return new String(encodedBytes);
     }
 
 }

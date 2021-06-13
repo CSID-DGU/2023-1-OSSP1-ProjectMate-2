@@ -8,6 +8,7 @@ package com.AkobotWeb.controller;
 import com.AkobotWeb.config.auth.dto.SessionUser;
 import com.AkobotWeb.domain.BoardVO;
 import com.AkobotWeb.domain.DB.UpdateDTO;
+import com.AkobotWeb.domain.Mail.MailDTO;
 import com.AkobotWeb.domain.SMS.SMSDTO;
 import com.AkobotWeb.service.FirebaseService;
 import com.AkobotWeb.service.SMS.SMSService;
@@ -207,7 +208,12 @@ public class MainController {
         return "redirect:dongguk"; // dongguk으로 redirect
     }
 
-    /* SMS 등록 처리*/
+    /**
+     * SMS 및 EMAIL 발신 처리
+     *
+     * */
+
+    /* SMS 등록 처리 */
     @PostMapping("/smsService")
     public String sms(SMSDTO smsdto,long bno) throws Exception {
         log.info(smsdto.toString());
@@ -222,6 +228,17 @@ public class MainController {
         else{
             log.info("SMS 처리 실패");
         }
+
+        return "redirect:tables";
+    }
+    /* E-Mail 등록 처리 */
+    @PostMapping("/mailService")
+    public String email(MailDTO mailDTO) throws Exception{
+        log.info(mailDTO.toString());
+        //log.info(String.valueOf(bno));
+
+        /* TODO EMAIL */
+
 
         return "redirect:tables";
     }

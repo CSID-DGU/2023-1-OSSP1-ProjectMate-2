@@ -47,6 +47,11 @@ dependencies {
 	/* security + oauth2 */
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+	/* GMAIL 보내기 */
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation fileTree(dir: 'libs', include: '*.jar')
+
 }
 /* JUnit 5 */
 test {
