@@ -1,6 +1,7 @@
 package com.AkobotWeb.service;
 
 import com.AkobotWeb.domain.BoardVO;
+import com.AkobotWeb.domain.Mail.MailDTO;
 import com.AkobotWeb.domain.SMS.SMSDTO;
 import com.AkobotWeb.domain.SolveVO.SolveVO;
 import com.google.api.core.ApiFuture;
@@ -62,13 +63,6 @@ public class FirebaseServiceImpl implements FirebaseService {
         return list;
     }
 
-    /* TODO 0510 */
-    @Override
-    public Long insert(BoardVO board) throws Exception {
-
-        return 1L;
-    }
-
     /* 0510 질문 상세 페이지 조회 구현 */
     @Override
     public BoardVO read(Long bno) throws Exception {
@@ -97,7 +91,7 @@ public class FirebaseServiceImpl implements FirebaseService {
     public void mkDummy() {
         firestore = FirestoreClient.getFirestore();
         for (int i = 1; i <= 25; i++) {
-            BoardVO boardVO = new BoardVO(Integer.toUnsignedLong(i), "dummy content", "dummy", "010-0000-0000", Timestamp.now());
+            BoardVO boardVO = new BoardVO(Integer.toUnsignedLong(i), "dummy content", "dummy", "010-0000-0000","example@akobot.com", Timestamp.now());
             ApiFuture<DocumentReference> future = firestore.collection(COLLECTION_NAME).add(boardVO);
         }
         System.out.println("Done");
@@ -106,20 +100,6 @@ public class FirebaseServiceImpl implements FirebaseService {
     /* bno 읽어와 bno 갱신한 새 도큐먼트 DB에 삽입*/
     @Override
     public void add(@ModelAttribute BoardVO board) throws Exception {
-
-        /*firestore= FirestoreClient.getFirestore();
-        firestore.collection(COLLECTION_NAME).get(
-        CollectionReference ref = firestore.collection(COLLECTION_NAME);
-
-        //현재 db의 bno max값을 가져온다
-        Query query = ref.orderBy("bno", Query.Direction.DESCENDING).limit(0);
-
-        long bno = query;
-        // bno ++; 하고 새로운 BoardVO객체를 만들어서 전달한다.
-
-        firestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> apiFuture = firestore.collection(COLLECTION_NAME).document(board.getName()).set(board);
-        return apiFuture.get().getUpdateTime().toString();*/
 
         /* 마지막 bno을 읽어와 ++bno 값으로 새 도큐먼트를 DB에 삽입*/
         long bno = getBno();
@@ -189,7 +169,7 @@ public class FirebaseServiceImpl implements FirebaseService {
 
     /* TODO 미해결 -> 해결 질문 게시판으로 처리 - smsService 메소드에서 호출 */
     @Override
-    public void migrate(SMSDTO smsdto, Long bno) throws Exception {
+    public void migrateSMS(SMSDTO smsdto, Long bno) throws Exception {
         //I. 미해결 질문 게시판으로 부터
         // 1) 해당 bno를 갖는 BoardVO 객체 정보 가져온다
         firestore = FirestoreClient.getFirestore();
@@ -217,7 +197,34 @@ public class FirebaseServiceImpl implements FirebaseService {
         log.info("migrate step 4 - 옮기기 완료");
 
     }
+    @Override
+    public void migrateEmail(MailDTO mailDTO, Long bno) throws Exception {
+        // 1) 미해결 질문 게시판으로 부터 해당 bno를 갖는 BoardVO 객체 정보 가져온다
+        firestore = FirestoreClient.getFirestore();
+        CollectionReference ref = firestore.collection(COLLECTION_NAME);
+        Query query = ref.whereEqualTo("bno", bno);
+        ApiFuture<QuerySnapshot> querySnapshot = query.get();
+        DocumentSnapshot document = querySnapshot.get().getDocuments().get(0); // 리스트의 0번쨰 요소를 가져오도록
 
+        // 2) MailDTO 부터 cloud firstore에 저장되는 SolveVO 인스턴로 옮긴다
+        SolveVO temp = document.toObject(SolveVO.class);
+        long sol_bno = getSolBno();
+        temp.setBno(++sol_bno);
+        temp.setAnswer(mailDTO.getMessage());
+        temp.setRegDate(Timestamp.now());
+        log.info("migrate stemp 2 - SolveVO instance info : " + temp.toString());
+
+        // 3) 기존의 DB컬렉션에서 해당 도큐먼트 삭제한다
+        String docName = document.getId();
+        log.info("migrate step 3 - docRef : " + docName);
+        ApiFuture<WriteResult> writeResult = ref.document(docName).delete(); // asynchronously delete a document
+
+        // 4) 해당 DB의 콜렉션에 새 도큐먼트로 추가한다
+        ref = firestore.collection(SOLVE_COLLECTION);
+        ApiFuture<DocumentReference> future = ref.add(temp);
+        log.info("migrate step 4 - 옮기기 완료");
+
+    }
     @Override
     public long getSolBno() throws Exception {
         firestore = FirestoreClient.getFirestore();

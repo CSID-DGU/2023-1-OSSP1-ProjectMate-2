@@ -19,5 +19,6 @@ public class BoardVO {
     private String content;
     private String name;
     private String phone;
+    private String email;
     private Timestamp regDate;
 }

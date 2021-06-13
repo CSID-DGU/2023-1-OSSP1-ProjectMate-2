@@ -12,14 +12,14 @@ $(document).ready(function(){
             $('#text_cnt').html("(2000 / 2000)");
         }
 
-        if($(this).val().length>90 && isLMS){
+  /*      if($(this).val().length>90 && isLMS){
             $("input:radio[name ='smsType']:input[value='L']").attr("checked", true).one();
             alert("LMS 형식의 메세지를 보냅니다.");
             isLMS = false;
         }else if($(this).val().length<90 && isSMS){
             $("input:radio[name ='smsType']:input[value='S']").attr("checked", true);
             isSMS = false;
-        }
+        }*/
 
     });
     //해당 input label 태그의 id값
