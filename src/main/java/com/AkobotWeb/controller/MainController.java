@@ -36,14 +36,17 @@ public class MainController {
 
     /* 로그인 전이라면 로그인하라하고, 로그인하면 구글 로그인 정보 보여줌 */
     @GetMapping("/")
-    public String index(Model model){
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
-        if(user != null){
-            model.addAttribute("userName",user.getName());
-            model.addAttribute("userImg",user.getPicture());
-        }
-        return "index";
+    public String firstpage() {
+        return "firstpage";
     }
+    //public String index(Model model){
+      //  SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        //if(user != null){
+          //  model.addAttribute("userName",user.getName());
+            //model.addAttribute("userImg",user.getPicture());
+        //}
+        //return "index";
+
     /**
     *   중복코드 최소화 하는 방법이지만, NULL EXCEPTION 이 일어남..
     public String index(Model model, @LoginUser SessionUser user) {
@@ -143,6 +146,20 @@ public class MainController {
     public String login() {
         return "login";
     }
+
+    @GetMapping("/index")
+    public String index(Model model) {
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+            model.addAttribute("userImg", user.getPicture());
+        }
+        return "index";
+    }
+
+    //public String index() {
+      //  return "index";
+    //}
 
     /* manual.html —> 아코봇 사용방법이 앞으로 등재될 페이지*/
     @GetMapping("/manual")
