@@ -155,6 +155,21 @@ public class MainController {
         return "manual";
     }
 
+    @GetMapping("/how_answer")
+    public String how_answer() {
+        return "how_answer";
+    }
+
+    @GetMapping("/how_mangeDB")
+    public String how_manageDB() {
+        return "how_mangeDB";
+    }
+
+    @GetMapping("/how_notice_question")
+    public String how_notice_question() {
+        return "how_notice_question";
+    }
+
     /* 아코봇에서 미해결 질문 등록하는 페이지*/
     @GetMapping("/ask")
     public String ask() {

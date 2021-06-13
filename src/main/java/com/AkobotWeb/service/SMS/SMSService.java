@@ -38,7 +38,7 @@ public class SMSService {
                 log.info("HTTPURLConnection오류");
             }
             try {
-                key = PropertyUtil.getProperty("sms.key");
+                key = PropertyUtil.getProperty(/*"sms.key"*/"31e2e5d46e1e2059449efe64cde0693ds");
             } catch (Exception e) {
                 log.info("SMS 전송 관련 서비스 키 오류");
             }
