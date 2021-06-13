@@ -60,10 +60,10 @@
                             <label>질문 답변 내용 </label>
                             <input type="text" class="form-control" name="answer" th:value="${result.answer}" readonly>
                         </div>
-                        <p> DB 수정하기 </p>
                     </div>
                     <div class = "card-body">
                         <!-- TODO 해결 질문 게시판, DB 구조 보여주기 -->
+                        <h3> DB 수정하기 </h3>
                         <th:block th:replace="~{/DB/showDB.html}"></th:block>
                     </div>
                 </div>

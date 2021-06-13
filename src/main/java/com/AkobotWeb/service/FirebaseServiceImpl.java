@@ -21,9 +21,9 @@ import java.util.stream.Collectors;
 @Service
 public class FirebaseServiceImpl implements FirebaseService {
     /*public static final String COLLECTION_NAME="TBL_BOARD"; // cloud firestore의 collection name*/
-    public static final String COLLECTION_NAME = "TBL_ASK_DUMMY"; // cloud firestore의 collection name
+    //public static final String COLLECTION_NAME = "TBL_ASK_DUMMY"; // cloud firestore의 collection name
+    public static final String COLLECTION_NAME = "TBL_ASK";
     public static final String SOLVE_COLLECTION = "TBL_SOLVED";
-
     Firestore firestore;
 
     @Override
@@ -91,7 +91,7 @@ public class FirebaseServiceImpl implements FirebaseService {
     public void mkDummy() {
         firestore = FirestoreClient.getFirestore();
         for (int i = 1; i <= 25; i++) {
-            BoardVO boardVO = new BoardVO(Integer.toUnsignedLong(i), "dummy content", "dummy", "010-0000-0000","example@akobot.com", Timestamp.now());
+            BoardVO boardVO = new BoardVO(Integer.toUnsignedLong(i), "dummy content", "김철수","example@akobot.com", Timestamp.now());
             ApiFuture<DocumentReference> future = firestore.collection(COLLECTION_NAME).add(boardVO);
         }
         System.out.println("Done");
