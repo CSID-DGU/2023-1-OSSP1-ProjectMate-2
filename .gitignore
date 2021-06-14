@@ -1,6 +1,7 @@
 HELP.md
 .gradle
-build/
+## EC2에서 필요
+## build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
