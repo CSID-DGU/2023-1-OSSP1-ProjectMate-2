@@ -2,19 +2,11 @@ package com.AkobotWeb.service.Email;
 
 import com.AkobotWeb.config.propertiesConfig.PropertyUtil;
 import com.AkobotWeb.domain.Mail.MailDTO;
-import com.sun.mail.util.logging.MailHandler;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-
-import javax.activation.FileDataSource;
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import java.util.Properties;
 
 @Slf4j
 @Service
