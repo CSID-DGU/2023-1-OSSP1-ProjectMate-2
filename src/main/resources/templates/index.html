@@ -59,7 +59,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <th:block th:replace="~{/common_codes/sidebar.html}"></th:block>
+        <th:block th:replace="~{common_codes/sidebar.html}"></th:block>
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -68,7 +68,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <th:block th:replace="~{/common_codes/topbar.html}"></th:block>
+                <th:block th:replace="~{common_codes/topbar.html}"></th:block>
 
                 <!-- Begin Page Content -->
                 <!--배경 문구-->
@@ -105,17 +105,10 @@
                     </div>
                 </div>
                 </div>
-                <!-- 가영
-                - "오늘 들어온 질문" 상위 5개 출력
-                - "현재 답변이 달리지 않은 질문의 개수" 보여주는 배너
-                - "이번 주 누적 질문 개수" 보여주는 배너
-                - "이번 달 누적 질문 개수" 보여주는 배너
-                일요일 작업 할 부분
-                 -->
                 <!-- End of Main Content -->
 
                 <!-- Footer -->
-                <th:block th:replace="~{/common_codes/footer.html}"></th:block>
+                <th:block th:replace="~{common_codes/footer.html}"></th:block>
 
             </div>
             <!-- End of Content Wrapper -->
@@ -129,7 +122,7 @@
         </a>
 
         <!-- Logout Modal-->
-        <th:block th:replace="~{/common_codes/logout_modal.html}"></th:block>
+        <th:block th:replace="~{common_codes/logout_modal.html}"></th:block>
 
         <!-- footer를 그대로 inlcude-->
         <footer th:replace="common_codes/fragments.html :: footer"></footer>

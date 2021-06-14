@@ -8,7 +8,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <th:block th:replace="~{/common_codes/sidebar.html}"></th:block>
+    <th:block th:replace="~{common_codes/sidebar.html}"></th:block>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -18,7 +18,7 @@
         <div id="content">
 
             <!-- Topbar -->
-            <th:block th:replace="~{/common_codes/topbar.html}"></th:block>
+            <th:block th:replace="~{common_codes/topbar.html}"></th:block>
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
@@ -50,15 +50,15 @@
                         </div>
                         <div class="form-group">
                             <label>질문 내용</label>
-                            <input type="text" class="form-control" name="bno" th:value="${result.content}" readonly>
+                            <input type="text" class="form-control" name="content" th:value="${result.content}" readonly>
                         </div>
                         <div class="form-group">
                             <label>질문 작성자</label>
-                            <input type="text" class="form-control" name="bno" th:value="${result.name}" readonly>
+                            <input type="text" class="form-control" name="name" th:value="${result.name}" readonly>
                         </div>
                         <div class="form-group">
                             <label>작성자 이메일</label>
-                            <input type="text" class="form-control" name="bno" th:value="${result.email}" readonly>
+                            <input type="text" class="form-control" name="email" th:value="${result.email}" readonly>
                         </div>
                     </div>
                     <div class = "card-body">
@@ -73,7 +73,7 @@
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <th:block th:replace="~{/common_codes/footer.html}"></th:block>
+        <th:block th:replace="~{common_codes/footer.html}"></th:block>
         <!-- End of Footer -->
 
     </div>
@@ -88,7 +88,7 @@
 </a>
 
 <!-- Logout Modal-->
-<th:block th:replace="~{/common_codes/logout_modal.html}"></th:block>
+<th:block th:replace="~{common_codes/logout_modal.html}"></th:block>
 
 <!-- footer를 그대로 inlcude-->
 <footer th:replace="common_codes/fragments.html :: footer"></footer>

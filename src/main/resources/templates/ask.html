@@ -1,4 +1,3 @@
-
 <head>
     <title>Akobot question form</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -75,37 +74,19 @@
         </p>
         <p>여러분의 합격을 응원합니다!</p>
 
-            <!--액션 설정해줄것-->
+        <!--액션 설정해줄것-->
         <form method="post" action="/add" name = "removefrm">
             <div class = "content" style="text-align : left;">
                 <label for="Name">이     름 : </label>
                 <input type="text" name="name" id="Name"/>
                 <br><br>
-                <label for="Phone">이메일 주소 : </label>
-                <input type="text" name="phone" id="Phone"/>
+                <label for="Email">이메일 주소 : </label>
+                <input type="text" name="email" id="Email"/>
                 <br><br>
                 <label for="Question">질문</label><br>
                 <textarea name="content" rows="10" cols="100" id="Question"></textarea>
                 <br>
                 <button class="openBtn" onclick="javascript:check_c()">제출</button>
-                <!--div class="modal hidden">
-                    <div class="bg"></div>
-                    <div class="modalBox">
-                        <div class ="modal-header">
-                            <p style="font-size:24px">정말로 제출 하시겠습니까?<br>
-                            <hr color="#DCDCDC"/></p>
-                            <div class = "modal-body">제출하시려면 "확인"버튼을 누르십시오</div>
-                            <br><br>
-                            <div class = "modal-footer">
-                                <button type="submit" style="float:left" onClick="location
-                                .href='dongguk'">확인</button>
-                                <button class="closeBtn" style="float:left">취소</button-->
-                                <!--alert 기능으로 변경해보기-->
-                            <!--/div>
-                        </div>
-                    </div>
-                </div-->
-
                 <script>
                     const open = () => {
                         document.querySelector(".modal").classList.remove("hidden");
