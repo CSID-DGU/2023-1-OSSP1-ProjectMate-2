@@ -15,7 +15,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <th:block th:replace="~{/common_codes/sidebar.html}"></th:block>
+    <th:block th:replace="~{common_codes/sidebar.html}"></th:block>
     <!-- End of Sidebar -->
 
 
@@ -23,21 +23,10 @@
     <div id="content-wrapper" class="d-flex flex-column">
 
         <!-- Main Content -->
-        <div-- id="content">
+        <div id="content">
 
             <!-- Topbar -->
-            <th:block th:replace="~{/common_codes/topbar.html}"></th:block>
-            <!-- End of Topbar -->
-
-            <!-- Begin Page Content -->
-            <!--div-- class="container-fluid">
-
-                < Page Heading -->
-                <!--div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">아코봇 사용방법</h1>
-
-                </div>
-            </div-->
+            <th:block th:replace="~{common_codes/topbar.html}"></th:block>
 
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -55,19 +44,8 @@
                 </div>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
             <!-- Footer -->
-            <th:block th:replace="~{/common_codes/footer.html}"></th:block>
+            <th:block th:replace="~{common_codes/footer.html}"></th:block>
             <!-- End of Footer -->
 
         </div>
@@ -82,7 +60,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <th:block th:replace="~{/common_codes/logout_modal.html}"></th:block>
+    <th:block th:replace="~{common_codes/logout_modal.html}"></th:block>
 
     <!-- footer를 그대로 inlcude-->
     <footer th:replace="common_codes/fragments.html :: footer"></footer>

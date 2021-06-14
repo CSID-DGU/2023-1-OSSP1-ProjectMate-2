@@ -160,10 +160,6 @@ public class MainController {
         return "index";
     }
 
-    //public String index() {
-      //  return "index";
-    //}
-
     /* manual.html —> 아코봇 사용방법이 앞으로 등재될 페이지*/
     @GetMapping("/manual")
     public String manual(Model model) {
