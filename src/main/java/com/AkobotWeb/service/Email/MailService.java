@@ -5,6 +5,7 @@ import com.AkobotWeb.domain.Mail.MailDTO;
 import com.sun.mail.util.logging.MailHandler;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Bean;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -24,6 +25,7 @@ public class MailService {
 
     private static final String FROM_ADDRESS = PropertyUtil.getProperty("spring.mail.username");
 
+    @Bean
     public void mailSend(MailDTO mailDto) {
         SimpleMailMessage message = new SimpleMailMessage();
         try {
