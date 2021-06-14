@@ -25,7 +25,6 @@ public class MailService {
 
     private static final String FROM_ADDRESS = PropertyUtil.getProperty("spring.mail.username");
 
-    @Bean
     public void mailSend(MailDTO mailDto) {
         SimpleMailMessage message = new SimpleMailMessage();
         try {

@@ -10,9 +10,7 @@ import org.springframework.stereotype.Component;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Component
 public class MailDTO {
-    @Autowired
     private String userEmail;
     private String title;
     private String message;
