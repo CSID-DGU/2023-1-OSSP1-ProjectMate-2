@@ -29,8 +29,40 @@
 </div>
 
 
+### 목표
 
-작성하기
+> 챗봇은 사용자와의 대화를 통해 입시정보 데이터를 제공한다. 챗봇이 이해하지 못하는 질문은 미해결 질문 게시판 링크를 제공하여 관리자가 직접 사용자에게 답변을 할 수 있도록 한다.
+
+---
+
+  &nbsp;`개발 환경` :  ![Springboot](http://img.shields.io/badge/-Springboot2.4.5-000000?style=flat&logo=springboot) & ![Springboot](http://img.shields.io/badge/-Gradle6.8.3-006cb7?style=flat&logo=gradle)
+
+  &nbsp;`데이터베이스` : ![Springboot](http://img.shields.io/badge/-CloudFirestore-FFCA28?style=flat&logo=Firebase)
+
+---
+
+### 1. 질문 흐름도 구상
+
+
+![흐름도](https://user-images.githubusercontent.com/11707490/122390118-98cf9e80-cfac-11eb-82a4-9097dc190872.png)
+
+
+
+### 2. 챗봇 완성 
+
+- 텍스트 정보 제공
+<img width="524" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122399761-0f24ce80-cfb6-11eb-9d28-78157b0d5b24.png">
+
+- 이미지 링크 제공
+<img width="820" alt="이미지 링크 제공" src="https://user-images.githubusercontent.com/11707490/122399790-151aaf80-cfb6-11eb-8d18-386f03aed27f.png">
+
+- 미해결 질문 게시판 링크 제공
+<img width="587" alt="미해결 질문 게시판 링크" src="https://user-images.githubusercontent.com/11707490/122399808-1815a000-cfb6-11eb-98f8-e94aab0f2b26.png">
+
+
+
+
+
 <br>
 
 
