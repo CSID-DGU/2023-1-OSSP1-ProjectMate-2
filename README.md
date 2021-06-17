@@ -280,13 +280,10 @@ Spring Security와 구글 로그인 API를 활용하여 로그인 처리를 담�
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122359472-8ba4b680-cf90-11eb-8825-611964835110.png"></p>
 
 - 로그인 이후 관리자 페이지 메인 화면<br>
-
-![관리자 전면](https://user-images.githubusercontent.com/54317409/122359491-8f383d80-cf90-11eb-835f-76ab30d6ca2a.JPG)
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122359491-8f383d80-cf90-11eb-835f-76ab30d6ca2a.JPG"></p>
 
 
 - 미해결 질문 게시글 목록 전체  조회<br>
-![질문 게시글 목록](https://user-images.githubusercontent.com/54317409/122363506-f3a8cc00-cf93-11eb-886a-ce7c1ecec8a4.png)
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122363506-f3a8cc00-cf93-11eb-886a-ce7c1ecec8a4.png"></p>
 
 
@@ -296,12 +293,10 @@ Spring Security와 구글 로그인 API를 활용하여 로그인 처리를 담�
 
 
 - 미해결 질문 답변 및 알람(메일) 전송 <br>
-![답변 및 알람 전송](https://user-images.githubusercontent.com/54317409/122363516-f73c5300-cf93-11eb-9ea1-e34e3b788881.png)
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122363516-f73c5300-cf93-11eb-9ea1-e34e3b788881.png"></p>
 
 
 - 아코봇 정보 갱신 <br>
-![정보 업데이트](https://user-images.githubusercontent.com/54317409/122363528-fb687080-cf93-11eb-995a-aa083ccb6f6e.png)
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122363528-fb687080-cf93-11eb-995a-aa083ccb6f6e.png"></p>
 
 
