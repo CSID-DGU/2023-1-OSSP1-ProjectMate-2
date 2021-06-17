@@ -49,7 +49,7 @@
 
 
 
-### 2. 챗봇 완성 
+### 2. 챗봇 완성 모습
 
 - 텍스트 정보 제공
 <img width="524" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122399761-0f24ce80-cfb6-11eb-9d28-78157b0d5b24.png">
