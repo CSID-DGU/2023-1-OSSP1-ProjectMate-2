@@ -25,7 +25,7 @@
 
 ### Goal
 
-> This Chabot, Akobot offers information for applying Dongguk University by communicating with an user. If there's any case that akobot couldn't understand, it gives an URL to get response from an admin. 
+> This Chabot, Akobot offers information for applying Dongguk University by communicating with an user. If there's any case that akobot couldn't understand, it gives an URL and it allows user to get info from admins later. 
 
 ---
 
