@@ -277,8 +277,6 @@ Spring Security와 구글 로그인 API를 활용하여 로그인 처리를 담�
 ### 2. 관리자 페이지 완성 모습
 
 - 관리자 암호키가 있는 관리자만이 구글 연동 로그인을 할 수 있음
-
-![접근](https://user-images.githubusercontent.com/54317409/122359472-8ba4b680-cf90-11eb-8825-611964835110.png)
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122359472-8ba4b680-cf90-11eb-8825-611964835110.png"></p>
 
 - 로그인 이후 관리자 페이지 메인 화면<br>
