@@ -76,7 +76,7 @@
 <p align="center"><img src="https://user-images.githubusercontent.com/54317409/122449417-c9c9c680-cfe0-11eb-8681-014f52b0feff.png" height="60%" width="60%"><br> 관리자 페이지 전체 구성도</p>
 
 ---
-  &nbsp;`개발 언어` : ![JAVA](http://img.shields.io/badge/-Java11-006cb7?style=flat&logo=Java)
+  &nbsp;`개발 언어` : ![JAVA](http://img.shields.io/badge/-Java11-006cb7?style=flat&logo=Java) & ![JAVA](http://img.shields.io/badge/-Javascript-006cb7?style=flat&logo=Javascript)
 
   &nbsp;`개발 환경` :  ![Springboot](http://img.shields.io/badge/-Springboot2.4.5-000000?style=flat&logo=springboot) & ![Springboot](http://img.shields.io/badge/-Gradle6.8.3-006cb7?style=flat&logo=gradle)
 
