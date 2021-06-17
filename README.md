@@ -2,11 +2,7 @@
 동국대 입학도우미 챗봇 '아코봇' 
 <ul style="list-style:none;">
     <li><a href="#sec_target1" style="text-decoration:none;"><b>I. 아코봇 설명부로 이동</b></a></li>
-    <li><a href="#sec_target2" style="text-decoration:none;">1.1  </a></li>
-    <li><a href="#sec_target3" style="text-decoration:none;">1.2.</a></li>
-    <li><a href="#sec_target4" style="text-decoration:none;">1.3 그레이들 프로젝트를 스프링 부트 프로젝트로 변경하기</a></li>
-    <li><a href="#sec_target5" style="text-decoration:none;">II. <b>관리자 페이지 설명부로 이동 <b>인텔리제이에서 GIT 과 GITHUB 사용법 </b></a></li>
-    <li><a href="#sec_target6" style="text-decoration:none;">2.1. </a></li>
+    <li><a href="#sec_target2" style="text-decoration:none;">II. <b>관리자 페이지 설명부로 이동</b></a></li>
 </ul>
 
 ## 팀 구성 
@@ -69,7 +65,7 @@
 
 
 <div class="sec1">
-    <a name="sec_target5"></a>
+    <a name="sec_target2"></a>
     <h2>II. 관리자 페이지</h2>
 </div>
 
