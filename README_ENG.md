@@ -4,6 +4,8 @@
 <ul style="list-style:none;">
     <li><a href="#sec_target1" style="text-decoration:none;"><b>I. Jump to Akobot's Introduction</b></a></li>
     <li><a href="#sec_target2" style="text-decoration:none;"><b>II. Jump to Admins' Web Page Introduction</b></a></li>
+     <br>
+    <li><a href="https://github.com/CSID-DGU/2021-1-OSSP2-ttogttagis-3/blob/main/README_ENG.md">Redirect for Korean Speakers</a> </li> 
 </ul>
 <br> 
 <h3> Team Member</h3> 
