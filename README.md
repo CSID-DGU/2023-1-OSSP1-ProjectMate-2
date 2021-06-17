@@ -180,13 +180,96 @@ git clone https://github.com/CSID-DGU/2021-1-OSSP2-ttogttagis-3.git
 
 
 
-#### 공통 프로젝트에 필수 적이지만, 보안상의 이유로 `.gitignore`에 등록된 부분이 있습니다.
-`src`> `main` > `resources` 디렉토리에 필요한 파일 3가지
-`application.properties`
-`application-oauth.properties`
-`serviceAccountKey.json`
+### (필수) 공통 프로젝트에 필수 적이지만, 보안상의 이유로 `.gitignore`에 등록된 부분이 있습니다.
+`src`> `main` > `resources` 디렉토리에 추가할 파일 3가지 
+
+1. `application.properties`
 
 
+```properties
+# 자동재시작 사용여부
+spring.devtools.restart.enabled=true
+
+#application-oauth.properties 로딩
+spring.profiles.include=oauth
+
+#로컬 작업에서 db 작업을 위해 h2
+spring.h2.console.enabled=true
+
+#카페 24 SMS 호스팅 키 였으나 더이상 사용하지 않음
+#sms.key = 
+
+# mail 발신 관련
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username= WRITE_YOUR_EMAIL_HERE
+spring.mail.password= WRITE_YOUR_PASSWORD_HERE
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
+spring.mail.properties.mail.smtp.auth=true
+```
+
+- 해당 GMAIL 계정으로 로그인한 상태에서 https://www.google.com/settings/security/lesssecureapps에서 보안 수준이 낮은 앱 허용 사용을 해주십시오
+
+![1](https://user-images.githubusercontent.com/54317409/122437319-8ff2c300-cfd4-11eb-91f1-2c25384d2d6f.JPG)
+
+- mail 발신을 담당할 관리자의 gmail 이메일과 패스워드를 WRITE_`YOUR_EMAIL_HERE` 와 `WRITE_YOUR_PASSWORD_HERE`입력하십시오
+
+
+2. `application-oauth.properties`
+```properties
+spring.security.oauth2.client.registration.google.client-id= WRITE_YOUR_CLIENT_ID
+spring.security.oauth2.client.registration.google.client-secret= WRITE_YOUR_CLIENT_SECRET
+spring.security.oauth2.client.registration.google.scope=profile,email
+```
+
+Spring Security와 구글 로그인 API를 활용하여 로그인 처리를 담당하는 properties파일입니다.
+
+- 구글 클라우드 플랫폼 cloud.google.com/gcp 에 접속합니다.
+- 새 프로젝트를 생성 후, API 개요를 클릭합니다. 또는 기존의 프로젝트를 선택합니다.
+![oauth0](https://user-images.githubusercontent.com/54317409/122437419-a7ca4700-cfd4-11eb-809f-1cf23a62e453.png)
+
+- 상단 사용자 인증 정보 만들기 선택 후 OAuth 클라이언트 ID 생성합니다.
+![oauth](https://user-images.githubusercontent.com/54317409/122437441-ae58be80-cfd4-11eb-9ecb-b6d671625a89.png)
+
+- 리디렉션을 승인할 URI을 작성 후, 클라이언트 ID, 비밀번호를 확인하고
+
+  해당 properties 파일의 WRITE_YOUR_CLIENT_ID 와 WRITE_YOUR_CLIENT_SECRET에 대치합니다.
+  
+  ![oauth3-1](https://user-images.githubusercontent.com/54317409/122437513-c03a6180-cfd4-11eb-88cc-36fe68149c8a.png)
+
+
+3.  `serviceAccountKey.json`
+```json
+{
+  "type": "service_account",
+  "project_id": "akobotweb",
+  "private_key_id": "COPY YOUR KEY"
+  "private_key": "-----BEGIN PRIVATE KEY-----
+  
+  
+  
+  \n-----END PRIVATE KEY-----\n",
+  "client_email": "COPY YOUR KEY",
+  "client_id": "COPY YOUR KEY",
+  "auth_uri": "COPY YOUR KEY",
+  "token_uri": "COPY YOUR KEY",
+  "auth_provider_x509_cert_url": "COPY YOUR KEY",
+  "client_x509_cert_url": "COPY YOUR KEY"
+}
+```
+
+챗봇과 챗봇 데이터베이스인 firebase 앱에 접근하는 키의 정보를 담고 있습니다.
+
+- https://console.firebase.google.com/ 로 이동하여 Firebase 프로젝트를 새로 생성하거나 만듭니다.
+
+  (1)  톱니바퀴 모양을 클릭 하여 프로젝트 설정으로 이동합니다
+
+  (2)  서비스 계정을 클릭합니다
+
+  (3)  `새 비공개 키 설정`을 클릭하여 serviceAccountKey.json 파일을 생성하고 프로젝트의 해당 파일로 복사합니다.
+
+![3](https://user-images.githubusercontent.com/54317409/122437291-8a957880-cfd4-11eb-8af1-1319affa6506.png)
 
 
 
