@@ -117,27 +117,28 @@
 
    - (2) `Build and run using` , `Run tests using` 의 드롭박스의 값을 `IntelliJ IDEA` 로 바꿔주십시오. (기본 설정이 `Gradle`인데 느리다고 합니다.)
 
-![그림1](https://user-images.githubusercontent.com/54317409/122431795-bcf0a700-cfcf-11eb-8a29-0898eed6ea1d.png)
+
+<p align="center"><img src="https://user-images.githubusercontent.com/54317409/122431795-bcf0a700-cfcf-11eb-8a29-0898eed6ea1d.png" height="60%" width="60%"></p>
+
 
 
 3. IntelliJ 상단 메뉴에서
 - (1) `File`> `Project Structure`>`Project`에서
 - (2) `Project SDK`의 선택지 중 ` Java 11`을 설정해주셔야 합니다. 별도의 다운이 필요 없는 ` Amazon Correto 11.0.10`를 설정하거나 또는 자바11를 설치합니다.
 
-![그림2](https://user-images.githubusercontent.com/54317409/122431904-cf6ae080-cfcf-11eb-92cc-6eeae906fed8.png)
-
+<p align="center"><img src="https://user-images.githubusercontent.com/54317409/122431904-cf6ae080-cfcf-11eb-92cc-6eeae906fed8.png" height="60%" width="60%"></p>
 
 4. 깃허브에 있는 프로젝트를 로컬 레파지토리로 복사하기 위해,
 
    (1) 인텔리제이 상단  `File` 탭을 누른다. 
 
    (2) `Project from Version Contrl...`를 누른다
+<p align="center"><img src="https://user-images.githubusercontent.com/54317409/122432254-21ac0180-cfd0-11eb-86d1-54ec1b2d724f.png" height="60%" width="60%"></p>
 
-![그림3](https://user-images.githubusercontent.com/54317409/122432254-21ac0180-cfd0-11eb-86d1-54ec1b2d724f.png)
 
 ​	(3)  저희 오픈소스 프로젝트 URL을 입력하고, CLONE 버튼을 누릅니다.
 
-![그림4](https://user-images.githubusercontent.com/54317409/122432277-2670b580-cfd0-11eb-805d-e890e8524eac.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/54317409/122432277-2670b580-cfd0-11eb-805d-e890e8524eac.png" height="60%" width="60%"></p>
 
 <br>
 <h4> B. 로컬 PC에 해당 프로젝트 설치하기 </h4>
@@ -182,8 +183,9 @@ git clone https://github.com/CSID-DGU/2021-1-OSSP2-ttogttagis-3.git
 
 
 
-### <u>(필수) 공통 프로젝트에 필수 적이지만, 보안상의 이유로 `.gitignore`에 등록된 부분이 있습니다.</u>
-`src`> `main` > `resources` 디렉토리에 추가할 파일 3가지 
+### ⚠️ (필수) 공통 프로젝트에 필수 적이지만, 보안상의 이유로 `.gitignore`에 등록된 부분이 있습니다.
+프로젝트 경로의 `src`> `main` > `resources` 디렉토리에 추가할 파일 3가지 
+- LINUX기반 가상 머신에선, VIM 에디터등을 이용해 해당 경로에서 작성할 것
 
 1. `application.properties`
 
@@ -212,8 +214,7 @@ spring.mail.properties.mail.smtp.auth=true
 ```
 
 - 해당 GMAIL 계정으로 로그인한 상태에서 https://www.google.com/settings/security/lesssecureapps에서 보안 수준이 낮은 앱 허용 사용을 해주십시오
-
-![1](https://user-images.githubusercontent.com/54317409/122437319-8ff2c300-cfd4-11eb-91f1-2c25384d2d6f.JPG)
+<p align="center"><img src="https://user-images.githubusercontent.com/54317409/122437319-8ff2c300-cfd4-11eb-91f1-2c25384d2d6f.JPG" height="60%" width="60%"></p>
 
 - mail 발신을 담당할 관리자의 gmail 이메일과 패스워드를 WRITE_`YOUR_EMAIL_HERE` 와 `WRITE_YOUR_PASSWORD_HERE`입력하십시오
 
@@ -229,16 +230,15 @@ Spring Security와 구글 로그인 API를 활용하여 로그인 처리를 담�
 
 - 구글 클라우드 플랫폼 cloud.google.com/gcp 에 접속합니다.
 - 새 프로젝트를 생성 후, API 개요를 클릭합니다. 또는 기존의 프로젝트를 선택합니다.
-![oauth0](https://user-images.githubusercontent.com/54317409/122437419-a7ca4700-cfd4-11eb-809f-1cf23a62e453.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/54317409/122437419-a7ca4700-cfd4-11eb-809f-1cf23a62e453.png" height="60%" width="60%"></p>
 
 - 상단 사용자 인증 정보 만들기 선택 후 OAuth 클라이언트 ID 생성합니다.
-![oauth](https://user-images.githubusercontent.com/54317409/122437441-ae58be80-cfd4-11eb-9ecb-b6d671625a89.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/54317409/122437441-ae58be80-cfd4-11eb-9ecb-b6d671625a89.png" height="60%" width="60%"></p>
 
 - 리디렉션을 승인할 URI을 작성 후, 클라이언트 ID, 비밀번호를 확인하고
 
   해당 properties 파일의 WRITE_YOUR_CLIENT_ID 와 WRITE_YOUR_CLIENT_SECRET에 대치합니다.
-  
-  ![oauth3-1](https://user-images.githubusercontent.com/54317409/122437513-c03a6180-cfd4-11eb-88cc-36fe68149c8a.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/54317409/122437513-c03a6180-cfd4-11eb-88cc-36fe68149c8a.png" height="60%" width="60%"></p>
 
 
 3.  `serviceAccountKey.json`
@@ -271,7 +271,8 @@ Spring Security와 구글 로그인 API를 활용하여 로그인 처리를 담�
 
   (3)  `새 비공개 키 설정`을 클릭하여 serviceAccountKey.json 파일을 생성하고 프로젝트의 해당 파일로 복사합니다.
 
-![3](https://user-images.githubusercontent.com/54317409/122437291-8a957880-cfd4-11eb-8af1-1319affa6506.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/54317409/122437291-8a957880-cfd4-11eb-8af1-1319affa6506.png" height="60%" width="60%"></p>
+
 
 
 
