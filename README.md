@@ -105,7 +105,7 @@
 
 <br>
 <h3> 2. 해당 프로젝트 설치 방법 </h3>
-<h5> A. 통합개발환경, IntelliJ 에서 해당 프로젝트 설치하기 </h5>
+<h4> A. 통합개발환경, IntelliJ 에서 해당 프로젝트 설치하기 </h4>
 
 1. 인텔리제이 IDE를 설치한다.
 
@@ -139,7 +139,8 @@
 
 ![그림4](https://user-images.githubusercontent.com/54317409/122432277-2670b580-cfd0-11eb-805d-e890e8524eac.png)
 
-<h5> B. 로컬 PC에 해당 프로젝트 설치하기 </h5>
+<br>
+<h4> B. 로컬 PC에 해당 프로젝트 설치하기 </h4>
 
 1. GIT BASH를 이용하여, `git clone` 명령어를 이용하여 로컬 PC에 해당 프로젝트를 복사합니다.
 
@@ -148,8 +149,9 @@ git clone https://github.com/CSID-DGU/2021-1-OSSP2-ttogttagis-3.git
 ```
 
 
+<br>
 
-C. 리눅스 기반 가상 머신에 해당 프로젝트 설치하기  
+<h4> C. 리눅스 기반 가상 머신에 해당 프로젝트 설치하기</h4>  
 
 1. 자바와 GIT 을 설치합니다
 
@@ -180,7 +182,7 @@ git clone https://github.com/CSID-DGU/2021-1-OSSP2-ttogttagis-3.git
 
 
 
-### (필수) 공통 프로젝트에 필수 적이지만, 보안상의 이유로 `.gitignore`에 등록된 부분이 있습니다.
+### <u>(필수) 공통 프로젝트에 필수 적이지만, 보안상의 이유로 `.gitignore`에 등록된 부분이 있습니다.</u>
 `src`> `main` > `resources` 디렉토리에 추가할 파일 3가지 
 
 1. `application.properties`
