@@ -1,10 +1,11 @@
 # 2021-1-OSSP2-ttogttagis-3
-동국대 입학도우미 챗봇 '아코봇' 
+<h1> 동국대 입학처 챗봇- 아코봇 & 관리자 페이지 프로젝트</h1> 
+<br> 
 <ul style="list-style:none;">
     <li><a href="#sec_target1" style="text-decoration:none;"><b>I. 아코봇 설명부로 이동</b></a></li>
     <li><a href="#sec_target2" style="text-decoration:none;">II. <b>관리자 페이지 설명부로 이동</b></a></li>
 </ul>
-
+<br> 
 ## 팀 구성 
 * 2019112059 이가영 (팀장)
 
@@ -16,9 +17,7 @@
 
 * 2017112095 최준호
 
-
-## 동국대 입학처 챗봇- 아코봇 & 관리자 페이지 프로젝트 
-
+<br> 
 <div class="sec1">
     <a name="sec_target1"></a>
     <h2>I. 아코봇</h2>
@@ -40,21 +39,20 @@
 
 ### 1. 질문 흐름도 구상
 
-
-![흐름도](https://user-images.githubusercontent.com/11707490/122390118-98cf9e80-cfac-11eb-82a4-9097dc190872.png)
+<p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122390118-98cf9e80-cfac-11eb-82a4-9097dc190872.png"></p>
 
 
 
 ### 2. 챗봇 완성 모습
 
 - 텍스트 정보 제공
-<img width="524" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122399761-0f24ce80-cfb6-11eb-9d28-78157b0d5b24.png">
+<p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122399761-0f24ce80-cfb6-11eb-9d28-78157b0d5b24.png"></p>
 
 - 이미지 링크 제공
-<img width="820" alt="이미지 링크 제공" src="https://user-images.githubusercontent.com/11707490/122399790-151aaf80-cfb6-11eb-8d18-386f03aed27f.png">
+<p align="center"><img height="60%" width="60%" alt="이미지 링크 제공" src="https://user-images.githubusercontent.com/11707490/122399790-151aaf80-cfb6-11eb-8d18-386f03aed27f.png"></p>
 
 - 미해결 질문 게시판 링크 제공
-<img width="587" alt="미해결 질문 게시판 링크" src="https://user-images.githubusercontent.com/11707490/122399808-1815a000-cfb6-11eb-98f8-e94aab0f2b26.png">
+<p align="center"><img height="60%" width="60%" alt="미해결 질문 게시판 링크" src="https://user-images.githubusercontent.com/11707490/122399808-1815a000-cfb6-11eb-98f8-e94aab0f2b26.png"></p>
 
 
 
@@ -281,30 +279,32 @@ Spring Security와 구글 로그인 API를 활용하여 로그인 처리를 담�
 - 관리자 암호키가 있는 관리자만이 구글 연동 로그인을 할 수 있음
 
 ![접근](https://user-images.githubusercontent.com/54317409/122359472-8ba4b680-cf90-11eb-8825-611964835110.png)
-
+<p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122359472-8ba4b680-cf90-11eb-8825-611964835110.png"></p>
 
 - 로그인 이후 관리자 페이지 메인 화면<br>
 
 ![관리자 전면](https://user-images.githubusercontent.com/54317409/122359491-8f383d80-cf90-11eb-835f-76ab30d6ca2a.JPG)
-
+<p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122359491-8f383d80-cf90-11eb-835f-76ab30d6ca2a.JPG"></p>
 
 
 - 미해결 질문 게시글 목록 전체  조회<br>
 ![질문 게시글 목록](https://user-images.githubusercontent.com/54317409/122363506-f3a8cc00-cf93-11eb-886a-ce7c1ecec8a4.png)
+<p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122363506-f3a8cc00-cf93-11eb-886a-ce7c1ecec8a4.png"></p>
 
 
 
 - 미해결 질문 게시글 상세 조회<br>
-![미해결 질문 조회](https://user-images.githubusercontent.com/54317409/122363493-f0154500-cf93-11eb-9232-cb72cd51f9cc.png)
-
+<p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122363493-f0154500-cf93-11eb-9232-cb72cd51f9cc.png"></p>
 
 
 - 미해결 질문 답변 및 알람(메일) 전송 <br>
 ![답변 및 알람 전송](https://user-images.githubusercontent.com/54317409/122363516-f73c5300-cf93-11eb-9ea1-e34e3b788881.png)
+<p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122363516-f73c5300-cf93-11eb-9ea1-e34e3b788881.png"></p>
 
 
 - 아코봇 정보 갱신 <br>
 ![정보 업데이트](https://user-images.githubusercontent.com/54317409/122363528-fb687080-cf93-11eb-995a-aa083ccb6f6e.png)
+<p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122363528-fb687080-cf93-11eb-995a-aa083ccb6f6e.png"></p>
 
 
 
