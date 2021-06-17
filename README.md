@@ -35,9 +35,11 @@
 
 ---
 
-  &nbsp;`개발 환경` :  ![Springboot](http://img.shields.io/badge/-Springboot2.4.5-000000?style=flat&logo=springboot) & ![Springboot](http://img.shields.io/badge/-Gradle6.8.3-006cb7?style=flat&logo=gradle)
+  &nbsp;`개발 환경` :  <img alt="Dialogflow" src ="https://img.shields.io/badge/Dialogflow-#FF9800.svg?&style=for-the-badge&logo=Dialogflow&logoColor=Yellow"/>
+
 
   &nbsp;`데이터베이스` : ![Springboot](http://img.shields.io/badge/-CloudFirestore-FFCA28?style=flat&logo=Firebase)
+
 
 ---
 
