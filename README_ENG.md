@@ -181,7 +181,7 @@ git clone https://github.com/CSID-DGU/2021-1-OSSP2-ttogttagis-3.git
 
 
 
-### ⚠️ (REQUIRED) Note tha some properties files which is very important to run this project written in `.gitignore`
+### ⚠️ (REQUIRED) Note that some properties files which is very important to run this project written in `.gitignore`
 <br>
 🌟 Insert 3 properites files into `src` > `main` > `resources`
 - Consider using Vim Editor, if you are accessing our project in linux based VM such as Ubuntu, CentOs
