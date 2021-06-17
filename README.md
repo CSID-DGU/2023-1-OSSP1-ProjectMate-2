@@ -4,6 +4,8 @@
 <ul style="list-style:none;">
     <li><a href="#sec_target1" style="text-decoration:none;"><b>I. 아코봇 설명부로 이동</b></a></li>
     <li><a href="#sec_target2" style="text-decoration:none;">II. <b>관리자 페이지 설명부로 이동</b></a></li>
+    <br>
+    <li><a href="https://github.com/CSID-DGU/2021-1-OSSP2-ttogttagis-3/blob/main/README_ENG.md">Redirect for English Speakers</a> </li> 
 </ul>
 <br> 
 <h3> 팀 구성</h3> 
