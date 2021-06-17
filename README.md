@@ -76,7 +76,22 @@
 
 
 
-- 이후 추가
+- 미해결 질문 게시글 목록 전체  조회
+![질문 게시글 목록](https://user-images.githubusercontent.com/54317409/122363506-f3a8cc00-cf93-11eb-886a-ce7c1ecec8a4.png)
+
+
+
+- 미해결 질문 게시글 상세 조회
+![미해결 질문 조회](https://user-images.githubusercontent.com/54317409/122363493-f0154500-cf93-11eb-9232-cb72cd51f9cc.png)
+
+
+
+- 미해결 질문 답변 및 알람(메일) 전송
+![답변 및 알람 전송](https://user-images.githubusercontent.com/54317409/122363516-f73c5300-cf93-11eb-9ea1-e34e3b788881.png)
+
+
+- 아코봇 정보 갱신 
+![정보 업데이트](https://user-images.githubusercontent.com/54317409/122363528-fb687080-cf93-11eb-995a-aa083ccb6f6e.png)
 
 
 
