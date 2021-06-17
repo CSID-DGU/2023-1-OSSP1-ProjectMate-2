@@ -104,6 +104,91 @@
 
 
 <br>
+### 2. 해당 프로젝트 설치 방법
+A. 통합개발환경, IntelliJ 에서 해당 프로젝트 설치하기 
+
+1. 인텔리제이 IDE를 설치한다.
+
+> https://www.jetbrains.com/idea/download
+
+2. IntelliJ 설치후 IntelliJ 의 설정을 다음과 같이 설정한다.
+
+   - (1) IntelliJ 상단 `Setting`> `Build,Execution,Deployment` > `Gradle` 에 접근하여, 
+
+   - (2) `Build and run using` , `Run tests using` 의 드롭박스의 값을 `IntelliJ IDEA` 로 바꿔주십시오. (기본 설정이 `Gradle`인데 느리다고 합니다.)
+
+![그림1](https://user-images.githubusercontent.com/54317409/122431795-bcf0a700-cfcf-11eb-8a29-0898eed6ea1d.png)
+
+
+3. IntelliJ 상단 메뉴에서
+- (1) `File`> `Project Structure`>`Project`에서
+- (2) `Project SDK`의 선택지 중 ` Java 11`을 설정해주셔야 합니다. 별도의 다운이 필요 없는 ` Amazon Correto 11.0.10`를 설정하거나 또는 자바11를 설치합니다.
+
+![그림2](https://user-images.githubusercontent.com/54317409/122431904-cf6ae080-cfcf-11eb-92cc-6eeae906fed8.png)
+
+
+4. 깃허브에 있는 프로젝트를 로컬 레파지토리로 복사하기 위해,
+
+   (1) 인텔리제이 상단  `File` 탭을 누른다. 
+
+   (2) `Project from Version Contrl...`를 누른다
+
+![그림3](https://user-images.githubusercontent.com/54317409/122432254-21ac0180-cfd0-11eb-86d1-54ec1b2d724f.png)
+
+​	(3)  저희 오픈소스 프로젝트 URL을 입력하고, CLONE 버튼을 누릅니다.
+
+![그림4](https://user-images.githubusercontent.com/54317409/122432277-2670b580-cfd0-11eb-805d-e890e8524eac.png)
+
+B. 로컬 PC에 해당 프로젝트 설치하기
+
+1. GIT BASH를 이용하여, `git clone` 명령어를 이용하여 로컬 PC에 해당 프로젝트를 복사합니다.
+
+```
+git clone https://github.com/CSID-DGU/2021-1-OSSP2-ttogttagis-3.git
+```
+
+
+
+C. 리눅스 기반 가상 머신에 해당 프로젝트 설치하기  
+
+1. 자바와 GIT 을 설치합니다
+
+```
+sudo yum install java-11-openjdk-devel
+sudo yum install git
+```
+
+2. 해당 서버의 시간대를 한국으로 설정합니다.
+
+```
+sudo rm /etc/localtime
+sudo ln –s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+```
+
+3. 프로젝트를 다운 받고, 배포 파일을 만들기 위한 디렉토리를 생성합니다.
+
+```
+mkdir ~/app && mkdir ~/app/akobot
+```
+
+4. 해당 디렉토리로 이동하고, 깃허브의 프로젝트 레파지토리를 복사합니다.
+
+```
+cd ~/app/akobot 
+git clone https://github.com/CSID-DGU/2021-1-OSSP2-ttogttagis-3.git
+```
+
+
+
+#### 공통 프로젝트에 필수 적이지만, 보안상의 이유로 `.gitignore`에 등록된 부분이 있습니다.
+`src`> `main` > `resources` 디렉토리에 필요한 파일 3가지
+`application.properties`
+`application-oauth.properties`
+`serviceAccountKey.json`
+
+
+
+
 
 ### 2. 관리자 페이지 완성 모습
 
