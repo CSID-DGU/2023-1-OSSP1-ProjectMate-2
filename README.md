@@ -39,14 +39,31 @@
 
 
 ---
+### 1. 적용 방법 
 
-### 1. 질문 흐름도 구상
+ &nbsp;a. 현재 프로젝트의 GITHUB 레파지토리의 경로, `Chatbot/Akobot2.zip` 파일을 다운 받습니다.<br>
+
+ &nbsp;b. 아코봇을 적용하기 위해 https://dialogflow.cloud.google.com/ 에 접속하여 아코봇 서비스를 적용하고자 하는 구글 계정으로 로그인을 합니다.<br>
+
+ &nbsp;c. 아래의 그림과 지시사항을 따라 해당 Akobot2.zip 파일을 IMPORT 합니다.
+
+ &nbsp; &nbsp; (1) Dialogflow 메인 화면에서 톱니바퀴를 눌러 환경 설정 화면에 진입합니다.
+
+  &nbsp; &nbsp;(2) Export and Import 를 클릭합니다.
+
+ &nbsp; &nbsp; (3) IMPORT FROM ZIP 파일을 클릭해 앞서 다운받은 Akobot2.zip 파일을 불러옵니다.
+ 
+<p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122643658-0108b680-d14c-11eb-87fe-4cb4c3e9479c.png"></p>
+
+
+
+### 2. 질문 흐름도 구상
 
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122390118-98cf9e80-cfac-11eb-82a4-9097dc190872.png"></p>
 
 
 
-### 2. 챗봇 완성 모습
+### 3. 챗봇 완성 모습
 
 - 텍스트 정보 제공
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122399761-0f24ce80-cfb6-11eb-9d28-78157b0d5b24.png"></p>
