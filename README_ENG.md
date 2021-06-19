@@ -40,7 +40,7 @@
 ---
 ### 1. Install Akobot on `your Dialogflow Project`
 
- &nbsp;a. Download `Chatbot/Akobot2.zip` located in Chatbot/Akobot2.zip from this repository .<br>
+ &nbsp;a. Download `Akobot2.zip` located in Chatbot/Akobot2.zip from this repository .<br>
 
  &nbsp;b. To import our project,  go to https://dialogflow.cloud.google.com/ then, login with your account to service Akobot.
 
@@ -55,13 +55,58 @@
 
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122643658-0108b680-d14c-11eb-87fe-4cb4c3e9479c.png"></p>
 
-### 2. Designing Question Flow
+<br>
+<h3> 2. Establish `Akobot Database` with Cloud firestore </h3>
+
+&nbsp;a. Download `dataBackup.json` located `/Database/dataBackup.json` from this repository .<br>
+
+&nbsp;b. To install `firestore-import-export`, enter next instruction on your cmd or terminal  
+
+```
+npm -install -g node-firestore-import-export
+```
+
+&nbsp;c. To import our original database, 
+
+Go https://firebase.google.com/ then Get login with your google account for this project
+
+Follow next step to get `serviceAccountKey.json` file on your local PC
+
+  (1)  Get into Project Setting 
+
+  (2)  Click Service Account
+
+  (3)  Get a new private key setting, then copy serviceAccountKey.json 
+  
+
+<p align="center"><img src="https://user-images.githubusercontent.com/54317409/122437291-8a957880-cfd4-11eb-8af1-1319affa6506.png" height="60%" width="60%"></p>
+
+
+Hit next command on your cmd or termina
+
+```
+firestore-import --accountCredentials path/to/credentials/file.json --backupFile /backups/myDatabase.json
+```
+
+> --accountCredentials : credential key to access your cloud firestore database.
+>
+> path/to/credentials/file.json : directory for the credential key.
+>
+> --backupFile : to import your new database with the backup one.
+>
+> /backups/myDatabase.json : directory for the backup database.
+
+
+&nbsp;d. Reference, 
+> Visit https://www.npmjs.com/package/node-firestore-import-export 
+
+### 3. Designing Question Flow
 
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122390118-98cf9e80-cfac-11eb-82a4-9097dc190872.png"></p>
 
 
 
-### 3. Akobot Demonstrations
+### 4. Akobot Demonstrations
 
 - Delivering Text Info
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122399761-0f24ce80-cfb6-11eb-9d28-78157b0d5b24.png"></p>
