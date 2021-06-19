@@ -60,7 +60,7 @@
 
 &nbsp;a. 현재 프로젝트의 GITHUB 레파지토리의 경로, `Database/dataBackup.json` 파일을 다운 받습니다.<br>
 
-&nbsp;b. 다음의 명령어로 해당 프로그램 설치합니다.
+&nbsp;b. 다음의 명령어로 `firestore-import-export` 프로그램을 설치합니다.
 
 ```
 npm -install -g node-firestore-import-export
@@ -76,7 +76,7 @@ npm -install -g node-firestore-import-export
 
 (2) 서비스 계정을 클릭합니다
 
-(3) 새 비공개 키 설정을 클릭하여 serviceAccountKey.json 파일을 생성하고 프로젝트의 해당 파일로 복사합니다.
+(3) 새 비공개 키 설정을 클릭하여 serviceAccountKey.json 파일을 생성합니다.
 
 <p align="center"><img src="https://user-images.githubusercontent.com/54317409/122437291-8a957880-cfd4-11eb-8af1-1319affa6506.png" height="60%" width="60%"></p>
 
