@@ -39,7 +39,7 @@
 
 
 ---
-### 1. 적용 방법 
+### 1. 적용 방법 - 아코봇 설치, Dialogflow
 
  &nbsp;a. 현재 프로젝트의 GITHUB 레파지토리의 경로, `Chatbot/Akobot2.zip` 파일을 다운 받습니다.<br>
 
@@ -55,15 +55,60 @@
  
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122643658-0108b680-d14c-11eb-87fe-4cb4c3e9479c.png"></p>
 
+<br>
+<h3> 2. 적용 방법 - 아코봇 DB 구축 - Cloud firestore 적용하기 </h3>
+
+&nbsp;a. 현재 프로젝트의 GITHUB 레파지토리의 경로, `Database/dataBackup.json` 파일을 다운 받습니다.<br>
+
+&nbsp;b. 다음의 명령어로 해당 프로그램 설치합니다.
+
+```
+npm -install -g node-firestore-import-export
+```
+
+&nbsp;c. import 방법
+
+서비스 하고자 하는 구글 계정으로 https://firebase.google.com/?hl=ko에 접속하여
+
+다음의 그림을 참고하여 serviceAccountKey.json을 본인의 로컬 컴퓨터에 설치합니다.
+
+(1) 톱니바퀴 모양을 클릭 하여 프로젝트 설정으로 이동합니다
+
+(2) 서비스 계정을 클릭합니다
+
+(3) 새 비공개 키 설정을 클릭하여 serviceAccountKey.json 파일을 생성하고 프로젝트의 해당 파일로 복사합니다.
+
+<p align="center"><img src="https://user-images.githubusercontent.com/54317409/122437291-8a957880-cfd4-11eb-8af1-1319affa6506.png" height="60%" width="60%"></p>
 
 
-### 2. 질문 흐름도 구상
+그리고 다음의 명령어를, cmd 나 터미널 등에 입력합니다. 
+
+```
+firestore-import --accountCredentials path/to/credentials/file.json --backupFile /backups/myDatabase.json
+```
+
+> --accountCredentials : 해당 데이터베이스에 접근하는 credential 키입니다.
+>
+> path/to/credentials/file.json : 로컬 컴퓨터에 있는 해당 credential 키의 경로를 뜻합니다.
+>
+> --backupFile : 새로운 데이터베이스로 백업된 데이터베이스의 내용을 불러오기 위한 옵션입니다.
+>
+> /backups/myDatabase.json : 로컬 컴퓨터에 저장된 백업된 데이터베이스의 경로 입니다.
+
+
+
+&nbsp;d. 참고 
+
+> https://www.npmjs.com/package/node-firestore-import-export 방문합니다
+
+
+### 3. 질문 흐름도 구상
 
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122390118-98cf9e80-cfac-11eb-82a4-9097dc190872.png"></p>
 
 
 
-### 3. 챗봇 완성 모습
+### 4. 챗봇 완성 모습
 
 - 텍스트 정보 제공
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122399761-0f24ce80-cfb6-11eb-9d28-78157b0d5b24.png"></p>
@@ -287,7 +332,8 @@ Spring Security와 구글 로그인 API를 활용하여 로그인 처리를 담�
 
   (2)  서비스 계정을 클릭합니다
 
-  (3)  `새 비공개 키 설정`을 클릭하여 serviceAccountKey.json 파일을 생성하고 프로젝트의 해당 파일로 복사합니다.
+  (3)  `새 비공개 키 설정`을 클릭하여 serviceAccountKey.json 파일을 생성하고 프로젝트의 해당 파일로 복사합니다. <br>
+  (⚠️ 앞서 아코봇 DB 구축을 하기 위해 만들었다면, 새로 안만들어도 됩니다. 최신의 해당 파일만 있으면 됩니다.)
 
 <p align="center"><img src="https://user-images.githubusercontent.com/54317409/122437291-8a957880-cfd4-11eb-8af1-1319affa6506.png" height="60%" width="60%"></p>
 
