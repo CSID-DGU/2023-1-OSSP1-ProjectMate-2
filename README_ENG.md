@@ -38,14 +38,30 @@
 
 
 ---
+### 1. Install Akobot on `your Dialogflow Project`
 
-### 1. Designing Question Flow
+ &nbsp;a. Download `Chatbot/Akobot2.zip` located in Chatbot/Akobot2.zip from this repository .<br>
+
+ &nbsp;b. To import our project,  go to https://dialogflow.cloud.google.com/ then, login with your account to service Akobot.
+
+ &nbsp;c. Follow 3 steps below to import the Akobot2.zip file.
+
+ &nbsp; &nbsp; (1) On Dialogflow Console, click `the setting buttons`.
+
+ &nbsp; &nbsp; (2) Go to `Export and Import` 
+
+ &nbsp; &nbsp; (3) Select `IMPORT FROM ZIP` and choose `Akobot2.zip` file
+ 
+
+<p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122643658-0108b680-d14c-11eb-87fe-4cb4c3e9479c.png"></p>
+
+### 2. Designing Question Flow
 
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122390118-98cf9e80-cfac-11eb-82a4-9097dc190872.png"></p>
 
 
 
-### 2. Akobot Demonstrations
+### 3. Akobot Demonstrations
 
 - Delivering Text Info
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122399761-0f24ce80-cfb6-11eb-9d28-78157b0d5b24.png"></p>
