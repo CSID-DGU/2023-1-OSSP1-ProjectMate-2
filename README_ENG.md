@@ -330,7 +330,7 @@ It contains very crucial inforamation to access Chabot's and Web Page's Database
   (2)  Click Service Account
 
   (3)  Get a new private key setting, then copy serviceAccountKey.json 
-
+  (⚠️ If you alreday have a latest private key, you don't need to make a new one.)
 <p align="center"><img src="https://user-images.githubusercontent.com/54317409/122437291-8a957880-cfd4-11eb-8af1-1319affa6506.png" height="60%" width="60%"></p>
 
 
