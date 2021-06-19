@@ -49,7 +49,7 @@
 
  &nbsp; &nbsp; (1) Dialogflow 메인 화면에서 톱니바퀴를 눌러 환경 설정 화면에 진입합니다.
 
-  &nbsp; &nbsp;(2) Export and Import 를 클릭합니다.
+ &nbsp; &nbsp; (2) Export and Import 를 클릭합니다.
 
  &nbsp; &nbsp; (3) IMPORT FROM ZIP 파일을 클릭해 앞서 다운받은 Akobot2.zip 파일을 불러옵니다.
  
