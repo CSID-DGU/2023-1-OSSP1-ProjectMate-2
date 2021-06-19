@@ -1,11 +1,11 @@
 <h3> 2021-1-OSSP2-ttogttagis-3</h3>
-<h1> Project for making Chatbot of Dongguk Univ. Admissions  &  Akobot Management system for its Admin</h1> 
+<h1> Project for building Chatbot of Dongguk Univ. Admissions  &  Akobot Management system for its Admin</h1> 
 <br> 
 <ul style="list-style:none;">
     <li><a href="#sec_target1" style="text-decoration:none;"><b>I. Jump to Akobot's Introduction</b></a></li>
     <li><a href="#sec_target2" style="text-decoration:none;"><b>II. Jump to Admins' Web Page Introduction</b></a></li>
      <br>
-    <li><a href="https://github.com/CSID-DGU/2021-1-OSSP2-ttogttagis-3/blob/main/README_ENG.md">Redirect for Korean Speakers</a> </li> 
+    <li><a href="https://github.com/CSID-DGU/2021-1-OSSP2-ttogttagis-3/blob/main/README.md">Redirect for Korean Speakers</a> </li> 
 </ul>
 <br> 
 <h3> Team Member</h3> 
@@ -20,8 +20,11 @@
 
 * 2017112095 최준호
 
-## 1. Akobot - Chabot for Dongguk Univ. Admissions
-
+<br>
+<div class="sec1">
+    <a name="sec_target1"></a>
+    <h2>I. Akobot - Chabot for Dongguk Univ. Admissions</h2>
+</div>
 
 ### Goal
 
@@ -42,7 +45,7 @@
 
 
 
-### 2. Images for showing how it works
+### 2. Akobot Demonstrations
 
 - Delivering Text Info
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/11707490/122399761-0f24ce80-cfb6-11eb-9d28-78157b0d5b24.png"></p>
@@ -383,7 +386,7 @@ nohup java -jar $REPOSITROY/$JAR_NAME 2>&1 &
 <p align="center"><img src="https://user-images.githubusercontent.com/54317409/122448953-460fda00-cfe0-11eb-8888-1f1fcc5a1134.png" height="60%" width="60%"></p>
 
 <br>
-### 4. Images for AMS
+### 4. AMS Demonstrations
 
 - Only admins who have a private key can proceed further logging process
 <p align="center"><img height="60%" width="60%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/122359472-8ba4b680-cf90-11eb-8825-611964835110.png"></p>
