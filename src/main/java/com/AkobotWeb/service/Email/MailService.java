@@ -12,11 +12,11 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class MailService {
-    private JavaMailSender javaMailSender;
+    //private JavaMailSender javaMailSender;
 
-    private static final String FROM_ADDRESS = PropertyUtil.getProperty("spring.mail.username");
+    //private static final String FROM_ADDRESS = PropertyUtil.getProperty("spring.mail.username");
 
-    public void mailSend(MailDTO mailDto) {
+    /*public void mailSend(MailDTO mailDto) {
         SimpleMailMessage message = new SimpleMailMessage();
         try {
             message.setFrom(FROM_ADDRESS);
@@ -28,7 +28,7 @@ public class MailService {
             log.info("ERROR : MailService.java" + e.getMessage());
         }
 
-    }
+    }*/ // mailfault
 
     /**
      *  FUTURE WORK - ATTACHMENT
