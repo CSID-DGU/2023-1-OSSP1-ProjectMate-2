@@ -2,6 +2,14 @@ plugins {
 	id 'org.springframework.boot' version '2.4.5'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id "org.sonarqube" version "4.0.0.2929"
+}
+
+sonar {
+	properties {
+		property "sonar.projectKey", "Park-MinJe_2021-1-OSSP2-akobot-origin_AYex9IxWIFPrG4o7MxfI"
+		property "sonar.projectName", "2021-1-OSSP2-akobot-origin"
+	}
 }
 
 group = 'com.AkobotWeb'
