@@ -18,6 +18,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: make libs dir
+        run: mkdir "/home/runner/work/2021-1-OSSP2-akobot-origin/2021-1-OSSP2-akobot-origin/libs"
       - name: Cache SonarQube packages
         uses: actions/cache@v1
         with:
