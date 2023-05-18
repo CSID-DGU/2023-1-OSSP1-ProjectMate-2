@@ -1,0 +1,115 @@
+<!--공통된 topbar - 로그인 관련부 -->
+<!DOCTYPE html>
+<!-- Topbar -->
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" id="topNav">
+
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+    <style>
+        div.button
+        {
+            margin: auto;
+            width : 80%
+        }
+        input.button
+        {
+            margin: auto;
+            width : 80%
+        }
+    </style>
+    <script>
+        <!--important tag는 function 으로 change-->
+        function changeDark(){
+            let x=document.querySelectorAll('#topNav');
+            x[0].setAttribute('style','background-color: black !important');
+        }
+        function changeLight(){
+            let x=document.querySelectorAll('#topNav');
+            x[0].setAttribute('style','background-color: #fff !important');
+        }
+    </script>
+
+
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
+        <!--dark mode toggle -->
+
+        <form name="해당 폼의 이름" action="값을 보낼 주소" method="post">
+            <br>
+            <input type='date' name='userBirthday'/>
+        </form>
+
+        <!-- Nav Item - User Information -->
+        <!-- TODO 차후 유저에 맞게 변화될 수 있도록 0503-->
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="" id="userDropdown" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!--img class = 'img-profile square' src="img/Calen.png" hspace = 30-->
+                <img class="img-profile rounded-circle" src="img/Person.png" width = "100" height="100">
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+            aria-labelledby="userDropdown">
+                <!-- 로그인 -->
+                <div class="row-cols-xl-6" style="width:290px;height:100px;">  <!--style="width:290px;height:100px;"-->
+                    <div class="col-xl-10">
+                        <div class = "button" th:if="${not #strings.isEmpty(userName)}">
+                            <img style="width:45px; height:45px" src="" th:src="${userImg}"
+                                 class="rounded-circle img-thumbnail img-responsive">
+                            <span id="login-user" th:text="${userName}">사용자</span> 님, 안녕하세요!
+                            <br><br>
+                            <a href="logout" class="btn btn-sm btn-info active" role="button">Logout</a>
+                                <input id="changeDark" class = "btn btn-sm btn-info active" type="button" value="DarkMode" onclick="
+        if(document.querySelector('#changeDark').value === 'DarkMode'){ // 지금 상태가 light 모드 , Dark로 바꾸려면
+            changeDark();
+            document.querySelector('#content').style.background='#232324';
+            document.querySelector('#content').style.color='white';
+            document.querySelector('#accordionSidebar').style.background='#323234';
+            document.querySelector('#changeDark').value='LightMode';
+        }else{
+            changeLight();
+            document.querySelector('#content').style.background='white';
+            document.querySelector('#content').style.color='black';
+            document.querySelector('#accordionSidebar').style.background='#4e73df';
+            document.querySelector('#changeDark').value='DarkMode';
+        }
+        ">
+                        </div>
+                        <div th:if="${#strings.isEmpty(userName)}" class = "button">
+                            <!-- 스프링 시큐리티에서 기본 제공하는 URL - 별도 컨트롤러 작성 필요 없음 -->
+                            <a href="/oauth2/authorization/google" class="btn btn-sm btn-info active button" role="button">로그인 하기</a>
+                            <br><br>
+                                <input id="changeDark" class="btn btn-sm btn-info active button" type="button" value="DarkMode" onclick="
+        if(document.querySelector('#changeDark').value === 'DarkMode'){ // 지금 상태가 light 모드 , Dark로 바꾸려면
+            changeDark();
+            document.querySelector('#content').style.background='#232324';
+            document.querySelector('#content').style.color='white';
+            document.querySelector('#accordionSidebar').style.background='#323234';
+            document.querySelector('#changeDark').value='LightMode';
+        }else{
+            changeLight();
+            document.querySelector('#content').style.background='white';
+            document.querySelector('#content').style.color='black';
+            document.querySelector('#accordionSidebar').style.background='#4e73df';
+            document.querySelector('#changeDark').value='DarkMode';
+        }
+        ">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    로그아웃
+                </a>-->
+
+            </div>
+        </li>
+
+    </ul>
+</nav>
+
+<!-- End of Topbar -->

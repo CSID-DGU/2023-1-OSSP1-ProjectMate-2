@@ -1,0 +1,173 @@
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<style>
+    li{
+        list-style: none;
+    }
+</style>
+<div class="treeview-animated w-20 border mx-4 my-4">
+    <h6 class="pt-3 pl-3">저장 위치 선정</h6>
+    <hr>
+    <form method="post" name="updateForm" action="/updateDB">
+    <ul class="treeview-animated-list mb-3">
+        <li class="treeview-animated-items">
+            <a class="closed" id="competition">
+                <i class="fas fa-angle-right"></i>
+                <span>competition - 작년도 경쟁률</span>
+            </a>
+            <ul class="nested">
+                <li>
+                    <div class="treeview-animated-element" id="competition_rate"><input type="radio" name="radio_input" value="competition_rate"> rate</div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview-animated-items">
+            <a class="closed" id="jungsi">
+                <i class="fas fa-angle-right"></i>
+                <span>jungsi - 정시 </span>
+            </a>
+            <ul class="nested" >
+                <li>
+                    <div class="treeview-animated-element" id="jungsi_basic"><input type="radio" name="radio_input" value="jungsi_basic"> basic - 기초수급자 관련 </div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="jungsi_farming"><input type="radio" name="radio_input" value="jungsi_farming"> farming - 농어촌 전형</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="jungsi_incumbent"><input type="radio" name="radio_input" value="jungsi_incumbent"> incumbent - 재직자 전형</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="jungsi_normal"><input type="radio" name="radio_input" value="jungsi_normal"> normal - 일반 전형 </div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="jungsi_specialized"><input type="radio" name="radio_input" value="jungsi_specialized"> specialized - 특성화 전형</div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview-animated-items">
+            <a class="closed" id="closed">
+                <i class="fas fa-angle-right"></i>
+                <span>recruit - 모집 인원</span>
+            </a>
+            <ul class="nested">
+                <li>
+                    <div class="treeview-animated-element" id="recruit_num"><input type="radio" name="radio_input" value="recruit_num"> num</div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview-animated-items">
+            <a class="closed" id="schedule">
+                <i class="fas fa-angle-right"></i>
+                <span>schedule - 전형 일정</span>
+            </a>
+            <ul class="nested">
+                <li>
+                    <div class="treeview-animated-element" id="schedule_foreigner"><input type="radio" name="radio_input" value="schedule_foreigner"> foreigner - 재외국민/외국인 특별전형</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="schedule_jungsi"><input type="radio" name="radio_input" value="schedule_jungsi"> jungsi - 정시 전형 일정</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="schedule_susi"><input type="radio" name="radio_input" value="schedule_susi"> susi - 수시 전형 일정</div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview-animated-items">
+            <a class="closed" id="susi">
+                <i class="fas fa-angle-right"></i>
+                <span>susi - 수시 전형</span>
+            </a>
+            <ul class="nested">
+                <li>
+                    <div class="treeview-animated-element" id="susi_buddhism"><input type="radio" name="radio_input" value="susi_buddhism"> buddhism - 불교 추천 인재 전형</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="susi_dodream"><input type="radio" name="radio_input" value="susi_dodream"> dodream - 두드림 전형</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="susi_dodreamsoft"><input type="radio" name="radio_input" value="susi_dodreamsoft"> dodreamsoft - 두드림 소프트웨어 전형</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="susi_essay"><input type="radio" name="radio_input" value="susi_essay"> essay - 논술 전형</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="susi_incumbent"><input type="radio" name="radio_input" value="susi_incumbent"> incumbent - 재직자 전형</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="susi_performance"><input type="radio" name="radio_input" value="susi_performance"> performance</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="susi_principal"><input type="radio" name="radio_input" value="susi_principal"> principal - 학교장 추천 전형</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="susi_regular"><input type="radio" name="radio_input" value="susi_regular"> regular - 고른기회 전형</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="susi_special"><input type="radio" name="radio_input" value="susi_special"> special</div>
+                </li>
+            </ul>
+        </li>
+        <li class="treeview-animated-items">
+            <a class="closed" id="susi">
+                <i class="fas fa-angle-right"></i>
+                <span>note - 지원자격 유의사항</span>
+            </a>
+            <ul class="nested">
+                <li>
+                    <div class="treeview-animated-element" id="note_detail"><input type="radio" name="radio_input" value="note_detail"> farm_standard - 농어촌학생 재학거주 인정기준</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="note_detail"><input type="radio" name="radio_input" value="note_detail"> special_major - 특성화고교 졸업자 동일계열 기준 학과</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="note_detail"><input type="radio" name="radio_input" value="note_detail"> incumbent_calculating - 재직기간 산정기준</div>
+                </li>
+            </ul>
+        </li>
+        <li class="treeview-animated-items">
+            <a class="closed" id="susi">
+                <i class="fas fa-angle-right"></i>
+                <span>foreign - 재외국민/외국인 특별전형</span>
+            </a>
+            <ul class="nested">
+                <li>
+                    <div class="treeview-animated-element" id="foreign_detail"><input type="radio" name="radio_input" value="foreign_detail"> foreign_detail - 재외국민/외국인 특별전형</div>
+            </ul>
+        </li>
+        <li class="treeview-animated-items">
+            <a class="closed" id="susi">
+                <i class="fas fa-angle-right"></i>
+                <span>test - 전형요소별 평가방법</span>
+            </a>
+            <ul class="nested">
+                <li>
+                    <div class="treeview-animated-element" id="test_document"><input type="radio" name="radio_input" value="test_document"> test_document - 서류종합평가</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="test_interview"><input type="radio" name="radio_input" value="test_interview"> test_interview - 면접평가</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="test_records"><input type="radio" name="radio_input" value="test_records"> test_records - 학교생활기록부</div>
+                </li>
+                <li>
+                    <div class="treeview-animated-element" id="test_SAT"><input type="radio" name="radio_input" value="test_SAT"> test_SAT - 대학수학능력시험</div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+        <div class="card-body">
+        <div class="form-group">
+            <label>DB 수정</label>
+            <textarea class="form-control" name="Answer" rows="15" cols="100" id="Answer" style="width:100%;" placeholder="수정 내용 입력"></textarea></div>
+        <button type="submit" id="submit" class="btn btn-outline-primary">수정</button>
+        <button type="reset" class="btn btn-outline-secondary">리셋</button>
+        <button type="button" class="btn btn-outline-success"><a style="text-decoration:none" href="/solve">취소</a></button>
+        </div>
+    </form>
+</div>
+<script src="js/TextArea/limit-textarea.js"></script>

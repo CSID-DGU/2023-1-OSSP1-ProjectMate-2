@@ -1,0 +1,110 @@
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <h3>답변 메세지 보내기</h3>
+        <form method="post" name="smsForm" action="/smsService">
+            <!-- bno 넘겨주려고 -->
+            <input type="hidden" class="form-control" name="bno" th:value="${result.bno}">
+
+            <input type="hidden" name="action" value="go"> 발송타입
+            <span>
+          <input type="radio" id="short" name="smsType" value="S">단문(SMS)</span>
+            <span>
+          <input type="radio" id="long" name="smsType" value="L">장문(LMS)</span>
+            <br/>
+            <div class="form-group">제목 :
+                <input type="text" id="limit_reply_title" class="form-control" name="subject"
+                       placeholder="장문(LMS)인 경우(한글30자이내)">
+                <div id="reply_title_cnt">(0 / 30)</div>
+            </div>
+            <br/>
+            <div class="form-group">전송메세지<br/>
+                <textarea id="limit_text" name="msg" cols="30" class="form-control" rows="10" style="width:455px;"
+                          placeholder="내용입력"></textarea></div>
+            <div id="text_cnt">(0 / 2000)</div>
+            <div class="form-group">
+                <p>단문(SMS) : 최대 90byte까지 전송할 수 있으며, 잔여건수 1건이 차감됩니다.
+                    <br/> 장문(LMS) : 한번에 최대 2,000byte까지 전송할 수 있으며 1회 발송당 잔여건수 3건이 차감됩니다.
+                </p>
+                <br/>
+                <br/>
+                <div class="form-group">받는 번호
+                    <input type="text" id="Rphone" class="form-control" name="rphone" th:value="${result.phone}"> <br/>예)
+                    011-011-111 , '-' 포함해서 입력.
+                </div>
+                <br/>
+                <!-- 카페24 서비스에 발신번호를 등록한 관리자 번호 -->
+                <input type="hidden" class="form-control" name="sphone1" value="010">
+                <input type="hidden" class="form-control" name="sphone2" value="3949">
+                <input type="hidden" class="form-control" name="sphone3" value="0471">
+                <span id="sendPhoneList"></span>
+                <br/>
+                <div class="form-group">test flag
+                    <input type="text" class="form-control" name="testflag" maxlength="1" placeholder="예) 테스트시: Y">
+                </div>
+                <!--<div class="form-group">
+                    <br/>
+                    이름삽입번호
+                    <input type="text" class="form-control" name="destination" placeholder="예) 010-000-0000|홍길동"
+                           size=80>
+                </div>
+                <br/> 보내는 번호
+                <input type="hidden" name="sphone1">
+                <input type="hidden" name="sphone2">
+                <input type="hidden" name="sphone3">
+                <span id="sendPhoneList"></span>
+                <br/>
+                <div class="form-group">예약 날짜
+                    <input type="text" class="form-control" name="rdate" maxlength="8" placeholder="예)20090909"></div>
+                <div class="form-group">
+                    <br/>예약 시간
+                    <input type="text" class="form-control" name="rtime" maxlength="6"
+                           placeholder="예)173000 ,오후 5시 30분,예약시간은 최소 10분 이상으로 설정."></div>
+                <br/>
+                <div class="form-group">return url
+                    <input type="text" class="form-control" name="returnurl" maxlength="64" value=""></div>
+                <br/>
+                <div class="form-group">test flag
+                    <input type="text" class="form-control" name="testflag" maxlength="1" placeholder="예) 테스트시: Y">
+                </div>
+                <br/>
+                <div class="form-group">nointeractive
+                    <input type="text" class="form-control" name="nointeractive" maxlength="1"
+                           placeholder="예) 사용할 경우 : 1, 성공시 대화상자(alert)를 생략."></div>
+                <br/>
+                <div class="form-group">반복설정
+                    <input type="checkbox" name="repeatFlag" value="Y"></div>
+                <br/>
+                <div class="form-group">반복횟수
+                    <select name="repeatNum">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select> 예) 1~10회 가능.
+                </div>
+                <br/>
+                <div class="form-group">전송간격
+                </div>
+                <div class="form-group">
+                    <select name="repeatTime"> 예)15분 이상부터 가능.
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                    </select>분마다
+                </div>
+                <br>-->
+                <button type="submit" id="submit" class="btn btn-outline-primary">전송</button>
+                <button type="reset" class="btn btn-outline-secondary">리셋</button>
+                <button type="button" class="btn btn-outline-success"><a style="text-decoration:none" href="/tables">취소</a></button>
+                <br/>이통사 정책에 따라 발신번호와 수신번호가 같은 경우 발송되지 않습니다.
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="js/TextArea/limit-textarea.js"></script>
+<script src="js/SMS/formAlert.js"></script>
+
+

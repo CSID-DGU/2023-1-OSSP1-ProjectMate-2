@@ -1,0 +1,55 @@
+HELP.md
+.gradle
+## Socket programming 예시
+!**/src/main/java/com/AkobotWeb/messagingstompwebsocket/
+!**/src/main/resources/static/index.html
+!**/src/main/resources/static/app.js
+
+## EC2에서 필요
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### FIREBASE KEY ###
+serviceAccountKey.json
+
+### GOOGLE LOGIN ###
+application-oauth.properties
+
+### APPLICATION. // CAFE24 SMS MESSAGE ###
+application.properties
+
+### LOG ###
+LOG_DIR_IS_UNDEFINED
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/

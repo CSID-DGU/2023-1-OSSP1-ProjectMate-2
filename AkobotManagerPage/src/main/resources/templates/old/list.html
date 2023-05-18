@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>아코봇 리스트</title>
+</head>
+<body>
+    테스트
+    <!--TODO : 리스트 개선하기 -->
+    <div>
+        <div>게시글 </div>
+        <!-- static resource : @{디렉토리/파일} -->
+        <a href="write.do">게시글 목록</a>
+        <table border="1">
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>내용</th>
+                <th>날짜</th>
+            </tr> <!--  개별변수:${집합변수} -->
+            <!-- dates.format(날짜데이터, 출력형식) -->
+            <!-- href="view.do?idx=3" -->
+            <!-- th:href="@{}"
+            @{정적인 텍스트(변수=값)} 이라는 뜻이다.-->
+
+            <tr th:each="row:${list}"> <!-- each는 반복문이라는 뜻이다. 즉 tr구문이 반복된다는 뜻-->
+                <!-- row 옆에 콜론 ":"이 있는데 변수라는 의미이다. -->
+                <!-- 즉 list를 row변수안에 넣는다는 의미 밑에 코드는 row안에 있는 값들을 하나씩 출력하는 것 -->
+                <!-- 컨트롤러에서 변수명을 list라고 넘겼기 때문에 이것을 받기 위해 사용한 구문이다. -->
+                <td><span th:text="${row.idx}"></span></td>
+                <td><span th:text="${row.name}"></span></td>
+                <td>
+                    <!-- 변수를 사용할땐 ${}를 쓰고, 리소스는 (클릭하면 view.do라는 리소스로 넘어간다) @{}를 사용한다. -->
+                    <a th:href="@{view.do(idx=${row.idx})}"><span th:text="${row.content}"></span>
+                    </a>
+                </td>
+                <td>
+                    <!-- #dates는 내장함수이고, 날짜를 yyyy-MM-dd HH:mm:ss이런 형식으로 만들겠다는 구문이다.-->
+                    <span th:text=
+                                  "${#dates.format(row.post_date, 'yyyy-MM-dd HH:mm:ss')}"></span></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

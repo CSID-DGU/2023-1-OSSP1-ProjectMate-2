@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Akobot Management system</title>
+</head>
+<style>
+    .content {
+        font-family: system-ui, serif;
+        font-size: 1rem;
+        padding: 2rem;
+        border-radius: 2rem;
+        background: #ffffff;
+    }
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background : #b5fada;
+    }
+</style>
+<body>
+<div class = "wrapper">
+<div class = "content" style="text-align : center;">
+    <h1></h1>
+    <img src="img/aaaakkkbo.png"/>
+    <p>본 관리자 페이지는 관계자들만 접속할 수 있습니다</p>
+    <p>PASSWORD</p>
+    <input id = "pwd" type="password">
+    <button class="openBtn" onclick="javascript:checkpwd()">접속</button>
+    <script>
+        function checkpwd(){
+            if(document.getElementById('pwd').value != '980930'){
+                alert("암호가 틀립니다!!")
+                document.getElementById("pwd").value = '';
+            }
+            else{
+                alert("암호가 맞습니다!!")
+                location.href = "index";
+            }
+        }
+    </script>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th= "http://www.thymeleaf.org">
+<head th:replace="common_codes/fragments.html:: fragment-header(title='Akobot Management system')"></head>
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <th:block th:replace="~{common_codes/sidebar.html}"></th:block>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <th:block th:replace="~{common_codes/topbar.html}"></th:block>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">해결된 질문 게시판</h1>
+                <p class="mb-4">학생들로 부터 들어온 해결 질문에 대한 조회 게시판입니다!<br>
+                    챗봇 DB를 수정할 수 있습니다.</p>
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Solved Question</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Question</th>
+                                    <th>writer</th>
+                                    <th>date</th>
+                                    <th>check</th>
+                                </tr>
+                                </thead>
+
+                                <!-- TODO Thymeleaf 사용영역 -->
+                                <tbody>
+                                <tr th:each="VO : ${result}">
+                                    <td>[[${VO.bno}]]</td>
+                                    <td><a th:href="@{/solvedDetail(bno=${VO.bno})}">[[${VO.content}]]</a></td>
+                                    <td>[[${VO.name}]]</td>
+                                    <td>[[${VO.regDate}]]</td>
+                                    <td>#</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <th:block th:replace="~{common_codes/footer.html}"></th:block>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<th:block th:replace="~{common_codes/logout_modal.html}"></th:block>
+
+<!-- footer를 그대로 inlcude-->
+<footer th:replace="common_codes/fragments.html :: footer"></footer>
+
+</body>
+
+</html>

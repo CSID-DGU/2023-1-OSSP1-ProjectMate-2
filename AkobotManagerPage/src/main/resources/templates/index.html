@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- thymeleaf 적용 -->
+<head th:replace="common_codes/fragments.html:: fragment-header(title='Akobot Management system')"></head>
+<!--배경 문구에 적용한 애니메이션-->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Pen+Script&display=swap');
+    .loading span {
+        font-family: 'Jua', serif;
+        display: inline-block;
+        animation: loading .7s infinite alternate;
+        font-size: 300%;
+        font-weight: bold;
+        color: orange;
+    }
+    .loading span:nth-child(2) {
+        animation-delay: .1s;
+    }
+    .loading span:nth-child(3) {
+        animation-delay: .2s;
+    }
+    .loading span:nth-child(4) {
+        animation-delay: .3s;
+    }
+    .loading span:nth-child(5) {
+        animation-delay: .4s;
+    }
+    .loading span:nth-child(6) {
+        animation-delay: .5s;
+    }
+    .loading span:nth-child(7) {
+        animation-delay: .6s;
+    }
+    .loading span:nth-child(8) {
+        animation-delay: .7s;
+    }
+    .loading span:nth-child(9) {
+        animation-delay: .8s;
+    }
+    .loading span:nth-child(10) {
+        animation-delay: .9s;
+    }
+    .loading span:nth-child(11) {
+        animation-delay: .10s;
+    }
+    @keyframes loading {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(0.8);
+        }
+    }
+</style>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <th:block th:replace="~{common_codes/sidebar.html}"></th:block>
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <th:block th:replace="~{common_codes/topbar.html}"></th:block>
+
+                <!-- Begin Page Content -->
+                <!--배경 문구-->
+                <div class="loading">
+                    <span>무</span>
+                    <span>엇</span>
+                    <span>을</span>
+                    <span> </span>
+                    <span>도</span>
+                    <span>와</span>
+                    <span>드</span>
+                    <span>릴</span>
+                    <span>까</span>
+                    <span>요</span>
+                    <span>?</span>
+
+                    <!-- 이미지 슬라이드 JS 코드 -->
+                    <div class="imgaeSlide">
+                        <img id=mainImage alt="img" th:src="@{/img/dgu1.jpg}">
+                        <script type="text/javascript">
+                            const myImage=document.getElementById("mainImage");
+                            const imageArray=["img/dgu1.jpg","img/dgu2.jpg","img/dgu3.jpg"];
+                            let imageIndex=0;
+
+                            function changeImage(){
+                                myImage.setAttribute("src",imageArray[imageIndex]);
+                                imageIndex++;
+                                if(imageIndex>=imageArray.length){
+                                    imageIndex=0;
+                                }
+                            }
+                            setInterval(changeImage,3000);
+                        </script>
+                    </div>
+                </div>
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <th:block th:replace="~{common_codes/footer.html}"></th:block>
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <th:block th:replace="~{common_codes/logout_modal.html}"></th:block>
+
+        <!-- footer를 그대로 inlcude-->
+        <footer th:replace="common_codes/fragments.html :: footer"></footer>
+    </div>
+</body>
+
+</html>
