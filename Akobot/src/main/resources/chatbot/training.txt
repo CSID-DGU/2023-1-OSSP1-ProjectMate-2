@@ -1,0 +1,29 @@
+content    아코봇을 불러줘
+content    전체 모집 요강이 뭐야?
+content    수시전형 알려줘
+content    정시전형 알려줘
+content    모집 인원이 몇 명이지?
+content    작년도 경쟁률은 어때?
+content    지원자격유의사항 있어?
+content    재외국민이나 외국인 특별전형
+content    전형요소별평가방법 알려줘
+content    전형 일정 어떻게 돼?
+content    두드림소프트웨어 설명해줘
+content    학교장 추천 설명해줘
+content    두드림 설명해줘
+content    불교추천 설명해줘
+content    논술전형을 설명해줘
+content    고른기회 전형을 설명해줘
+content    일반전형 설명해줘
+content    농어촌 전형 설명해줘
+content    특성화 고교 전형 설명해줘
+content    재직자 전형 설명해줘
+content    기초생활수급자 및 차상위계층 전형 설명해줘
+content    농어촌학생 재학거주 인정기준 어떻게 돼?
+content    특성화고교 졸업자 통합계열 기준학과 좀 알려줘
+content    재직기간 산정기준 있나요?
+content    서류종합평가는 뭐야?
+content    면접평가는 어떻게 돼?
+content    학교 생활기록부 반영 방법
+content    대학수학능력시험 (SAT) 알려줘
+content    끝
