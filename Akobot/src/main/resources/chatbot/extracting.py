@@ -6,7 +6,7 @@ from soynlp.tokenizer import MaxScoreTokenizer
 import json
 
 #load data for training..*will be modified with DB
-training=pd.read_csv("simple.CSV", encoding="euc-kr")
+training=pd.read_csv("example.CSV", encoding="euc-kr")
 training=pd.DataFrame(training['content'])
 
 '''
@@ -19,7 +19,7 @@ for i in training:
 '''
 #write .txt file
 f = open("training.txt", 'wt', encoding='utf-8')
-for i in  range(0, 29):
+for i in  range(0, 100):
     data = training.loc[i].to_string()
     f.write(data+'\n')
 f.close()
@@ -43,15 +43,16 @@ word_score_table = word_extractor.extract()
 scores = {word:score.cohesion_forward for word, score in word_score_table.items()}
 maxscore_tokenizer = MaxScoreTokenizer(scores=scores)
 words=[]
-words=maxscore_tokenizer.tokenize("두드림소프트웨어알려줄래??")
+words=maxscore_tokenizer.tokenize("두드림소프트웨어가 궁금해")
 print(words)
 
 
 #look at DB and extracting the only keywords what you need
 keywords=[]
 for word in words:
-    if word=='두드림소프트웨어': #will be modified w/ DB
+    if ('두드림' in word) or ('소프트웨어' in word)==True : #will be modified w/ DB
+        #keywords에는 조사를 뺀 word가 들어가야하는데 문제점 발생! -> 소프트웨어 뒤에 붙은 조사 '가'가 분리가 안됩니다...
         keywords.append(word)
-
+        
 #extracted keywords
 print(keywords)
