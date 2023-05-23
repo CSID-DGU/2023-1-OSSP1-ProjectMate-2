@@ -6,7 +6,7 @@ from soynlp.tokenizer import MaxScoreTokenizer
 import json
 
 # load data for training..*will be modified with DB
-training=pd.read_csv("simple.csv", encoding="euc-kr")
+training=pd.read_csv("simple.csv", encoding="utf-8")
 training=pd.DataFrame(training['content'])
 
 '''
@@ -19,7 +19,7 @@ for i in training:
 '''
 # write .txt file
 f = open("training.txt", 'wt', encoding='utf-8')
-for i in range(0, 100):
+for i in range(0, 10):
     data = training.loc[i].to_string()
     f.write(data+'\n')
 f.close()
@@ -54,3 +54,6 @@ for word in words:
         
 #extracted keywords
 print(keywords)
+
+def get_keywords():
+    return keywords
