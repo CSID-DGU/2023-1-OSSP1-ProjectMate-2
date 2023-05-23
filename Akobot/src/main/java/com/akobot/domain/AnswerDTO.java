@@ -4,10 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Greeting {
-
-    private String content;
+public class AnswerDTO {
+    private ArrayList<String> says;
 }
