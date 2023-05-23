@@ -6,7 +6,7 @@ from soynlp.tokenizer import MaxScoreTokenizer
 import json
 
 # load data for training..*will be modified with DB
-training=pd.read_csv("/Users/jisoojeong/Desktop/example.csv", encoding="euc-kr")
+training=pd.read_csv("simple.csv", encoding="euc-kr")
 training=pd.DataFrame(training['content'])
 
 '''
@@ -50,15 +50,7 @@ print(words)
 #look at DB and extracting the only keywords what you need
 keywords=[]
 for word in words:
-    if ('두드림' in word) or ('소프트웨어' in word)==True : #will be modified w/ DB
-        #keywords에는 조사를 뺀 word가 들어가야하는데 문제점 발생! -> 소프트웨어 뒤에 붙은 조사 '가'가 분리가 안됩니다...
-        keywords.append(word)
-for keyword in keywords:
-    # 이 부분을 조사 리스트를 적용하는 방식으로 하면 어떨지 생각 
-    # 가능한 모든 조사들의 리스트를 만들 수 있을지가 관건
-    if '가' in keyword: 
-        keywords.append(keyword[:len(keyword)-len('가')])
-        keywords.remove(keyword)
+    keywords.append(word)
         
 #extracted keywords
 print(keywords)
