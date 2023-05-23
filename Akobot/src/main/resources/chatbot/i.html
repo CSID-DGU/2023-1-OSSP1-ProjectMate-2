@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>챗봇 예시</title>
+  <style>
+    #chat-container {
+      width: 600px;
+      height: 300px;
+      border: 1px solid #ccc;
+      overflow: auto;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container"></div>
+  <input type="text" id="user-input" placeholder="메시지를 입력하세요">
+  <button onclick="sendMessage()">전송</button>
+
+  <script>
+    const chatContainer = document.getElementById('chat-container');
+    const userInput = document.getElementById('user-input');
+
+    function sendMessage() {
+      const message = userInput.value;
+
+      // 입력된 메시지를 출력
+      displayMessage('사용자', message);
+
+      // 메시지에 대한 응답 로직을 작성
+      // 예시로 응답을 출력하는 코드를 작성합니다.
+      const response = '안녕하세요! 저는 챗봇입니다.';
+      displayMessage('챗봇', response);
+
+      // 입력 필드를 초기화합니다.
+      userInput.value = '';
+    }
+
+    function displayMessage(sender, message) {
+      const messageElement = document.createElement('p');
+      messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+      chatContainer.appendChild(messageElement);
+
+      // 스크롤을 가장 아래로 이동
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+  </script>
+</body>
+</html>
