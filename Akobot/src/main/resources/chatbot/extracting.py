@@ -1,12 +1,12 @@
-#extracting keywords from the input sentence of user
+# extracting keywords from the input sentence of user
 import pandas as pd
 from soynlp.utils import DoublespaceLineCorpus
 from soynlp.word import WordExtractor
 from soynlp.tokenizer import MaxScoreTokenizer
 import json
 
-#load data for training..*will be modified with DB
-training=pd.read_csv("example.CSV", encoding="euc-kr")
+# load data for training..*will be modified with DB
+training=pd.read_csv("/Users/jisoojeong/Desktop/example.csv", encoding="euc-kr")
 training=pd.DataFrame(training['content'])
 
 '''
@@ -17,14 +17,14 @@ for i in training:
     contents.append(i)
     training=pd.DataFrame(contents)
 '''
-#write .txt file
+# write .txt file
 f = open("training.txt", 'wt', encoding='utf-8')
-for i in  range(0, 100):
+for i in range(0, 100):
     data = training.loc[i].to_string()
     f.write(data+'\n')
 f.close()
 
-#counting txt file's line number
+# counting txt file's line number
 corpus = DoublespaceLineCorpus("training.txt")
 print("text file's line number is ", len(corpus))
 
@@ -53,6 +53,10 @@ for word in words:
     if ('두드림' in word) or ('소프트웨어' in word)==True : #will be modified w/ DB
         #keywords에는 조사를 뺀 word가 들어가야하는데 문제점 발생! -> 소프트웨어 뒤에 붙은 조사 '가'가 분리가 안됩니다...
         keywords.append(word)
+for keyword in keywords:
+    if '가' in keyword:
+        keywords.append(keyword[:len(keyword)-len('가')])
+        keywords.remove(keyword)
         
 #extracted keywords
 print(keywords)
