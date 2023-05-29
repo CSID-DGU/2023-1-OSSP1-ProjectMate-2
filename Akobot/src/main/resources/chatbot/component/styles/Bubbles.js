@@ -55,7 +55,7 @@ function Bubbles(container, self, options) {
       // ...it shan't be memorized
       return
 
-    // save to memory
+    // save to memory.bubble.say
     interactionsHistory.push({ say: say, reply: reply })
   }
 

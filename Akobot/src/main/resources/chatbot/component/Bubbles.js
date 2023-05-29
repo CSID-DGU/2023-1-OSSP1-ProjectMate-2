@@ -95,6 +95,10 @@ function Bubbles(container, self, options) {
           function() {},
           "reply reply-freeform"
         )
+        
+        // Send value to the server
+        sendToServer(this.value);
+        
         // callback
         typeof callbackFn === "function"
           ? callbackFn({
@@ -109,6 +113,24 @@ function Bubbles(container, self, options) {
     container.appendChild(inputWrap)
     bubbleWrap.style.paddingBottom = "100px"
     inputText.focus()
+
+    function sendToServer(value) {
+      // Make an AJAX request or use the Fetch API to send the value to the server
+      // Example using Fetch API:
+      fetch('/chatbot', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ value: value })
+      })
+      .then(response => {
+        // Handle the response from the server if needed
+      })
+      .catch(error => {
+        // Handle any errors that occurred during the request
+      });
+    }
   }
   inputCallbackFn ? this.typeInput(inputCallbackFn) : false
 
@@ -328,9 +350,9 @@ function prepHTML(options) {
     link.media = "screen,print"
     document.getElementsByTagName("head")[0].appendChild(link)
   }
-  appendCSS("C:/Users/sjisn/Downloads/chat-bubble-master (1)/chat-bubble-master" + "component/styles/input.css")
-  appendCSS("C:/Users/sjisn/Downloads/chat-bubble-master (1)/chat-bubble-master" + "component/styles/reply.css")
-  appendCSS("C:/Users/sjisn/Downloads/chat-bubble-master (1)/chat-bubble-master" + "component/styles/says.css")
+  appendCSS(relative_path + "component/styles/input.css")
+  appendCSS(relative_path + "component/styles/reply.css")
+  appendCSS(relative_path + "component/styles/says.css")
   appendCSS(relative_path + "component/styles/setup.css")
   appendCSS(relative_path + "component/styles/typing.css")
 }
