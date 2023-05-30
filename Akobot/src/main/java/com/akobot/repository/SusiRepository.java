@@ -1,7 +1,7 @@
 package com.akobot.repository;
 
 import com.akobot.domain.IntentDTO;
-import com.akobot.domain.tables.PushLogPK;
+import com.akobot.domain.tables.PushLogIntentsPK;
 import com.akobot.domain.tables.SusiEntity;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +21,7 @@ public class SusiRepository {
     }
 
     public IntentDTO findOne(int school_key, String field, String document){
-        PushLogPK pk = new PushLogPK();
+        PushLogIntentsPK pk = new PushLogIntentsPK();
         pk.setSchool_key(school_key);
         pk.setField(field);
         pk.setDocument(document);
