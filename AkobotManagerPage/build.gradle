@@ -38,8 +38,8 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	/* firebase 개발 환경 설정*/
-	implementation 'com.google.firebase:firebase-admin:7.1.1'
+	/* MySQL 개발 환경 설정*/
+	implementation 'mysql:mysql-connector-java'
 
 	/* DevTool 의존성 주입*/
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
