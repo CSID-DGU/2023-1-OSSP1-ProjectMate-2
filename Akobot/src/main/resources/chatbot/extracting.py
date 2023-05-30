@@ -47,6 +47,6 @@ maxscore_tokenizer = MaxScoreTokenizer(scores=scores)
 
 # extracted keywords
 keywords=[]
-keywords=maxscore_tokenizer.tokenize("배고파 뭐 먹을 것 없니?") # 사용자 질문
+keywords=maxscore_tokenizer.tokenize("정시 정시 정시전형 어때?") # 사용자 질문
 print("사용자 입력을 다음과 같이 토크나이징: ", keywords)
 

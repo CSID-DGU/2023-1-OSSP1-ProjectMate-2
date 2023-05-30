@@ -43,9 +43,9 @@ intents={
                 '학교생활기록부':'test_records',
                 '대학수학능력시험':'test_SAT',
                 #level 10
-                '재외국민/외국인':'schedule_foreigner',
-                '정시':'schedule_jungsi',
-                '수시':'schedule_susi',
+                '재외국민/외국인일정':'schedule_foreigner',
+                '정시일정':'schedule_jungsi',
+                '수시일정':'schedule_susi',
                 #fallback intent
                 '잘못된 입력':'fallback'
              }
