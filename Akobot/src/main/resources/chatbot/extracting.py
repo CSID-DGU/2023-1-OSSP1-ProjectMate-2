@@ -25,9 +25,6 @@ for i in range(0, 10):
     f.write(data+'\n')
 f.close()
 
-# counting txt file's line number
-corpus = DoublespaceLineCorpus("training.txt")
-print("text file's line number is ", len(corpus))
 
 '''
 #load json (DB)
@@ -36,22 +33,20 @@ with open('C:\\test.json', 'r') as f:
 print(json.dumps(json_data, indent="\t") )
 '''
 
-#corpus training
-word_extractor = WordExtractor()
-word_extractor.train(corpus)
-word_score_table = word_extractor.extract()
+# counting txt file's line number
+corpus = DoublespaceLineCorpus("training.txt")
 
+# corpus training
+word_extractor = WordExtractor()
+word_extractor.train(corpus) # 여기에서 training was done. used memory 0.120 Gb 0.120 Gb 나온다.
+word_score_table = word_extractor.extract() # 이 코드가 연산 3가지 cohesion probabilities, branching entropies, accessor variety 출력함..
+
+# make scoring for tokenizing
 scores = {word:score.cohesion_forward for word, score in word_score_table.items()}
 maxscore_tokenizer = MaxScoreTokenizer(scores=scores)
 
-words=[]
-words=maxscore_tokenizer.tokenize("두드림소프트웨어전형이 어떤지 궁금해") # 사용자 질문
-print("사용자 입력을 다음과 같이 토크나이징: ", words)
-
-
-#look at DB and extracting the only keywords what you need
+# extracted keywords
 keywords=[]
-for word in words:
-    keywords.append(word)
-        
-#extracted keywords
+keywords=maxscore_tokenizer.tokenize("배고파 뭐 먹을 것 없니?") # 사용자 질문
+print("사용자 입력을 다음과 같이 토크나이징: ", keywords)
+

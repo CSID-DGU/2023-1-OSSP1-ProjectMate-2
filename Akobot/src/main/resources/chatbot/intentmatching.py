@@ -2,7 +2,7 @@
 import pandas as pd
 import extracting
 
-#user keyword-intent keyword matching with dictionary {key:item}
+#user keyword-intent keyword matching with dictionary {key:value}
 intents={
                 #level 1
                 '전체모집요강':'total',
@@ -64,18 +64,19 @@ for user_keyword in extracting.keywords: # extracted keywords from user input
             print("'"+user_keyword+"' 입력을 '"+intent_keyword + "'에 해당하는 "
                   +intents[intent_keyword]+" 인텐트로 매칭을 성공했습니다.")
             break
-        else:
-            matchings.append(intents['잘못된 입력'])
-        
+            
+
+# matchings 리스트 내 중복 값 제거
+matchings=list(dict.fromkeys(matchings))
+
+# matchings 리스트 내 개수가 0이면 fallback 발생
+if len(matchings)==0:
+    matchings.append(intents['잘못된 입력'])
 
 # show matching results (intents in english)
-#print(matchings) 
+print(matchings)
+
+# matching된 결과들 레벨에 따라 처리할 것 (intents의 intent_levels 사용)
 
 
-# matchings 내 중복 값 제거
-# if there are several fallback intents, everything but one must be removed.
-print(list(dict.fromkeys(matchings)))
-
-# matching된 결과들 레벨에 따라 처리할 것
-# intents의 intent_levels 사용
-
+# cmd 창에서의 출력
