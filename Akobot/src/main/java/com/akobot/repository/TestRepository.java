@@ -28,13 +28,17 @@ public class TestRepository {
 
         TestEntity testEntity = em.find(TestEntity.class, pk);
 
-        IntentDTO intentDTO = new IntentDTO();
-        intentDTO.setPks(testEntity.getPks());
-        intentDTO.setContent(testEntity.getMethod());
-        intentDTO.setContent(testEntity.getTarget());
-        intentDTO.setElseData(testEntity.getElseData());
-        intentDTO.setLevel(testEntity.getLevel());
+        if(testEntity != null) {
+            IntentDTO intentDTO = new IntentDTO();
+            intentDTO.setPks(testEntity.getPks());
+            intentDTO.setContent(testEntity.getMethod());
+            intentDTO.setContent(testEntity.getTarget());
+            intentDTO.setElseData(testEntity.getElseData());
+            intentDTO.setLevel(testEntity.getLevel());
 
-        return intentDTO;
+            return intentDTO;
+        }
+
+        return null;
     }
 }

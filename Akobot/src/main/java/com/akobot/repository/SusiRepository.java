@@ -28,14 +28,18 @@ public class SusiRepository {
 
         SusiEntity susiEntity = em.find(SusiEntity.class, pk);
 
-        IntentDTO intentDTO = new IntentDTO();
-        intentDTO.setPks(susiEntity.getPks());
-        intentDTO.setContent(susiEntity.getCondition_text());
-        intentDTO.setContent(susiEntity.getPoint());
-        intentDTO.setContent(susiEntity.getTest());
-        intentDTO.setElseData(susiEntity.getElseData());
-        intentDTO.setLevel(susiEntity.getLevel());
+        if(susiEntity != null) {
+            IntentDTO intentDTO = new IntentDTO();
+            intentDTO.setPks(susiEntity.getPks());
+            intentDTO.setContent(susiEntity.getCondition_text());
+            intentDTO.setContent(susiEntity.getPoint());
+            intentDTO.setContent(susiEntity.getTest());
+            intentDTO.setElseData(susiEntity.getElseData());
+            intentDTO.setLevel(susiEntity.getLevel());
 
-        return intentDTO;
+            return intentDTO;
+        }
+
+        return null;
     }
 }

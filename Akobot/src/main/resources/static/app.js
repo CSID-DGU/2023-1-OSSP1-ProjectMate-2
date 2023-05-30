@@ -18,8 +18,9 @@ function connect() {
     stompClient.connect({}, function (frame) {
         setConnected(true);
         console.log('Connected: ' + frame);
-        stompClient.subscribe('/topic/greetings', function (says) {
-            showGreeting(JSON.parse(greeting.body).says);
+        stompClient.subscribe('/topic/greetings', function (answering) {
+            //showGreeting(JSON.parse(answering.body));
+            showGreeting(JSON.parse(answering.body));
         });
     });
 }
@@ -33,15 +34,16 @@ function disconnect() {
 }
 
 function sendName() {
+    $("#greetings").append("<tr style=\"text-align:right\"><td>USER</td></tr>");
+    $("#greetings").append("<tr style=\"text-align:right\"><td>" + $("#ask").val() + "</td></tr>");
     stompClient.send("/app/hello", {}, JSON.stringify({'ask': $("#ask").val()}));
 }
 
 function showGreeting(messages) {
-    $("#greetings").append("<tr>");
-    for(var msg in messages){
-        $("#greetings").append("<td>" + msg + "</td>");
+    $("#greetings").append("<tr><td>SERVER</td></tr>");
+    for(i = 0; i < messages.length; i++){
+        $("#greetings").append("<tr><td>" + messages[i].says + "</td></tr>");
     }
-    $("#greetings").append("</tr>");
 }
 
 $(function () {

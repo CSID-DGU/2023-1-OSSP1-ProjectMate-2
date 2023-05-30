@@ -76,6 +76,8 @@ public class MySqlServiceImpl implements MySqlService {
             answers.add(answer);
         }
 
+        log.info(answers.getClass() + " -> " + answers);
+
         return answers;
     }
 }

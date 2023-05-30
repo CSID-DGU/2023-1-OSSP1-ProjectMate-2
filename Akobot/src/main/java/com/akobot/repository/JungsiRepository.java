@@ -28,13 +28,17 @@ public class JungsiRepository {
 
         JungsiEntity jungsiEntity = em.find(JungsiEntity.class, pk);
 
-        IntentDTO intentDTO = new IntentDTO();
-        intentDTO.setPks(jungsiEntity.getPks());
-        intentDTO.setContent(jungsiEntity.getCondition_text());
-        intentDTO.setContent(jungsiEntity.getPoint());
-        intentDTO.setElseData(jungsiEntity.getElseData());
-        intentDTO.setLevel(jungsiEntity.getLevel());
+        if(jungsiEntity != null) {
+            IntentDTO intentDTO = new IntentDTO();
+            intentDTO.setPks(jungsiEntity.getPks());
+            intentDTO.setContent(jungsiEntity.getCondition_text());
+            intentDTO.setContent(jungsiEntity.getPoint());
+            intentDTO.setElseData(jungsiEntity.getElseData());
+            intentDTO.setLevel(jungsiEntity.getLevel());
 
-        return intentDTO;
+            return intentDTO;
+        }
+
+        return null;
     }
 }

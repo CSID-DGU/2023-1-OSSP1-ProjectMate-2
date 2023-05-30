@@ -19,7 +19,7 @@ public class GreetingController {
 
     @MessageMapping("/hello")
     @SendTo("/topic/greetings")
-    public ArrayList<AnswerDTO> greeting(AskDTO ask) throws Exception {
+    public ArrayList<AnswerDTO> answering(AskDTO ask) throws Exception {
         Thread.sleep(1000); // simulated delay
 
         return mySqlService.getAnswer(ask);
