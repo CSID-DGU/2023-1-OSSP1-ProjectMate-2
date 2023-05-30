@@ -1,17 +1,19 @@
 package com.AkobotWeb.repository;
 
 import com.AkobotWeb.domain.DB.IntentDTO;
-import com.AkobotWeb.domain.DB.tables.EtcEntity;
 import com.AkobotWeb.domain.DB.tables.JungsiEntity;
 import com.AkobotWeb.domain.DB.tables.PushLogIntentsPK;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
+@DynamicUpdate
 public class JungsiRepository {
     private final EntityManager em;
 
@@ -24,9 +26,12 @@ public class JungsiRepository {
         }
     }
 
+    @Transactional
     public void update(PushLogIntentsPK pk, String elseDataUpdate){
         JungsiEntity jungsi = em.find(JungsiEntity.class, pk);
         jungsi.setElseData(elseDataUpdate);
+
+        save(jungsi);
     }
 
     public IntentDTO findOne(long school_key, String field, String doc){
@@ -57,7 +62,7 @@ public class JungsiRepository {
     }
 
     public List<JungsiEntity> findByBno(String field){
-        return em.createQuery("select j from jungsi j where jungsi.field = :field", JungsiEntity.class)
+        return em.createQuery("select j from jungsi j where j.pks.field = :field", JungsiEntity.class)
                 .setParameter("field", field)
                 .getResultList();
     }

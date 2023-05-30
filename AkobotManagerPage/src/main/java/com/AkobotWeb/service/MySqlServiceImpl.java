@@ -61,10 +61,12 @@ public class MySqlServiceImpl implements MySqlService {
         //List<QueryDocumentSnapshot> documents = future.get().getDocuments();
 
         List<AskSolEntity> boards = askSolRepo.unsolvedAll();
+        log.info("Get unsolved from database: " + boards.getClass() + "->" + boards);
 
         for (AskSolEntity board : boards) {
             // logger 이용하는 방식으로 바꿔주기
             /*System.out.println(document.getId() + " -> "+ document.toObject(BoardVO.class));*/
+            log.info(board.getClass() + " -> " + board);
             list.add(board.toBoardVO());
         }
 
@@ -87,6 +89,7 @@ public class MySqlServiceImpl implements MySqlService {
         //DocumentSnapshot document = querySnapshot.get().getDocuments().get(0); // 리스트의 0번쨰 요소를 가져오도록
 
         boardVO = askSolRepo.findByBno(bno).toBoardVO();
+        log.info("Get Ask data detail: " + boardVO.getClass() + " -> " + boardVO);
 
         /* TODO log */
         /*System.out.println(boardVO.toString());*/
@@ -156,6 +159,7 @@ public class MySqlServiceImpl implements MySqlService {
         }*/
 
         List<AskSolEntity> askSolEntities = askSolRepo.solvedAll();
+        log.info("Get solvedAll() from database: " + askSolEntities.getClass() + "->" + askSolEntities);
 
         for(AskSolEntity askSol : askSolEntities){
             log.info(askSol.getClass() + " -> " + askSol);
@@ -263,6 +267,9 @@ public class MySqlServiceImpl implements MySqlService {
         SolveVO tempSol = askSolRepo.findByBno(bno).toSolveVO();
         tempSol.setAnswer(mailDTO.getMessage());
         tempSol.setAnswerDate(ZonedDateTime.now());
+
+        log.info("temp SolveVO: " + tempSol.toString());
+
         askSolRepo.updateSol(tempSol);
 
     }
@@ -299,12 +306,16 @@ public class MySqlServiceImpl implements MySqlService {
         log.info("챗봇 DB 수정 완료 : " + result);
          */
 
+        log.info("Field: " + field
+        + "doc: " + doc, "update: " + update);
+
         IntentDTO intentDTO = new IntentDTO();
 
         if((intentDTO = etcRepo.findOne(11111, field, doc)) != null){
             etcRepo.update(intentDTO.getPks(), update);
         }
         else if((intentDTO = susiRepo.findOne(11111, field, doc)) != null){
+            log.info("Update " + intentDTO.getElseData() + " -> " + update);
             susiRepo.update(intentDTO.getPks(), update);
         }
         else if((intentDTO = jungsiRepo.findOne(11111, field, doc)) != null){

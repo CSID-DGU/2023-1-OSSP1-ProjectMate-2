@@ -6,13 +6,16 @@ import com.AkobotWeb.domain.DB.tables.EtcEntity;
 import com.AkobotWeb.domain.DB.tables.PushLogIntentsPK;
 import com.AkobotWeb.domain.DB.tables.SusiEntity;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
+@DynamicUpdate
 public class SusiRepository {
     private final EntityManager em;
 
@@ -25,9 +28,12 @@ public class SusiRepository {
         }
     }
 
+    @Transactional
     public void update(PushLogIntentsPK pk, String elseDataUpdate){
         SusiEntity susi = em.find(SusiEntity.class, pk);
         susi.setElseData(elseDataUpdate);
+
+        save(susi);
     }
 
     public IntentDTO findOne(long school_key, String field, String doc){
@@ -59,7 +65,7 @@ public class SusiRepository {
     }
 
     public List<SusiEntity> findByBno(String field){
-        return em.createQuery("select s from susi s where susi.field = :field", SusiEntity.class)
+        return em.createQuery("select s from susi s where s.pks.field = :field", SusiEntity.class)
                 .setParameter("field", field)
                 .getResultList();
     }

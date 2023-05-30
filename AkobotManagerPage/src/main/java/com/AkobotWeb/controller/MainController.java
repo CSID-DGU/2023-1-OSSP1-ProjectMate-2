@@ -287,7 +287,24 @@ public class MainController {
         String[] temp = updateDTO.getRadio_input().split("_");
         if(temp.length != 0 ){
             field = temp[0];
-            doc = temp[1];
+            doc = updateDTO.getRadio_input();
+        }
+        // 호출
+        mySqlService.updateDB(field, doc, updateDTO.getAnswer());
+        return "manage";
+    }
+
+    /* DB 관리자 사용자 질문에 의한 챗봇 수정 처리*/
+    @PostMapping("/updateDBAtSolvedDetail")
+    public String updateDBAtSolvedDetail(UpdateDTO updateDTO) throws Exception {
+        // TODO 파라미터 파싱
+        String field ="";
+        String doc="";
+        log.info("DB update input: " +updateDTO.toString());
+        String[] temp = updateDTO.getRadio_input().split("_");
+        if(temp.length != 0 ){
+            field = temp[0];
+            doc = updateDTO.getRadio_input();
         }
         // 호출
         mySqlService.updateDB(field, doc, updateDTO.getAnswer());

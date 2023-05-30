@@ -5,13 +5,16 @@ import com.AkobotWeb.domain.DB.tables.EtcEntity;
 import com.AkobotWeb.domain.DB.tables.PushLogIntentsPK;
 import com.AkobotWeb.domain.DB.tables.TestEntity;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
+@DynamicUpdate
 public class TestRepository {
     private final EntityManager em;
 
@@ -24,9 +27,12 @@ public class TestRepository {
         }
     }
 
+    @Transactional
     public void update(PushLogIntentsPK pk, String elseDataUpdate){
         TestEntity test = em.find(TestEntity.class, pk);
         test.setElseData(elseDataUpdate);
+
+        save(test);
     }
 
     public IntentDTO findOne(long school_key, String field, String doc){
@@ -57,7 +63,7 @@ public class TestRepository {
     }
 
     public List<TestEntity> findByBno(String field){
-        return em.createQuery("select t from test t where test.field = :field", TestEntity.class)
+        return em.createQuery("select t from test t where t.pks.field = :field", TestEntity.class)
                 .setParameter("field", field)
                 .getResultList();
     }
