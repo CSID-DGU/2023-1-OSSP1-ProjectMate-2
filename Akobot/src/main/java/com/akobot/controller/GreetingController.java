@@ -1,26 +1,28 @@
 package com.akobot.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.akobot.service.MySqlServiceImpl;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.util.HtmlUtils;
 
 import com.akobot.domain.*;
-import com.akobot.service.FirebaseService;
 
 import java.util.ArrayList;
 
+@Slf4j
 @Controller
+@RequiredArgsConstructor
 public class GreetingController {
-    @Autowired
-    private FirebaseService fbservice;
+    private final MySqlServiceImpl mySqlService;
 
     @MessageMapping("/hello")
     @SendTo("/topic/greetings")
     public ArrayList<AnswerDTO> greeting(AskDTO ask) throws Exception {
         Thread.sleep(1000); // simulated delay
-        return fbservice.getAnswer(ask);
+
+        return mySqlService.getAnswer(ask);
     }
 
 }
