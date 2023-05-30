@@ -1,5 +1,6 @@
 package com.akobot.domain;
 
+import com.akobot.domain.tables.PushLogPK;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,11 +10,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class IntentDTO {
-    private long level;
-    private String elseData;
-    private String link;
-    private String point;
-    private String condition;
-    private String test;
+    /*
+    private int school_key;
+    private String field;
+    private String document;
+    */
+    private PushLogPK pks;
+
+    private String method;
     private String target;
+    private String content;
+    private String condition_text;
+    private String point;
+    private String test;
+    private String elseData;
+    private int level;
 }
