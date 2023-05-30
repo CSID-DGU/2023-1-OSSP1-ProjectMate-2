@@ -17,6 +17,7 @@ for i in training:
     contents.append(i)
     training=pd.DataFrame(contents)
 '''
+
 # write .txt file
 f = open("training.txt", 'wt', encoding='utf-8')
 for i in range(0, 10):
@@ -42,9 +43,10 @@ word_score_table = word_extractor.extract()
 
 scores = {word:score.cohesion_forward for word, score in word_score_table.items()}
 maxscore_tokenizer = MaxScoreTokenizer(scores=scores)
+
 words=[]
-words=maxscore_tokenizer.tokenize("두드림소프트웨어가 궁금해")
-print(words)
+words=maxscore_tokenizer.tokenize("두드림소프트웨어전형이 어떤지 궁금해") # 사용자 질문
+print("사용자 입력을 다음과 같이 토크나이징: ", words)
 
 
 #look at DB and extracting the only keywords what you need
@@ -53,7 +55,3 @@ for word in words:
     keywords.append(word)
         
 #extracted keywords
-print(keywords)
-
-def get_keywords():
-    return keywords

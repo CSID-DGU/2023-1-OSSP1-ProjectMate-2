@@ -2,16 +2,8 @@
 import pandas as pd
 import extracting
 
-# load intent data.*will be modified with DB
-data=pd.read_csv('simple.csv', encoding="utf-8")
-intents=data.iloc[:,0:2]
-
-# preprocess data
-intent_names=intents[intents.columns[1]].to_list()
-intent_levels=intents[intents.columns[0]].to_list() #오타수정
-
-#user keyword-intent keyword matching
-user_keyword={
+#user keyword-intent keyword matching with dictionary {key:item}
+intents={
                 #level 1
                 '전체모집요강':'total',
                 '수시':'susi',
@@ -53,30 +45,37 @@ user_keyword={
                 #level 10
                 '재외국민/외국인':'schedule_foreigner',
                 '정시':'schedule_jungsi',
-                '수시':'schedule_susi'
+                '수시':'schedule_susi',
+                #fallback intent
+                '잘못된 입력':'fallback'
              }
+
+# preprocess data
+intent_keywords=intents.keys() # korean 인텐트 한국어
+intent_names=intents.values() # english 인텐트 영어
+#intent_levels=
 
 # raw matching
 matchings=[]
-for keyword in extracting.keywords: #extracted keywords from user input
-    for intent_name in intent_names: #intent list from DB
-        if intent_name in user_keyword[keyword]: #if extracted keyword contains intent name
-            matchings.append(intent_name) 
-            print(intent_name + "인텐트로 매칭이 성공했습니다.")
+for user_keyword in extracting.keywords: # extracted keywords from user input
+    for intent_keyword in intent_keywords: # intent list from DB
+        if intent_keyword in user_keyword: # if extracted keyword contains intent name
+            matchings.append(intents[intent_keyword]) 
+            print("'"+user_keyword+"' 입력을 '"+intent_keyword + "'에 해당하는 "
+                  +intents[intent_keyword]+" 인텐트로 매칭을 성공했습니다.")
             break
         else:
-            matchings.append(["fallback"])
+            matchings.append(intents['잘못된 입력'])
         
 
-print(matchings) #show matching results
+# show matching results (intents in english)
+#print(matchings) 
 
 
-'''
-matching되지 않은 키워드들은 fall back intent 하나만 matching list에 append
-matchings.append(["fallback"])
-'''
+# matchings 내 중복 값 제거
+# if there are several fallback intents, everything but one must be removed.
+print(list(dict.fromkeys(matchings)))
 
-'''
-matching된 결과들 레벨에 따라 처리할 것
-#intents의 intent_levels 사용
-'''
+# matching된 결과들 레벨에 따라 처리할 것
+# intents의 intent_levels 사용
+
