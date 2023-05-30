@@ -11,7 +11,7 @@ import jakarta.persistence.*;
 @Entity(name="susi")
 public class SusiEntity {
     @EmbeddedId
-    private PushLogPK pks;
+    private PushLogIntentsPK pks;
 
     @Column(name="condition_text", length=2000)
     private String condition_text;

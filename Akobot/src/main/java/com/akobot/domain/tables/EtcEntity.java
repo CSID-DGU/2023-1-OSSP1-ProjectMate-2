@@ -11,7 +11,7 @@ import jakarta.persistence.*;
 @Entity(name="etc")
 public class EtcEntity {
     @EmbeddedId
-    private PushLogPK pks;
+    private PushLogIntentsPK pks;
 
     @Column(name="content", length=1000)
     private String content;

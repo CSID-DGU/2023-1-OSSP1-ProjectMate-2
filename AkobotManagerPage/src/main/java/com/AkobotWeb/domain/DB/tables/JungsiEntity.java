@@ -1,8 +1,8 @@
-package com.akobot.domain.tables;
+package com.AkobotWeb.domain.DB.tables;
 
 import lombok.*;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Getter
 @Builder

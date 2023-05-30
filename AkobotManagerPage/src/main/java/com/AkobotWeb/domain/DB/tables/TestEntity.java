@@ -1,23 +1,23 @@
-package com.akobot.domain.tables;
+package com.AkobotWeb.domain.DB.tables;
 
 import lombok.*;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Entity(name="jungsi")
-public class JungsiEntity {
+@Entity(name="test")
+public class TestEntity {
     @EmbeddedId
     private PushLogIntentsPK pks;
 
-    @Column(name="condition_text", length=1000)
-    private String condition_text;
+    @Column(name="method", length=1000)
+    private String method;
 
-    @Column(name="point", length=1000)
-    private String point;
+    @Column(name="target", length=1000)
+    private String target;
 
     @Column(name="elseData", length=1000)
     private String elseData;

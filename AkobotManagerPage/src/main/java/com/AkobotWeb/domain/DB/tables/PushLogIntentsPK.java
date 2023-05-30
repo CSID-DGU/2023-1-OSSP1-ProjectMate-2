@@ -1,16 +1,16 @@
-package com.akobot.domain.tables;
+package com.AkobotWeb.domain.DB.tables;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import lombok.Data;
 
 import java.io.Serializable;
 
 @Data
 @Embeddable
-public class PushLogPK implements Serializable {
+public class PushLogIntentsPK implements Serializable {
     @Column(name="school_key")
-    private int school_key;
+    private Long school_key;
 
     @Column(name="field", length=50)
     private String field;
