@@ -1,5 +1,6 @@
 package com.AkobotWeb.repository;
 
+import com.AkobotWeb.domain.DB.IntentDTO;
 import com.AkobotWeb.domain.DB.tables.EtcEntity;
 import com.AkobotWeb.domain.DB.tables.JungsiEntity;
 import com.AkobotWeb.domain.DB.tables.PushLogIntentsPK;
@@ -23,13 +24,31 @@ public class JungsiRepository {
         }
     }
 
-    public JungsiEntity findOne(int school_key, String field, String doc){
+    public void update(PushLogIntentsPK pk, String elseDataUpdate){
+        JungsiEntity jungsi = em.find(JungsiEntity.class, pk);
+        jungsi.setElseData(elseDataUpdate);
+    }
+
+    public IntentDTO findOne(long school_key, String field, String doc){
         PushLogIntentsPK pk = new PushLogIntentsPK();
         pk.setSchool_key(school_key);
         pk.setField(field);
         pk.setDocument(doc);
 
-        return em.find(JungsiEntity.class, pk);
+        JungsiEntity jungsiEntity = em.find(JungsiEntity.class, pk);
+
+        if(jungsiEntity != null) {
+            IntentDTO intentDTO = new IntentDTO();
+            intentDTO.setPks(jungsiEntity.getPks());
+            intentDTO.setContent(jungsiEntity.getCondition_text());
+            intentDTO.setContent(jungsiEntity.getPoint());
+            intentDTO.setElseData(jungsiEntity.getElseData());
+            intentDTO.setLevel(jungsiEntity.getLevel());
+
+            return intentDTO;
+        }
+
+        return null;
     }
 
     public List<JungsiEntity> findAll(){

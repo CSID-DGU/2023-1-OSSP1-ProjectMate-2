@@ -1,6 +1,7 @@
 package com.AkobotWeb.repository;
 
 
+import com.AkobotWeb.domain.DB.IntentDTO;
 import com.AkobotWeb.domain.DB.tables.EtcEntity;
 import com.AkobotWeb.domain.DB.tables.PushLogIntentsPK;
 import com.AkobotWeb.domain.DB.tables.SusiEntity;
@@ -24,13 +25,32 @@ public class SusiRepository {
         }
     }
 
-    public SusiEntity findOne(int school_key, String field, String doc){
+    public void update(PushLogIntentsPK pk, String elseDataUpdate){
+        SusiEntity susi = em.find(SusiEntity.class, pk);
+        susi.setElseData(elseDataUpdate);
+    }
+
+    public IntentDTO findOne(long school_key, String field, String doc){
         PushLogIntentsPK pk = new PushLogIntentsPK();
         pk.setSchool_key(school_key);
         pk.setField(field);
         pk.setDocument(doc);
 
-        return em.find(SusiEntity.class, pk);
+        SusiEntity susiEntity = em.find(SusiEntity.class, pk);
+
+        if(susiEntity != null) {
+            IntentDTO intentDTO = new IntentDTO();
+            intentDTO.setPks(susiEntity.getPks());
+            intentDTO.setContent(susiEntity.getCondition_text());
+            intentDTO.setContent(susiEntity.getPoint());
+            intentDTO.setContent(susiEntity.getTest());
+            intentDTO.setElseData(susiEntity.getElseData());
+            intentDTO.setLevel(susiEntity.getLevel());
+
+            return intentDTO;
+        }
+
+        return null;
     }
 
     public List<SusiEntity> findAll(){

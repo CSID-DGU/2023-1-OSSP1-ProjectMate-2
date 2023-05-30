@@ -281,16 +281,16 @@ public class MainController {
     @PostMapping("/updateDB")
     public String updateDB(UpdateDTO updateDTO) throws Exception {
         // TODO 파라미터 파싱
-        String collection="";
+        String field ="";
         String doc="";
         log.info("DB update input: " +updateDTO.toString());
         String[] temp = updateDTO.getRadio_input().split("_");
         if(temp.length != 0 ){
-            collection = temp[0];
+            field = temp[0];
             doc = temp[1];
         }
         // 호출
-        mySqlService.updateCB(collection, doc, updateDTO.getAnswer());
+        mySqlService.updateDB(field, doc, updateDTO.getAnswer());
         return "redirect:solve";
     }
 }

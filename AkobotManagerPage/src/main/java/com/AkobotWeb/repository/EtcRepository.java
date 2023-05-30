@@ -1,5 +1,6 @@
 package com.AkobotWeb.repository;
 
+import com.AkobotWeb.domain.DB.IntentDTO;
 import com.AkobotWeb.domain.DB.tables.EtcEntity;
 import com.AkobotWeb.domain.DB.tables.PushLogIntentsPK;
 import lombok.RequiredArgsConstructor;
@@ -22,13 +23,30 @@ public class EtcRepository {
         }
     }
 
-    public EtcEntity findOne(int school_key, String field, String doc){
+    public void update(PushLogIntentsPK pk, String elseDataUpdate){
+        EtcEntity etcEntity = em.find(EtcEntity.class, pk);
+        etcEntity.setElseData(elseDataUpdate);
+    }
+
+    public IntentDTO findOne(long school_key, String field, String doc){
         PushLogIntentsPK pk = new PushLogIntentsPK();
         pk.setSchool_key(school_key);
         pk.setField(field);
         pk.setDocument(doc);
 
-        return em.find(EtcEntity.class, pk);
+        EtcEntity etcEntity = em.find(EtcEntity.class, pk);
+
+        if(etcEntity != null) {
+            IntentDTO intentDTO = new IntentDTO();
+            intentDTO.setPks(etcEntity.getPks());
+            intentDTO.setContent(etcEntity.getContent());
+            intentDTO.setElseData(etcEntity.getElseData());
+            intentDTO.setLevel(etcEntity.getLevel());
+
+            return intentDTO;
+        }
+
+        return null;
     }
 
     public List<EtcEntity> findAll(){
