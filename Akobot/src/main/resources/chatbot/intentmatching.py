@@ -81,20 +81,23 @@ if len(matchings)==0:
 matchings=list((matchings))
 
 # show matching results (intents in english)
-print("matching 결과 >>",matchings)
+print("초기 matching 결과 >>",matchings)
 
 
-######################## 다른 레벨 다중 키워드 ###########################
-# matching된 결과들 레벨에 따라 처리할 것 (intents의 intent_levels 사용)
-# 1과 그 이상이 존재할 경우, 이름포함 여부로 드롭
+######################## 다른 레벨 다중 키워드 처리 ###########################
+'''
+매칭 결과에 1과 2이상의 레벨 인텐트가 존재하는 경우,
+둘의 이름을 비교하여 직속 상/하위 여부 판단 후,
+만약 직속 상관관계를 가진다면 레벨이 1인 인텐트를 제거
+'''
 for element in matchings:
     if element[1]==1: #레벨이 1
         for another in matchings:
-            if another[1]>1:
-                if element[0] in another[0]:
-                    matchings.remove(element)
+            if another[1]>1 and (element[0] in another[0]):
+                matchings.remove(element)
+
+print("전송할 최종 matching 결과 >>",matchings)
 
 
-
-
+######################## python  ###########################
 # python 서버 연결되게끔 cmd 창에서의 출력
