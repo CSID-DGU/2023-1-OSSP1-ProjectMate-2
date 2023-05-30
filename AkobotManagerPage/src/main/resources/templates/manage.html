@@ -20,9 +20,17 @@
             <th:block th:replace="~{common_codes/topbar.html}"></th:block>
             <!-- End of Topbar -->
 
+            <form method="post" name="updateForm" action="/updateDB">
             <div class = "card-body">
                 <th:block th:replace="~{DB/showDB.html}"></th:block>
+                <div class="form-group">
+                    <label>DB 수정</label>
+                    <textarea class="form-control" name="Answer" rows="15" cols="100" id="Answer" style="width:100%;" placeholder="수정 내용 입력"></textarea></div>
+                <button type="submit" id="submit" class="btn btn-outline-primary">수정</button>
+                <button type="reset" class="btn btn-outline-secondary">리셋</button>
+                <button type="button" class="btn btn-outline-success"><a style="text-decoration:none" href="/solve">취소</a></button>
             </div>
+            </form>
 
         </div>
         <!-- End of Main Content -->

@@ -48,9 +48,9 @@
                                 <!-- TODO Thymeleaf 사용영역 -->
                                 <tr th:each="VO : ${result}">
                                     <td>[[${VO.bno}]]</td>
-                                    <td><a th:href="@{/questionDetail(bno=${VO.bno})}">[[${VO.content}]]</a></td>
+                                    <td><a th:href="@{/questionDetail(bno=${VO.bno})}">[[${VO.question}]]</a></td>
                                     <td>[[${VO.name}]]</td>
-                                    <td>[[${VO.regDate}]]</td>
+                                    <td>[[${VO.askDate}]]</td>
                                     <td>#</td>
                                 </tr>
                                 </tbody>
