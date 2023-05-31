@@ -50,19 +50,22 @@ intents={
                 '잘못된 입력':['fallback',0]
              }
 
-# preprocess data
-intent_keywords=intents.keys() # korean 인텐트이름 한국어
-intent_list=list(intents.values()) # english 인텐트 이름영어, 인텐트 레벨 (2D)
+##################### keyword-intent matching ########################
+# 인텐트 한글명 1D 리스트
+intent_keywords=intents.keys() 
 
-# 영어이름 인텐트 리스트 (아직 사용안함)
+# [인텐트 영문명, 인텐트 레벨]의 2D 리스트
+intent_list=list(intents.values()) 
+
+# 인텐트 영문명 1D 리스트 (아직 사용안함)
 intent_names= pd.DataFrame(intent_list)[0].to_list()
 #print(intent_names)
 
-# 인텐트 레벨 리스트
+# 인텐트 레벨 1D 리스트
 intent_levels= pd.DataFrame(intent_list)[1].to_list()
 #print(intent_levels)
 
-# raw matching
+# 매칭된 [인텐트 영문명, 인텐트 레벨]를 갖는 2D 리스트
 matchings=[]
 for user_keyword in extracting.keywords: # extracted keywords from user input
     for intent_keyword in intent_keywords: # intent list from DB
@@ -72,19 +75,19 @@ for user_keyword in extracting.keywords: # extracted keywords from user input
              +intents[intent_keyword][0]+" 인텐트로 매칭을 성공했습니다.")
             break
 
-# matchings 리스트 내 개수가 0이면 fallback 발생
+# 매칭된 인텐트 수가 0이면 fallback 발생
 if len(matchings)==0:
     matchings.append(intents['잘못된 입력'])
     
-                
-# matchings 리스트 내 중복 값 제거
-matchings=list((matchings))
-
-# show matching results (intents in english)
+# 초기 매칭 결과 출력 (확인용)
 print("초기 matching 결과 >>",matchings)
 
+######################## 매칭 결과 정리 ###########################
+# 매칭된 인텐트 중 중복제거
+seen = []
+matchings= [x for x in matchings if x not in seen and not seen.append(x)]
 
-######################## 다른 레벨 다중 키워드 처리 ###########################
+# 매칭된 인텐트 중 포함관계 존재시, 상위인텐트 제거
 '''
 매칭 결과에 1과 2이상의 레벨 인텐트가 존재하는 경우,
 둘의 이름을 비교하여 직속 상/하위 여부 판단 후,
@@ -96,8 +99,8 @@ for element in matchings:
             if another[1]>1 and (element[0] in another[0]):
                 matchings.remove(element)
 
-print("전송할 최종 matching 결과 >>",matchings)
+print("\n전송할 최종 matching 결과 >>",matchings)
+print()
 
-
-######################## python  ###########################
+######################## python 연동 ###########################
 # python 서버 연결되게끔 cmd 창에서의 출력

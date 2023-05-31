@@ -47,6 +47,6 @@ maxscore_tokenizer = MaxScoreTokenizer(scores=scores)
 
 # extracted keywords
 keywords=[]
-keywords=maxscore_tokenizer.tokenize("수시랑 논술전형 어때?") # 사용자 질문
-print("사용자 입력 tokenizaing 결과>>", keywords)
+keywords=maxscore_tokenizer.tokenize("정시랑 논술전형 어때?") # 사용자 질문
+print("사용자 입력>>","정시랑 논술전형 어때?\n")
 
