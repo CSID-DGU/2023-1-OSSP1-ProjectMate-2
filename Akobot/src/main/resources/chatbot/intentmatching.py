@@ -1,8 +1,19 @@
-#intent matching 하기
+#intent matching 하기 (DB로부터 인텐트 목록 가져오기)
 import pandas as pd
-import extracting
+import extracting # extracting.py import
+
+
+'''
+#load json (DB)
+with open('.json', 'r') as f:
+    json_data = json.load(f)
+print(json.dumps(json_data, indent="\t") )
+'''
 
 #user keyword-intent keyword matching with dictionary {key:valuelist}
+'''
+로드한 파일을 dict로 변환하여 intents 만들예정
+'''
 intents={
                 #level 1
                 '전체모집요강':['total',1],
@@ -59,11 +70,9 @@ intent_list=list(intents.values())
 
 # 인텐트 영문명 1D 리스트 (아직 사용안함)
 intent_names= pd.DataFrame(intent_list)[0].to_list()
-#print(intent_names)
 
 # 인텐트 레벨 1D 리스트
 intent_levels= pd.DataFrame(intent_list)[1].to_list()
-#print(intent_levels)
 
 # 매칭된 [인텐트 영문명, 인텐트 레벨]를 갖는 2D 리스트
 matchings=[]
@@ -71,16 +80,11 @@ for user_keyword in extracting.keywords: # extracted keywords from user input
     for intent_keyword in intent_keywords: # intent list from DB
         if intent_keyword in user_keyword: # if extracted keyword contains intent name
             matchings.append(intents[intent_keyword]) 
-            print("'"+user_keyword+"'입력을 '"+intent_keyword+"'에 해당하는 "
-             +intents[intent_keyword][0]+" 인텐트로 매칭을 성공했습니다.")
             break
 
 # 매칭된 인텐트 수가 0이면 fallback 발생
 if len(matchings)==0:
     matchings.append(intents['잘못된 입력'])
-    
-# 초기 매칭 결과 출력 (확인용)
-print("초기 matching 결과 >>",matchings)
 
 ######################## 매칭 결과 정리 ###########################
 # 매칭된 인텐트 중 중복제거
@@ -99,8 +103,9 @@ for element in matchings:
             if another[1]>1 and (element[0] in another[0]):
                 matchings.remove(element)
 
-print("\n전송할 최종 matching 결과 >>",matchings)
-print()
 
 ######################## python 연동 ###########################
 # python 서버 연결되게끔 cmd 창에서의 출력
+
+# 최종 매칭된 인텐트 [인텐트 영문명, 영어 레벨] 출력
+print(matchings)
