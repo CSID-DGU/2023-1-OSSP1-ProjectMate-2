@@ -5,18 +5,29 @@ import com.AkobotWeb.domain.Mail.MailDTO;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.SimpleMailMessage;
+
+import javax.activation.DataHandler;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+import javax.mail.internet.MimeBodyPart;
+import javax.activation.FileDataSource;
+
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
 @AllArgsConstructor
 public class MailService {
-    //private JavaMailSender javaMailSender;
+    private JavaMailSender javaMailSender;
 
-    //private static final String FROM_ADDRESS = PropertyUtil.getProperty("spring.mail.username");
+    private static final String FROM_ADDRESS = PropertyUtil.getProperty("spring.mail.username");
 
-    /*public void mailSend(MailDTO mailDto) {
+    /*
+    public void mailSend(MailDTO mailDto) {
         SimpleMailMessage message = new SimpleMailMessage();
         try {
             message.setFrom(FROM_ADDRESS);
@@ -28,27 +39,41 @@ public class MailService {
             log.info("ERROR : MailService.java" + e.getMessage());
         }
 
-    }*/ // mailfault
+    }
+    */
 
     /**
      *  FUTURE WORK - ATTACHMENT
      *  */
-    /*public void attachSend(MailDTO mailDTO) {
+    public void attachSend(MailDTO mailDTO) {
         try {
             MimeMessage message = javaMailSender.createMimeMessage();
-            MimeMessageHelper messageHelper = new MimeMessage(message, true, "UTF-8");
+            MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 
             messageHelper.setFrom(FROM_ADDRESS);
             messageHelper.setTo(mailDTO.getUserEmail());
             messageHelper.setSubject(mailDTO.getTitle());
-            messageHelper.setText(mailDTO.getMessage());
 
             // 파일 첨부 처리
-            MimeBodyPart mbp = new MimeBodyPart();
-            FileDataSource fds = new FileDataSource(filename);
+            MimeMultipart multipart = new MimeMultipart();
+
+            //본문 내용 추가
+            MimeBodyPart textBodyPart = new MimeBodyPart();
+            textBodyPart.setText(mailDTO.getMessage());
+            multipart.addBodyPart(textBodyPart);
+
+            //파일 첨부 처리
+            MimeBodyPart fileBodyPart = new MimeBodyPart();
+            FileDataSource fds = new FileDataSource(mailDTO.getFilename());
+            fileBodyPart.setDataHandler(new DataHandler(fds));
+            fileBodyPart.setFileName(fds.getName());
+            multipart.addBodyPart(fileBodyPart);
+
+            // 메일에 첨부 파일 추가
+            message.setContent(multipart);
 
         } catch (MessagingException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 }
