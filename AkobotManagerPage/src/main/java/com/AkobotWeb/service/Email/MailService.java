@@ -6,16 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.SimpleMailMessage;
 
-import javax.activation.DataHandler;
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
-import javax.mail.internet.MimeBodyPart;
-import javax.activation.FileDataSource;
-
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -25,7 +16,6 @@ public class MailService {
     private JavaMailSender javaMailSender;
 
     private static final String FROM_ADDRESS = PropertyUtil.getProperty("spring.mail.username");
-
 
     public void mailSend(MailDTO mailDto) {
         SimpleMailMessage message = new SimpleMailMessage();
@@ -42,9 +32,9 @@ public class MailService {
     }
 
     /**
-     *  FUTURE WORK - ATTACHMENT
+     *  FUTURE WORK - ATTACHMENT - 파일 첨부 기능
      *  */
-    public void attachSend(MailDTO mailDTO) {
+    /*public void attachSend(MailDTO mailDTO) {
         try {
             log.info("attachSend(MailDTO) -> set javamailSender");
             MimeMessage message = javaMailSender.createMimeMessage();
@@ -59,13 +49,13 @@ public class MailService {
             log.info("attachSend(MailDTO) -> file handle 1");
             MimeMultipart multipart = new MimeMultipart();
 
-            //본문 내용 추가
+            // 본문 내용 추가
             log.info("attachSend(MailDTO) -> set email body content");
             MimeBodyPart textBodyPart = new MimeBodyPart();
             textBodyPart.setText(mailDTO.getMessage());
             multipart.addBodyPart(textBodyPart);
 
-            /*//파일 첨부 처리
+            // 파일 첨부 처리
             log.info("attachSend(MailDTO) -> file handle 2");
             MimeBodyPart fileBodyPart = new MimeBodyPart();
             FileDataSource fds = new FileDataSource(mailDTO.getFilename());
@@ -75,10 +65,10 @@ public class MailService {
 
             // 메일에 첨부 파일 추가
             log.info("attachSend(MailDTO) -> set file at email");
-            message.setContent(multipart);*/
+            message.setContent(multipart);
 
         } catch (MessagingException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }

@@ -12,5 +12,4 @@ public class MailDTO {
     private String userEmail;
     private String title;
     private String message;
-    private String filename;
 }
