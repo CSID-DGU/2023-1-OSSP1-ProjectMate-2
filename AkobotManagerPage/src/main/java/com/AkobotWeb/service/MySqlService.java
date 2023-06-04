@@ -4,15 +4,12 @@ import com.AkobotWeb.domain.BoardVO;
 import com.AkobotWeb.domain.Mail.MailDTO;
 import com.AkobotWeb.domain.SMS.SMSDTO;
 import com.AkobotWeb.domain.SolveVO.SolveVO;
-import com.google.cloud.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public interface FirebaseService {
-
-
-    public BoardVO getMemberDetail(String id) throws Exception;
+public interface MySqlService {
+    //public BoardVO getMemberDetail(String id) throws Exception;
 
     /**
      * 미해결 질문 게시판 관련
@@ -31,11 +28,11 @@ public interface FirebaseService {
      * 테스트 관련
      * */
     /* 0510 make Dummy Collections */
-    public void mkDummy() throws Exception;
+    //public void mkDummy() throws Exception;
 
     /**
-    * 해결질문게시판 관련
-    * */
+     * 해결질문게시판 관련
+     * */
     /* 해결 질문 게시판 전체 조회 */
     public List<SolveVO> getSolveVO() throws Exception;
     /* 해결 질문 게시판 개별 조회 */
@@ -44,10 +41,10 @@ public interface FirebaseService {
     public void migrateSMS(SMSDTO smsdto, Long bno) throws Exception;
     public void migrateEmail(MailDTO mailDTO, Long bno) throws Exception;
     /* 해결 질문 게시판 getBno*/
-    public long getSolBno() throws Exception;
+    //public long getSolBno() throws Exception;
 
     /**
      *  관리자 DB 수정 관련
      */
-    public void updateCB(String collection, String doc, String update) throws Exception;
+    public void updateDB(String collection, String doc, String update) throws Exception;
 }
