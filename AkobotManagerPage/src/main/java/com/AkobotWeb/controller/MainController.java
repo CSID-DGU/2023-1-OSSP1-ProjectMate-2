@@ -267,7 +267,8 @@ public class MainController {
 
         /* TODO EMAIL */
         try {
-            mailService.attachSend(mailDTO);
+            //mailService.attachSend(mailDTO);
+            mailService.mailSend(mailDTO);
             mySqlService.migrateEmail(mailDTO, bno);
             log.info("답변 완료 - 미해결 질문 게시판에서 -> 해결 질문 게시판으로 이동 완료");
         }catch(Exception e){

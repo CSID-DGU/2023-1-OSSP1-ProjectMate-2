@@ -26,7 +26,7 @@ public class MailService {
 
     private static final String FROM_ADDRESS = PropertyUtil.getProperty("spring.mail.username");
 
-    /*
+
     public void mailSend(MailDTO mailDto) {
         SimpleMailMessage message = new SimpleMailMessage();
         try {
@@ -40,29 +40,33 @@ public class MailService {
         }
 
     }
-    */
 
     /**
      *  FUTURE WORK - ATTACHMENT
      *  */
     public void attachSend(MailDTO mailDTO) {
         try {
+            log.info("attachSend(MailDTO) -> set javamailSender");
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 
+            log.info("attachSend(MailDTO) -> Email receiver and title");
             messageHelper.setFrom(FROM_ADDRESS);
             messageHelper.setTo(mailDTO.getUserEmail());
             messageHelper.setSubject(mailDTO.getTitle());
 
             // 파일 첨부 처리
+            log.info("attachSend(MailDTO) -> file handle 1");
             MimeMultipart multipart = new MimeMultipart();
 
             //본문 내용 추가
+            log.info("attachSend(MailDTO) -> set email body content");
             MimeBodyPart textBodyPart = new MimeBodyPart();
             textBodyPart.setText(mailDTO.getMessage());
             multipart.addBodyPart(textBodyPart);
 
-            //파일 첨부 처리
+            /*//파일 첨부 처리
+            log.info("attachSend(MailDTO) -> file handle 2");
             MimeBodyPart fileBodyPart = new MimeBodyPart();
             FileDataSource fds = new FileDataSource(mailDTO.getFilename());
             fileBodyPart.setDataHandler(new DataHandler(fds));
@@ -70,7 +74,8 @@ public class MailService {
             multipart.addBodyPart(fileBodyPart);
 
             // 메일에 첨부 파일 추가
-            message.setContent(multipart);
+            log.info("attachSend(MailDTO) -> set file at email");
+            message.setContent(multipart);*/
 
         } catch (MessagingException e) {
             e.printStackTrace();
