@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Akobot</title>
-  
+	<title>Keyboard Input for chat-bubble</title>
+
+	<!-- for mobile screens -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<!-- stylesheets are conveniently separated into components -->
 	<link rel="stylesheet" media="all" href="../component/styles/setup.css">
 	<link rel="stylesheet" media="all" href="../component/styles/says.css">
@@ -17,14 +20,18 @@
     background-image: url('back.png');
     background-repeat : no-repeat;
     background-size: cover;
-    
+
 	}
 	.bubble-container {
-		height: 70vh;
+    height: 70vh;
     width: 50vh;
     position: absolute;
     right:0px; bottom:0px;
-    z-index: -1;
+    border-radius:10px;
+	}
+	.bubble-container .input-wrap textarea {
+		margin: 0;
+		width: calc(100% - 30px);
 	}
 	</style>
 </head>
@@ -37,7 +44,7 @@
 <script src="../component/Bubbles.js"></script>
 <script>
 // initialize by constructing a named function...
-// ...and add text processinFg plugin:
+// ...and add text processing plugin:
 var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
   // the one that we care about is inputCallbackFn()
   // this function returns an object with some data that we can process from user input
@@ -47,65 +54,9 @@ var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
   // this function does no natural language processing
   // this is where you may want to connect this script to NLC backend.
   inputCallbackFn: function(o) {
-  function sendUserInputToServer(userInput) {
-  const languageCode = "en"; // 언어 코드를 적절히 설정하세요.
-
-  fetch("/chatbot", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      query_input: {
-        text: {
-          text: userInput,
-          language_code: languageCode
-        }
-      }
-    })
-  })
-    .then(response => response.json())
-    .then(responseData => {
-      // 서버로부터 받은 응답 데이터를 처리합니다.
-      console.log(responseData);
-      //chatWindow.talk(convo);
-    })
-    .catch(error => {
-      // 에러 처리 
-      console.error("API 요청 중 에러 발생:", error);
-    });
-  }
-
-
-function makeDatabaseWithFile(file) {
-  const formData = new FormData();
-  formData.append("file", file);
-
-  fetch("/makeDbWithFile", {
-    method: "POST",
-    body: formData
-  })
-    .then(response => response.json())
-    .then(responseData => {
-      // 서버로부터 받은 응답 데이터를 처리합니다.
-      console.log(responseData);
-      
-    })
-    .catch(error => {
-      // 에러 처리
-      console.error("API 요청 중 에러 발생:", error);
-    });
-}
-
-// 예시: 사용자 입력을 서버로 보내는 코드
-const userInput = o.input;
-sendUserInputToServer(userInput);
-
-// 예시: 파일을 서버로 보내어 데이터베이스 생성하는 코드
-const fileInput = document.getElementById("file-input");
-const file = fileInput.files[0];
-makeDatabaseWithFile(file);
-
+    
+    
+    
     // add error conversation block & recall it if no answer matched
     var miss = function() {
       chatWindow.talk(
@@ -150,9 +101,10 @@ var convo = {
   ice: {
     says: ["안녕 나는 동국대 챗봇 '아코봇'이야!", "아래 중에서 알고 싶은 정보를 입력해줘","[수시],[정시],[모집 인원],[전형 일정],[작년도 경쟁률],[전체 모집요강],[재외국민/외국인 특별전형],[지원자격 유의사항],[전형요소별 평가방법]"],
     reply: [
- 
+
     ]
   }
+
 }
 
 // pass JSON to your function and you're done!

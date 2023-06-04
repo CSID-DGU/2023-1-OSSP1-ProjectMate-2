@@ -1,4 +1,4 @@
-// core function
+// core functionptions
 function Bubbles(container, self, options) {
   // options
   options = typeof options !== "undefined" ? options : {}
