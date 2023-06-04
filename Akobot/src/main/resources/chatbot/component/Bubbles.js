@@ -81,7 +81,8 @@ function Bubbles(container, self, options) {
     inputWrap.appendChild(inputText)
     inputText.addEventListener("keypress", function(e) {
       // register user input
-      if (e.keyCode == 13) {
+      if (e.keyCode
+         == 13) {
         e.preventDefault()
         typeof bubbleQueue !== false ? clearTimeout(bubbleQueue) : false // allow user to interrupt the bot
         var lastBubble = document.querySelectorAll(".bubble.say")
