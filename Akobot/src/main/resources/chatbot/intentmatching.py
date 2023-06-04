@@ -2,7 +2,6 @@
 import pandas as pd
 import extracting # extracting.py import
 
-
 '''
 #load json (DB)
 with open('.json', 'r') as f:
