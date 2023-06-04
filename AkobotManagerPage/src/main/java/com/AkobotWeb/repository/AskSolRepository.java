@@ -47,12 +47,7 @@ public class AskSolRepository {
                 0
         );
 
-        if(askSol.getPks() == null){
-            em.persist(askSol);
-        }
-        else{
-            em.merge(askSol);
-        }
+        save(askSol);
     }
 
     @Transactional

@@ -300,7 +300,7 @@ public class MainController {
         // TODO 파라미터 파싱
         String field ="";
         String doc="";
-        log.info("DB update input: " +updateDTO.toString());
+        log.info("DB update cause by question input: " +updateDTO.toString());
         String[] temp = updateDTO.getRadio_input().split("_");
         if(temp.length != 0 ){
             field = temp[0];

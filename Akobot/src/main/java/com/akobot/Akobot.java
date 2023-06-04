@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MessagingStompWebsocketApplication {
+public class Akobot {
 
     public static void main(String[] args) {
-        SpringApplication.run(MessagingStompWebsocketApplication.class, args);
+        SpringApplication.run(Akobot.class, args);
     }
 }

@@ -1,15 +1,14 @@
 package com.akobot.service;
 
 import com.akobot.domain.*;
-import com.akobot.domain.tables.EtcEntity;
-import com.akobot.repository.EtcRepository;
-import com.akobot.repository.JungsiRepository;
-import com.akobot.repository.SusiRepository;
-import com.akobot.repository.TestRepository;
+import com.akobot.domain.tables.AskSolEntity;
+import com.akobot.domain.tables.PushLogAskSolPK;
+import com.akobot.repository.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.ArrayList;
 
@@ -19,6 +18,7 @@ import java.util.ArrayList;
 @RequiredArgsConstructor
 public class MySqlServiceImpl implements MySqlService {
 
+    private final AskSolRepository askSolRepo;
     private final EtcRepository etcRepo;
     private final JungsiRepository jungsiRepo;
     private final SusiRepository susiRepo;
@@ -62,13 +62,23 @@ public class MySqlServiceImpl implements MySqlService {
             log.info(intentDTO.getClass() + " -> " + intentDTO);
 
             ArrayList<String> tmpStr = new ArrayList<>();
-            tmpStr.add(intentDTO.getMethod());
-            tmpStr.add(intentDTO.getTarget());
-            tmpStr.add(intentDTO.getContent());
-            tmpStr.add(intentDTO.getCondition_text());
-            tmpStr.add(intentDTO.getPoint());
-            tmpStr.add(intentDTO.getTest());
-            tmpStr.add(intentDTO.getElseData());
+            if(!intentDTO.getPks().getDocument().equals("fallback_default")) {
+                tmpStr.add(intentDTO.getMethod());
+                tmpStr.add(intentDTO.getTarget());
+                tmpStr.add(intentDTO.getContent());
+                tmpStr.add(intentDTO.getCondition_text());
+                tmpStr.add(intentDTO.getPoint());
+                tmpStr.add(intentDTO.getTest());
+                tmpStr.add(intentDTO.getElseData());
+            }
+            else{
+                log.info("fall-back occurred");
+                tmpStr.add("음..잘 모르겠어요");
+                tmpStr.add("아래 링크로 문의 주세요! 이메일로 답변해드립니다!");
+                tmpStr.add("localhost:8090/ask");
+
+                answers.clear();
+            }
 
             AnswerDTO answer = new AnswerDTO();
             answer.setSays(tmpStr);
@@ -79,5 +89,39 @@ public class MySqlServiceImpl implements MySqlService {
         log.info(answers.getClass() + " -> " + answers);
 
         return answers;
+    }
+
+    /* bno 읽어와 bno 갱신한 새 도큐먼트 DB에 삽입*/
+    @Override
+    public void add(@ModelAttribute BoardVO board) throws Exception {
+
+        /* 마지막 bno을 읽어와 ++bno 값으로 새 도큐먼트를 DB에 삽입*/
+        long bno = getBno();
+
+        PushLogAskSolPK askSolPK = new PushLogAskSolPK();
+        askSolPK.setSchool_key(11111);
+        askSolPK.setField("TBL_ASK");
+        askSolPK.setBno(++bno);
+
+        AskSolEntity askSol = AskSolEntity.builder()
+                .pks(askSolPK)
+                .question(board.getQuestion())
+                .answer(board.getAnswer())
+                .email(board.getEmail())
+                .name(board.getName())
+                .askDate(null)
+                .answerDate(null)
+                .isAnswered(0)
+                .build();
+
+        log.info("Add Question: " + askSol.getClass() + " -> " + askSol.toString());
+
+        log.info(askSolRepo.save(askSol).toString());
+    }
+
+    /* getBno */
+    @Override
+    public long getBno() throws Exception {
+        return askSolRepo.maxBno();
     }
 }

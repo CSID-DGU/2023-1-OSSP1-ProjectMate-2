@@ -14,7 +14,7 @@ import java.util.ArrayList;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-public class GreetingController {
+public class WebSocketController {
     private final MySqlServiceImpl mySqlService;
 
     @MessageMapping("/hello")
