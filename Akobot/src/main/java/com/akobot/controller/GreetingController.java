@@ -8,6 +8,7 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
 import com.akobot.domain.*;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 
