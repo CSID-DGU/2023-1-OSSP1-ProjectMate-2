@@ -3,23 +3,19 @@ package com.akobot;
 import com.akobot.domain.PreprocessorDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Slf4j
 @RequiredArgsConstructor
 public class Preprocessor {
-    public List<String> getMatchedIntents() throws IOException, InterruptedException {
+    public List<String> getMatchedIntents(String usr_input) throws IOException, InterruptedException {
         ProcessBuilder pb = new ProcessBuilder("python",
-                "Akobot/src/main/resources/chatbot/intentmatching.py");
+                "Akobot/src/main/resources/chatbot/intentmatching.py", usr_input);
 
         Process p = pb.start();
 

@@ -1,6 +1,9 @@
 #intent matching 하기 (DB로부터 인텐트 목록 가져오기)
 import pandas as pd
 import extracting # extracting.py import
+import sys
+
+usr_input = sys.argv[1]
 
 '''
 #load json (DB)
@@ -75,10 +78,18 @@ intent_levels= pd.DataFrame(intent_list)[1].to_list()
 
 # 매칭된 [인텐트 영문명, 인텐트 레벨]를 갖는 2D 리스트
 matchings=[]
+'''
 for user_keyword in extracting.keywords: # extracted keywords from user input
     for intent_keyword in intent_keywords: # intent list from DB
         if intent_keyword in user_keyword: # if extracted keyword contains intent name
             matchings.append(intents[intent_keyword]) 
+            break
+'''
+
+for user_keyword in extracting.extracKeywords(usr_input): # extracted keywords from user input
+    for intent_keyword in intent_keywords: # intent list from DB
+        if intent_keyword in user_keyword: # if extracted keyword contains intent name
+            matchings.append(intents[intent_keyword])
             break
 
 # 매칭된 인텐트 수가 0이면 fallback 발생
