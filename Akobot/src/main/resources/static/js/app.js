@@ -50,7 +50,7 @@ $(function () {
     $("form").on('submit', function (e) {
         e.preventDefault();
     });
-    $( "#modal_btn" ).click(function() {
+    $( "#connect" ).click(function() {
         connect();
     });
     $( "#disconnect" ).click(function() {

@@ -80,25 +80,34 @@ public class MySqlServiceImpl implements MySqlService {
             else if((intentDTO = jungsiRepo.findOne(11111, field, doc)) != null);
             else if((intentDTO = testRepo.findOne(11111, field, doc)) != null);
 
-            log.info(intentDTO.getClass() + " -> " + intentDTO);
-
             ArrayList<String> tmpStr = new ArrayList<>();
-            if(!intentDTO.getPks().getDocument().equals("fallback_default")) {
-                tmpStr.add(intentDTO.getMethod());
-                tmpStr.add(intentDTO.getTarget());
-                tmpStr.add(intentDTO.getContent());
-                tmpStr.add(intentDTO.getCondition_text());
-                tmpStr.add(intentDTO.getPoint());
-                tmpStr.add(intentDTO.getTest());
-                tmpStr.add(intentDTO.getElseData());
+
+            if(intentDTO != null) {
+                log.info(intentDTO.getClass() + " -> " + intentDTO);
+
+                if(!intentDTO.getPks().getDocument().equals("fallback_default")) {
+                    tmpStr.add(intentDTO.getMethod());
+                    tmpStr.add(intentDTO.getTarget());
+                    tmpStr.add(intentDTO.getContent());
+                    tmpStr.add(intentDTO.getCondition_text());
+                    tmpStr.add(intentDTO.getPoint());
+                    tmpStr.add(intentDTO.getTest());
+                    tmpStr.add(intentDTO.getElseData());
+                }
+                else{
+                    log.info("fall-back occurred");
+                    tmpStr.add("음..잘 모르겠어요");
+                    tmpStr.add("아래 링크로 문의 주세요! 이메일로 답변해드립니다!");
+                    tmpStr.add("localhost:8090/ask");
+                }
             }
-            else{
+            else {
+                log.info("intentDTO.getClass() -> null");
+
                 log.info("fall-back occurred");
                 tmpStr.add("음..잘 모르겠어요");
                 tmpStr.add("아래 링크로 문의 주세요! 이메일로 답변해드립니다!");
                 tmpStr.add("localhost:8090/ask");
-
-                answers.clear();
             }
 
             AnswerDTO answer = new AnswerDTO();
