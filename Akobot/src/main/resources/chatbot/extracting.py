@@ -6,7 +6,8 @@ import csv
 
 # load 'scores.CSV' & convert CSV file to dict.
 scores = {}
-with open("scores.csv", 'r', encoding="utf-8") as file:
+with open("C:/Users/win11/source/repos/2023-1-OPPS1-ProjectMate-2/Akobot/src/main/resources/chatbot/scores.csv",
+          'r', encoding="utf-8") as file:
     reader = csv.reader(file)
     for row in reader:
         scores[row[0]] = float(row[1])

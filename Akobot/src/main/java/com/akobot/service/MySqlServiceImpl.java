@@ -1,5 +1,6 @@
 package com.akobot.service;
 
+import com.akobot.Preprocessor;
 import com.akobot.domain.*;
 import com.akobot.domain.tables.AskSolEntity;
 import com.akobot.domain.tables.PushLogAskSolPK;
@@ -11,12 +12,16 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class MySqlServiceImpl implements MySqlService {
+
+    private final Preprocessor preprocessor = new Preprocessor();
 
     private final AskSolRepository askSolRepo;
     private final EtcRepository etcRepo;
@@ -29,14 +34,29 @@ public class MySqlServiceImpl implements MySqlService {
         //ArrayList<Intent> matchedIntents = new ArrayList<>();
         ArrayList<AnswerDTO> answers = new ArrayList<>();
 
-        String field = "";              // ex) competition, foreign, jungsi, ...
-        String doc = "";                // ex) competition_susi, competition_jungsi, ...
+        /**
+         * Python 모듈을 사용하는 Preprocessor를 활용한 intent matching
+         * Python 모듈에서 argument로 입력을 받는 것이 구현되지 않아 고정된 intent만 출력
+         */
+        List<String> intentsByPreprocessor = preprocessor.getMatchedIntents();
+
+        for(String i : intentsByPreprocessor){
+            log.info("Lines from Preprocessor -> " + i);
+        }
+
+        List<PreprocessorDTO> preDTOs = preprocessor.toArray(intentsByPreprocessor);
+        for(PreprocessorDTO pd : preDTOs) {
+            log.info("intents by PreprocessorDTO -> " + pd.toString());
+        }
 
         /**
          * Preprocesser가 완성되기 전까지는
          * 입력받은 string을 ','를 기준으로 tokenize 하여 intent 이름으로 인식한다.
          */
         String [] intents = ask.getAsk().split(",");
+
+        String field = "";              // ex) competition, foreign, jungsi, ...
+        String doc = "";                // ex) competition_susi, competition_jungsi, ...
 
         /**
          * 각각의 intent에 대한 답변을
@@ -47,7 +67,7 @@ public class MySqlServiceImpl implements MySqlService {
          */
         for(String intent : intents) {
             String[] tmp = intent.split("_");
-            if (tmp.length != 0) {
+            if (tmp.length > 1) {
                 field = tmp[0];
                 doc = intent;
             }
