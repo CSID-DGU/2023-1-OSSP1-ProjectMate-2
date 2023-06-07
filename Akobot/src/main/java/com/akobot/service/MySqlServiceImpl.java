@@ -35,6 +35,12 @@ public class MySqlServiceImpl implements MySqlService {
         ArrayList<AnswerDTO> answers = new ArrayList<>();
 
         /**
+         * Preprocesser가 완성되기 전까지는
+         * 입력받은 string을 ','를 기준으로 tokenize 하여 intent 이름으로 인식한다.
+         */
+        //String [] intents = ask.getAsk().split(",");
+
+        /**
          * Python 모듈을 사용하는 Preprocessor를 활용한 intent matching
          * Python 모듈에서 argument로 입력을 받는 것이 구현되지 않아 고정된 intent만 출력
          */
@@ -49,23 +55,17 @@ public class MySqlServiceImpl implements MySqlService {
             log.info("intents by PreprocessorDTO -> " + pd.toString());
         }
 
-        /**
-         * Preprocesser가 완성되기 전까지는
-         * 입력받은 string을 ','를 기준으로 tokenize 하여 intent 이름으로 인식한다.
-         */
-        String [] intents = ask.getAsk().split(",");
-
         String field = "";              // ex) competition, foreign, jungsi, ...
         String doc = "";                // ex) competition_susi, competition_jungsi, ...
 
         /**
          * 각각의 intent에 대한 답변을
          * AnswerDTO 형식으로 생성한다.
-         *
-         * intentDTO 양식으로 프론트에 보낼 수도 있지만,
-         * 우선은 이런식으로 한다.
          */
-        for(String intent : intents) {
+        //for(String intent : intents) {
+        for(PreprocessorDTO preDTO : preDTOs) {
+            String intent = preDTO.getIntentName();
+
             String[] tmp = intent.split("_");
             if (tmp.length > 1) {
                 field = tmp[0];
