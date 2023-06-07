@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Keyboard Input for chat-bubble</title>
+
+	<!-- for mobile screens -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- stylesheets are conveniently separated into components -->
+	<link rel="stylesheet" media="all" href="../../static/css/setup.css">
+	<link rel="stylesheet" media="all" href="../../static/css/says.css">
+	<link rel="stylesheet" media="all" href="../../static/css/reply.css">
+	<link rel="stylesheet" media="all" href="../../static/css/typing.css">
+	<link rel="stylesheet" media="all" href="../../static/css/input.css">
+	<style>
+	body {
+    height:100vh;
+    width:100vw;
+    background-image: url('back.png');
+    background-repeat : no-repeat;
+    background-size: cover;
+
+	}
+	.bubble-container {
+    height: 70vh;
+    width: 50vh;
+    position: absolute;
+    right:0px; bottom:0px;
+    border-radius:10px;
+	}
+	.bubble-container .input-wrap textarea {
+		margin: 0;
+		width: calc(100% - 30px);
+	}
+	</style>
+</head>
+<body>
+
+<!-- container element for chat window -->
+<div id="chat"></div>
+
+<!-- import the JavaScript file -->
+<script src="Bubbles.js"></script>
+
+<script>
+// initialize by constructing a named function...
+// ...and add text processing plugin:
+var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
+  // the one that we care about is inputCallbackFn()
+  // this function returns an object with some data that we can process from user input
+  // and understand the context of it
+
+  // this is an example function that matches the text user typed to one of the answer bubbles
+  // this function does no natural language processing
+  // this is where you may want to connect this script to NLC backend.
+  inputCallbackFn: function(o) {
+    
+    
+    
+    // add error conversation block & recall it if no answer matched
+    var miss = function() {
+      chatWindow.talk(
+        {
+          "i-dont-get-it": {
+            says: [
+              "Sorry, I don't get it 😕. Pls repeat? Or you can just click below 👇"
+            ],
+            reply: o.convo[o.standingAnswer].reply
+          }
+        },
+        "i-dont-get-it"
+      )
+    }
+
+    // do this if answer found
+    var match = function(key) {
+      setTimeout(function() {
+        chatWindow.talk(convo, key) // restart current convo from point found in the answer
+      }, 600)
+    }
+
+    // sanitize text for search function
+    var strip = function(text) {
+      return text.toLowerCase().replace(/[\s.,\/#!$%\^&\*;:{}=\-_'"`~()]/g, "")
+    }
+
+    // search function
+    var found = false
+    o.convo[o.standingAnswer].reply.forEach(function(e, i) {
+      strip(e.question).includes(strip(o.input)) && o.input.length > 0
+        ? (found = e.answer)
+        : found ? null : (found = false)
+    })
+    found ? match(found) : miss()
+  }
+}) // done setting up chat-bubble
+
+// conversation object defined separately, but just the same as in the
+// "Basic chat-bubble Example" (1-basics.html)
+var convo = {
+  ice: {
+    says: ["안녕 나는 동국대 챗봇 '아코봇'이야!", "아래 중에서 알고 싶은 정보를 입력해줘","[수시],[정시],[모집 인원],[전형 일정],[작년도 경쟁률],[전체 모집요강],[재외국민/외국인 특별전형],[지원자격 유의사항],[전형요소별 평가방법]"],
+    reply: [
+
+    ]
+  }
+
+}
+
+// pass JSON to your function and you're done!
+chatWindow.talk(convo)
+</script>
+</body>
