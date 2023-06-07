@@ -15,13 +15,13 @@ import java.util.ArrayList;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-public class GreetingController {
+public class WebSocketController {
     private final MySqlServiceImpl mySqlService;
 
-    @MessageMapping("/hello")
-    @SendTo("/topic/greetings")
+    @MessageMapping("/question")
+    @SendTo("/topic/answers")
     public ArrayList<AnswerDTO> answering(AskDTO ask) throws Exception {
-        Thread.sleep(1000); // simulated delay
+        //Thread.sleep(1000); // simulated delay
 
         return mySqlService.getAnswer(ask);
     }

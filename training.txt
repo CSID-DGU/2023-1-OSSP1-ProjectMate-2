@@ -1,0 +1,100 @@
+content    전체 모집 요강이 뭐야?
+content    모집 요강
+content    모집 정보
+content    전체 모집 요강
+content    NaN
+content    NaN
+content    수시 전형 알려줘
+content    수시
+content    수시 전형
+content    수시 알려줘
+content    NaN
+content    수시 알려주라
+content    아코야 수시 알려줄 수 있어 ?
+content    수시 알려줄 수 있니 ?
+content    정시 전형 알려줘
+content    정시 알려줘
+content    정시 
+content    정시 전형
+content    정시 알려주라
+content    정시 전형 알려줄 수 있어 ?
+content    아코야 정시 알려줄 수 있어 ?
+content    수능
+content    수능에 대해 알려줘
+content    수능 전형 알려줘
+content    NaN
+content    모집 인원이 몇 명이지?
+content    몇 명뽑아?
+content    몇 명 모집해?
+content    모집 인원 알고싶어
+content    모집 인원
+content    NaN
+content    NaN
+content    작년도 경쟁률은 어때?
+content    작년도 경쟁률 알고싶어
+content    작년도 경쟁률 알려줘
+content    경쟁률 알고싶어
+content    경쟁률 어때?
+content    경쟁률 알려줘
+content    지원자격 유의사항 있어?
+content    지원할때 유의해야할점은 뭐야?
+content    유의사항 말해줘
+content    유의사항
+content    NaN
+content    NaN
+content    NaN
+content    NaN
+content    재외국민이나 외국인 특별 전형 알려주라
+content    재외국민 전형 알려주라
+content    재외국민 전형이 궁금해
+content    외국인 특별 전형 알려주라
+content    외국인 전형 알려주라
+content    외국인 특별 전형이 궁금해
+content    외국인 전형이 궁금해
+content    전형요소별 평가방법 알려줘
+content    전형 요소 별 평가 방법이 궁금해
+content    전형 요소 별 평가 방법 알려주라
+content    전형 요소별 평가 방법이 뭐야 ?
+content    전형 일정 좀 알려주라
+content    전형 일정이 어떻게 돼?
+content    전형 일정이 궁금해
+content    전형 일정 알려주라
+content    전형 별로 일정이 어떻게 되는지 알려줘
+content    두드림소프트웨어 설명해줘
+content    두드림소프트웨어 전형에 대해 알려주라
+content    두드림소프트웨어 전형이 뭐야?
+content    두드림소프트웨어 전형
+content    두드림소프트웨어가 궁금해
+content    두드림소프트웨어가 뭐야?
+content    두드림소프트웨어에 대해 알려줘
+content    학교장 추천 설명해줘
+content    학교장 추천에 대해 알려주라
+content    학교장 추천이 뭐야?
+content    학교장 추천 전형에 대해 알려주라
+content    학교장 추천 알려줘
+content    학교장 추천 전형이 궁금해
+content    두드림 설명해줘
+content    두드림이 뭐야?
+content    두드림에 대해 설명해줘
+content    두드림
+content    두드림이 궁금해
+content    두드림 전형이 궁금해
+content    두드림 알려줘
+content    불교추천 설명해줘
+content    불교 추천 알려주라
+content    불교 추천 전형에 대해 알려주라
+content    불교 추천 전형에 대해 알려줘
+content    불교 추천 전형이 궁금해
+content    NaN
+content    논술전형을 설명해줘
+content    논술 설명해줘
+content    논술 알려줘
+content    논술 전형이 궁금해
+content    고른기회 전형을 설명해줘
+content    고른기회 전형
+content    기회 전형
+content    일반전형 설명해줘
+content    일반 전형
+content    농어촌 전형 설명해줘
+content    농어촌 전형
+content    농어촌 알려줘

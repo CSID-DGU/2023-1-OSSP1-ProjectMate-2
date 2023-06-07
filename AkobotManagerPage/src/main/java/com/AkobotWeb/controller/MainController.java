@@ -267,7 +267,7 @@ public class MainController {
 
         /* TODO EMAIL */
         try {
-            //mailService.mailSend(mailDTO);    // 23.04.20 mailfault
+            mailService.mailSend(mailDTO);
             mySqlService.migrateEmail(mailDTO, bno);
             log.info("답변 완료 - 미해결 질문 게시판에서 -> 해결 질문 게시판으로 이동 완료");
         }catch(Exception e){
@@ -300,7 +300,7 @@ public class MainController {
         // TODO 파라미터 파싱
         String field ="";
         String doc="";
-        log.info("DB update input: " +updateDTO.toString());
+        log.info("DB update cause by question input: " +updateDTO.toString());
         String[] temp = updateDTO.getRadio_input().split("_");
         if(temp.length != 0 ){
             field = temp[0];

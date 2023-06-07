@@ -1,9 +1,4 @@
-package com.AkobotWeb.domain;
-
-/**
- * 게시판 Board의 기본 ValueObject
- * Junho Choi
- */
+package com.akobot.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
