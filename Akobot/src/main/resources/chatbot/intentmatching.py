@@ -60,7 +60,8 @@ intents={
                 '정시일정':['schedule_jungsi',10],
                 '수시일정':['schedule_susi',10],
                 #fallback intent
-                '잘못된 입력':['fallback',0]
+                #'잘못된 입력':['fallback',0]
+                '잘못된 입력':['fallback_default',0]
              }
 
 ##################### keyword-intent matching ########################

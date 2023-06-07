@@ -17,7 +17,8 @@ import java.util.Map;
 
 @Slf4j
 @Service
-@Transactional(readOnly = true)
+//@Transactional(readOnly = true)
+@Transactional
 @RequiredArgsConstructor
 public class MySqlServiceImpl implements MySqlService {
 
