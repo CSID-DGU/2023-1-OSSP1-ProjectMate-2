@@ -14,6 +14,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Preprocessor {
     public List<String> getMatchedIntents(String usr_input) throws IOException, InterruptedException {
+        log.info("USER INPUT -> " + usr_input);
+
         ProcessBuilder pb = new ProcessBuilder("python",
                 "Akobot/src/main/resources/chatbot/intentmatching.py", usr_input);
 

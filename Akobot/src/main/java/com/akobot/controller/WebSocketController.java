@@ -22,6 +22,7 @@ public class WebSocketController {
     @SendTo("/topic/answers")
     public ArrayList<AnswerDTO> answering(AskDTO ask) throws Exception {
         //Thread.sleep(1000); // simulated delay
+        log.info("AskDTO -> ", ask);
 
         return mySqlService.getAnswer(ask);
     }

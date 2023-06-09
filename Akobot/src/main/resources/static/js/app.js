@@ -34,15 +34,27 @@ function disconnect() {
 }
 
 function sendName() {
-    $("#greetings").append("<tr style=\"text-align:right\"><td>USER</td></tr>");
+    /*$("#greetings").append("<tr style=\"text-align:right\"><td>USER</td></tr>");
     $("#greetings").append("<tr style=\"text-align:right\"><td>" + $("#ask").val() + "</td></tr>");
+    stompClient.send("/app/question", {}, JSON.stringify({'ask': $("#ask").val()}));*/
+
+    $("#greetings").append("<div class=\"bubble reply reply-freeform say\">");
+    $("#greetings").append("<span class=\"bubble-content\">" + $("#ask").val() + "</span>");
+    $("#greetings").append("</div>");
+
     stompClient.send("/app/question", {}, JSON.stringify({'ask': $("#ask").val()}));
 }
 
 function showGreeting(messages) {
-    $("#greetings").append("<tr><td>SERVER</td></tr>");
+    /*$("#greetings").append("<tr><td>SERVER</td></tr>");
     for(i = 0; i < messages.length; i++){
         $("#greetings").append("<tr><td>" + messages[i].says + "</td></tr>");
+    }*/
+
+    for(i = 0; i < messages.length; i++){
+        $("#greetings").append("<div class=\"bubble say\">");
+        $("#greetings").append("<span class=\"bubble-content\">" + messages[i].says + "</span>");
+        $("#greetings").append("</div>");
     }
 }
 
@@ -57,4 +69,8 @@ $(function () {
         disconnect();
     });
     $( "#send" ).click(function() { sendName(); });
+
+    $( "#btn-modal" ).click(function() {
+        connect();
+    });
 });
