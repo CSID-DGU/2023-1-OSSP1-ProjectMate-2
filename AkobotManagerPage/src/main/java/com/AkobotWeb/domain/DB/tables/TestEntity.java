@@ -19,7 +19,7 @@ public class TestEntity {
     @Column(name="target", length=1000)
     private String target;
 
-    @Column(name="elseData", length=1000)
+    @Column(name="else_data", length=1000)
     private String elseData;
 
     @Column(name="level")

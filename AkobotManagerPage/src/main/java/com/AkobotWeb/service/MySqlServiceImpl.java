@@ -22,8 +22,8 @@ import java.util.List;
 public class MySqlServiceImpl implements MySqlService {
     private final AskSolRepository askSolRepo;
     private final EtcRepository etcRepo;
-    private final JungsiRepository jungsiRepo;
-    private final SusiRepository susiRepo;
+    private final KsatRepository ksatRepositoryRepo;
+    private final EarlyAdmissionRepository earlyAdmissionRepositoryRepo;
     private final TestRepository testRepo;
 
     /*public static final String COLLECTION_NAME="TBL_BOARD"; // cloud firestore의 collection name*/
@@ -314,12 +314,12 @@ public class MySqlServiceImpl implements MySqlService {
         if((intentDTO = etcRepo.findOne(11111, field, doc)) != null){
             etcRepo.update(intentDTO.getPks(), update);
         }
-        else if((intentDTO = susiRepo.findOne(11111, field, doc)) != null){
+        else if((intentDTO = earlyAdmissionRepositoryRepo.findOne(11111, field, doc)) != null){
             log.info("Update " + intentDTO.getElseData() + " -> " + update);
-            susiRepo.update(intentDTO.getPks(), update);
+            earlyAdmissionRepositoryRepo.update(intentDTO.getPks(), update);
         }
-        else if((intentDTO = jungsiRepo.findOne(11111, field, doc)) != null){
-            jungsiRepo.update(intentDTO.getPks(), update);
+        else if((intentDTO = ksatRepositoryRepo.findOne(11111, field, doc)) != null){
+            ksatRepositoryRepo.update(intentDTO.getPks(), update);
         }
         else if((intentDTO = testRepo.findOne(11111, field, doc)) != null){
             testRepo.update(intentDTO.getPks(), update);
