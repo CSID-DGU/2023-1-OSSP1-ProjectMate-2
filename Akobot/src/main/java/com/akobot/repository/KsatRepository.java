@@ -1,7 +1,7 @@
 package com.akobot.repository;
 
 import com.akobot.domain.IntentDTO;
-import com.akobot.domain.tables.JungsiEntity;
+import com.akobot.domain.tables.KsatEntity;
 import com.akobot.domain.tables.PushLogIntentsPK;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
@@ -9,14 +9,14 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @RequiredArgsConstructor
-public class JungsiRepository {
+public class KsatRepository {
     private final EntityManager em;
 
-    public void save(JungsiEntity jungsi){
-        if (jungsi.getPks() == null){
-            em.persist(jungsi);
+    public void save(KsatEntity ksat){
+        if (ksat.getPks() == null){
+            em.persist(ksat);
         } else{
-            em.merge(jungsi);
+            em.merge(ksat);
         }
     }
 
@@ -26,15 +26,15 @@ public class JungsiRepository {
         pk.setField(field);
         pk.setDocument(document);
 
-        JungsiEntity jungsiEntity = em.find(JungsiEntity.class, pk);
+        KsatEntity ksatEntity = em.find(KsatEntity.class, pk);
 
-        if(jungsiEntity != null) {
+        if(ksatEntity != null) {
             IntentDTO intentDTO = new IntentDTO();
-            intentDTO.setPks(jungsiEntity.getPks());
-            intentDTO.setContent(jungsiEntity.getCondition_text());
-            intentDTO.setContent(jungsiEntity.getPoint());
-            intentDTO.setElseData(jungsiEntity.getElseData());
-            intentDTO.setLevel(jungsiEntity.getLevel());
+            intentDTO.setPks(ksatEntity.getPks());
+            intentDTO.setContent(ksatEntity.getCondition_text());
+            intentDTO.setContent(ksatEntity.getPoint());
+            intentDTO.setElseData(ksatEntity.getElseData());
+            intentDTO.setLevel(ksatEntity.getLevel());
 
             return intentDTO;
         }

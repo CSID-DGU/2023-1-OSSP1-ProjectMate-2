@@ -34,15 +34,15 @@ public class AskSolEntity implements Persistable<PushLogAskSolPK> {
     @Column(name = "name", length = 50)
     private String name;
 
-    @Column(name = "askDate")
+    @Column(name = "ask_date")
     //@CreationTimestamp
     private ZonedDateTime askDate;
 
-    @Column(name = "answerDate")
+    @Column(name = "answer_date")
     //@UpdateTimestamp
     private ZonedDateTime answerDate;
 
-    @Column(name = "isAnswered")
+    @Column(name = "is_answered")
     private int isAnswered;
 
     @Override

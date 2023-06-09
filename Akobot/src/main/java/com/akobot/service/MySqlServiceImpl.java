@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Slf4j
 @Service
@@ -26,8 +25,8 @@ public class MySqlServiceImpl implements MySqlService {
 
     private final AskSolRepository askSolRepo;
     private final EtcRepository etcRepo;
-    private final JungsiRepository jungsiRepo;
-    private final SusiRepository susiRepo;
+    private final KsatRepository ksatRepo;
+    private final EarlyAdmissionRepository earlyAdmissionRepo;
     private final TestRepository testRepo;
 
     @Override
@@ -76,8 +75,8 @@ public class MySqlServiceImpl implements MySqlService {
             IntentDTO intentDTO = new IntentDTO();
 
             if((intentDTO = etcRepo.findOne(11111, field, doc)) != null);
-            else if((intentDTO = susiRepo.findOne(11111, field, doc)) != null);
-            else if((intentDTO = jungsiRepo.findOne(11111, field, doc)) != null);
+            else if((intentDTO = earlyAdmissionRepo.findOne(11111, field, doc)) != null);
+            else if((intentDTO = ksatRepo.findOne(11111, field, doc)) != null);
             else if((intentDTO = testRepo.findOne(11111, field, doc)) != null);
 
             ArrayList<String> tmpStr = new ArrayList<>();

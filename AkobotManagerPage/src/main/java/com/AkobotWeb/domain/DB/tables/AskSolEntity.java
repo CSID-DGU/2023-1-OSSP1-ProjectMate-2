@@ -32,14 +32,14 @@ public class AskSolEntity {
     @Column(name = "name", length = 50)
     private String name;
 
-    @Column(name = "askDate")
+    @Column(name = "ask_date")
     @CreatedDate
     private ZonedDateTime askDate;
 
-    @Column(name = "answerDate")
+    @Column(name = "answer_date")
     private ZonedDateTime answerDate;
 
-    @Column(name = "isAnswered")
+    @Column(name = "is_answered")
     private int isAnswered;
 
     public BoardVO toBoardVO(){

@@ -1,15 +1,15 @@
-package com.akobot.domain.tables;
+package com.AkobotWeb.domain.DB.tables;
 
 import lombok.*;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
-@Getter
+@Getter @Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Entity(name="jungsi")
-public class JungsiEntity {
+@Entity(name="ksat")
+public class KsatEntity {
     @EmbeddedId
     private PushLogIntentsPK pks;
 
@@ -19,7 +19,7 @@ public class JungsiEntity {
     @Column(name="point", length=1000)
     private String point;
 
-    @Column(name="elseData", length=1000)
+    @Column(name="else_data", length=1000)
     private String elseData;
 
     @Column(name="level")
