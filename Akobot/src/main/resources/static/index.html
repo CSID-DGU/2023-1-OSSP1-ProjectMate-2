@@ -57,6 +57,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+
     <title>Hello WebSocket</title>
 
     <!-- for mobile screens -->
@@ -95,47 +97,66 @@
 
 <div id="modal" class="modal-overlay">
     <div class="modal-window">
-        <!--<div class="title">
-            <h2>Akobot</h2>
-        </div>
-        <div class="close-area">X</div>-->
-        <!--<div id="main-content" class="content">-->
-        <div class="content">
-            <div class="row">
-                <div class="col-md-6">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label for="connect">WebSocket connection:</label>
-                            <button id="connect" class="btn btn-default" type="submit">Connect</button>
-                            <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
-                            </button>
-                        </div>
-                    </form>
+        <!--<div class="content">-->
+            <div class="bubble-container">
+                <div class="title">
+                    <h2>Akobot</h2>
                 </div>
-                <div class="col-md-6">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label for="ask">What is your name?</label>
-                            <input type="text" id="ask" class="form-control" placeholder="Your name here...">
+                <div class="close-area">X</div>
+                <!--<div id="main-content" class="content">-->
+                <div class="bubble-wrap" id="greetings">
+                    <!--<div class="row">-->
+                        <!-- connect/disconnect button area for demo ver. -->
+                        <!--
+                        <div class="col-md-6">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label for="connect">WebSocket connection:</label>
+                                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                                    </button>
+                                </div>
+                            </form>
                         </div>
+                        -->
+                        <!-- input area for demo ver. -->
+                        <!--
+                        <div class="col-md-6">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label for="ask">What is your name?</label>
+                                    <input type="text" id="ask" class="form-control" placeholder="Your name here...">
+                                </div>
+                                <button id="send" class="btn btn-default" type="submit">Send</button>
+                            </form>
+                        </div>
+                        -->
+                    <!--</div>-->
+                    <!-- output area for demo ver. -->
+                    <!--
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table id="conversation" class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Greetings</th>
+                                </tr>
+                                </thead>
+                                <tbody id="greetings">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    -->
+                </div>
+                <div class="input-wrap">
+                    <form class="form-inline">
+                        <textarea id="ask" placeholder="질문을 입력하세요..." data-dl-input-translation="true"></textarea>
                         <button id="send" class="btn btn-default" type="submit">Send</button>
                     </form>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <table id="conversation" class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Greetings</th>
-                        </tr>
-                        </thead>
-                        <tbody id="greetings">
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <!--</div>-->
     </div>
 </div>
 </body>

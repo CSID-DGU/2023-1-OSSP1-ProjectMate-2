@@ -44,6 +44,7 @@ public class MySqlServiceImpl implements MySqlService {
          * Python 모듈을 사용하는 Preprocessor를 활용한 intent matching
          * Python 모듈에서 argument로 입력을 받는 것이 구현되지 않아 고정된 intent만 출력
          */
+        log.info("ask.getAsk() -> " + ask.getAsk());
         List<String> intentsByPreprocessor = preprocessor.getMatchedIntents(ask.getAsk());
 
         for(String i : intentsByPreprocessor){
