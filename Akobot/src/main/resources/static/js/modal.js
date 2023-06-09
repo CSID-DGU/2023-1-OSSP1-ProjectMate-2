@@ -10,7 +10,8 @@ function modalOff() {
 }
 const btnModal = document.getElementById("btn-modal")
 btnModal.addEventListener("click", e => {
-    modalOn()
+    if(!isModalOn()) modalOn()
+    else modalOff()
 })
 const closeBtn = modal.querySelector(".close-area")
 closeBtn.addEventListener("click", e => {
@@ -27,3 +28,4 @@ window.addEventListener("keyup", e => {
         modalOff()
     }
 })
+
