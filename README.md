@@ -1,5 +1,7 @@
 # 2023-1-OPPS1-ProjectMate-2
-2023년 1학기 공개SW프로젝트 2조입니다.
+
+[ReadME 템플릿 5f5afb4f7afd4ceca0a6fbb566e6694c.md](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/files/11778632/ReadME.5f5afb4f7afd4ceca0a6fbb566e6694c.md)
+
 
 ## 🔧 Stacks
 
@@ -24,14 +26,6 @@
 
 
 ### Library
-<br>
-<img src=”https://img.shields.io/badge/soynlp-0.0.493-brightgreen?style=flat-square&logo=soynlp&logoColor=white”/> 
 
-<img src=”https://img.shields.io/badge/pip-23.1.2-brightgreen?style=flat-square&logo=pip&logoColor=white”/>
 
 ### Communication
-<br>
-<img src=”https://img.shields.io/badge/Notion-white?style=flat-square&logo=Notion&logoColor=blue”/>
-
-<img src=”https://img.shields.io/badge/Webex-black?style=flat-square&logo=Webex&logoColor=blue”/>
-
