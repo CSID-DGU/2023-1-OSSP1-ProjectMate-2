@@ -1,19 +1,10 @@
 #intent matching 하기 (DB로부터 인텐트 목록 가져오기)
 import pandas as pd
 import extracting # extracting.py import
-import csv
-
-
-# intents = {}
-# with open("simple.csv", 'r', encoding="utf-8") as file:
-#     reader = csv.reader(file)
-#     for row in reader:
-#         intents={row[0]:row[1]}
-#         print(intents)
-
+import ast
 
 # user keyword-intent keyword matching with dictionary {key:valuelist}
-
+'''
 intents={
                 #level 1
                 '전체모집요강':['total',1],
@@ -60,7 +51,10 @@ intents={
                 #fallback intent
                 '잘못된 입력':['fallback',0]
              }
+'''
 
+with open("db.txt", 'r', encoding="utf-8") as file:
+    intents=ast.literal_eval(file)
 
 ##################### keyword-intent matching ########################
 # 인텐트 한글명 1D 리스트
