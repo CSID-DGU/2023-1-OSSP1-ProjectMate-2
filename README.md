@@ -52,12 +52,12 @@
 
 | 이름 | 학번 | Major Part |  ID  |
 | --- | --- | --- | --- |
-| 박성준 👑 | 2019112066 | Front-end | @SJ-PARKs |
-| 박민제 | 2019112608 | Back-end | @Park-MinJe |
-| 유재윤 | 2020113391 | User NLP & Rule-based Matching | @jaeyoonwodbs |
-| 정지수 | 2020113394 | User NLP & Rule-based Matching | @StopSoo |
-| 김규리 | 2021111998 | Back-end | @mandar2n |
-| 김세민 | 2021112017 | User NLP & Rule-based Matching | @semnisem |
+| 박성준 👑 | 2019112066 | Front-end | [@SJ-PARKs] |
+| 박민제 | 2019112608 | Back-end | [@Park-MinJe] |
+| 유재윤 | 2020113391 | User NLP & Rule-based Matching | [@jaeyoonwodbs] |
+| 정지수 | 2020113394 | User NLP & Rule-based Matching | [@StopSoo] |
+| 김규리 | 2021111998 | Back-end | [@mandar2n] |
+| 김세민 | 2021112017 | User NLP & Rule-based Matching | [@semnisem] |
 
 ## 💬 프로젝트 소개
 
@@ -81,17 +81,17 @@ Our website supports the following component.
 
 ---
 
-[🚀 아코봇 시작 가이드](#🚀-아코봇-시작-가이드) 
+[🚀 아코봇 시작 가이드](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#-아코봇-시작-가이드) 
 
-[🔧 Stacks ](#🔧-Stacks])
+[🔧 Stacks ](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#-stacks)
 
-[⌛ 아코봇 실행 예시](#⌛-아코봇-실행-예시) 
+[⌛ 아코봇 실행 예시](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#-아코봇-실행-예시) 
 
-[🖥️ 아코봇 관리자 페이지 화면 구성](#🖥️-아코봇-관리자-페이지-화면-구성) 
+[🖥️ 아코봇 관리자 페이지 화면 구성](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#%EF%B8%8F-아코봇-관리자-페이지-화면-구성) 
 
-[©️ 라이센스](#©️-라이센스) 
+[©️ 라이센스](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#%EF%B8%8F-라이센스) 
 
-[🗓️ 프로젝트를 마치며](#🗓️-프로젝트를-마치며) 
+[🗓️ 프로젝트를 마치며](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#%EF%B8%8F-프로젝트를-마치며) 
 
 ## 🚀 아코봇 시작 가이드
 
