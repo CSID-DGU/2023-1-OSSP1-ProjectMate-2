@@ -52,12 +52,12 @@
 
 | 이름 | 학번 | Major Part |  ID  |
 | --- | --- | --- | --- |
-| 박성준 👑 | 2019112066 | Front-end | [@SJ-PARKs] |
-| 박민제 | 2019112608 | Back-end | [@Park-MinJe] |
-| 유재윤 | 2020113391 | User NLP & Rule-based Matching | [@jaeyoonwodbs] |
-| 정지수 | 2020113394 | User NLP & Rule-based Matching | [@StopSoo] |
-| 김규리 | 2021111998 | Back-end | [@mandar2n] |
-| 김세민 | 2021112017 | User NLP & Rule-based Matching | [@semnisem] |
+| 박성준 👑 | 2019112066 | Front-end | [@SJ-PARKs](https://github.com/SJ-PARKs) |
+| 박민제 | 2019112608 | Back-end | [@Park-MinJe](https://github.com/Park-MinJe) |
+| 유재윤 | 2020113391 | User NLP & Rule-based Matching | [@jaeyoonwodbs](https://github.com/jaeyoonwodbs) |
+| 정지수 | 2020113394 | User NLP & Rule-based Matching | [@StopSoo](https://github.com/StopSoo) |
+| 김규리 | 2021111998 | Back-end | [@mandar2n](https://github.com/mandar2n) |
+| 김세민 | 2021112017 | User NLP & Rule-based Matching | [@semnisem](https://github.com/semnisem) |
 
 ## 💬 프로젝트 소개
 
