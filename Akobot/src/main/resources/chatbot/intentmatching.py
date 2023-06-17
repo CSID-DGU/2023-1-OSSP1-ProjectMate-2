@@ -1,10 +1,18 @@
 #intent matching 하기 (DB로부터 인텐트 목록 가져오기)
 import pandas as pd
 import extracting # extracting.py import
-import ast
 import sys
+import json
 
+# 임시!!!!! usr_input="수시 논술 알려줘"
 usr_input = sys.argv[1]
+
+# reading the data from the file
+with open("db.txt",encoding="utf-8") as f:
+    db = f.read()
+      
+# reconstructing the data as a dictionary
+intents = json.loads(db)
 
 # user keyword-intent keyword matching with dictionary {key:valuelist}
 '''
@@ -57,12 +65,10 @@ intents={
              }
 '''
 
-with open("db.txt", 'r', encoding="utf-8") as file:
-    intents=ast.literal_eval(file)
 
 ##################### keyword-intent matching ########################
 # 인텐트 한글명 1D 리스트
-intent_keywords=intents.keys() 
+intent_keywords=intents.keys()
 
 # [인텐트 영문명, 인텐트 레벨]의 2D 리스트
 intent_list=list(intents.values()) 
@@ -111,9 +117,5 @@ for element in matchings:
                 matchings.remove(element)
 
 
-######################## python 연동 ###########################
-# python 서버 연결되게끔 cmd 창에서의 출력
-
 # 최종 매칭된 인텐트 [인텐트 영문명, 영어 레벨] 출력
 print(matchings)
-
