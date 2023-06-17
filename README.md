@@ -4,7 +4,7 @@
 ## 🔧 Stacks
 
 ### Environment
-git, github, visual studio code, intelli j
+<br>
 <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/>
 
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>
@@ -13,7 +13,7 @@ git, github, visual studio code, intelli j
 
 
 ### Development
-python 3.11, spring, javascript, MySQL
+<br>
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/>
 
 <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white"/>
@@ -22,4 +22,16 @@ python 3.11, spring, javascript, MySQL
 
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/>
 
+
+### Library
+<br>
+<img src=”https://img.shields.io/badge/soynlp-0.0.493-brightgreen?style=flat-square&logo=soynlp&logoColor=white”/> 
+
+<img src=”https://img.shields.io/badge/pip-23.1.2-brightgreen?style=flat-square&logo=pip&logoColor=white”/>
+
+### Communication
+<br>
+<img src=”https://img.shields.io/badge/Notion-white?style=flat-square&logo=Notion&logoColor=blue”/>
+
+<img src=”https://img.shields.io/badge/Webex-black?style=flat-square&logo=Webex&logoColor=blue”/>
 
