@@ -26,7 +26,7 @@ intents={
                 '지원자격유의사항':['note',1],
                 '외국인특별전형':['foreign',1],
                 '전형요소별평가방법':['test',1],
-                '전형일정':['schedule',1],  
+                '전형일정':['schedule',1],
                 #level 3
                 '두드림소프트웨어':['susi_dodreamsoft',3],
                 '불교추천':['susi_buddhism',3],

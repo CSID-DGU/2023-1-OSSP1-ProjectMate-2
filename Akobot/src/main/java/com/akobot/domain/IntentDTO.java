@@ -1,6 +1,7 @@
 package com.akobot.domain;
 
 import com.akobot.domain.tables.PushLogIntentsPK;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

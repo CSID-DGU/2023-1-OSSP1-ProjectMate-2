@@ -1,11 +1,14 @@
 package com.akobot.repository;
 
 import com.akobot.domain.IntentDTO;
+import com.akobot.domain.tables.EtcEntity;
 import com.akobot.domain.tables.PushLogIntentsPK;
 import com.akobot.domain.tables.EarlyAdmissionEntity;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
@@ -41,5 +44,10 @@ public class EarlyAdmissionRepository {
         }
 
         return null;
+    }
+
+    public List<EarlyAdmissionEntity> findAll() {
+        return em.createQuery("select e from earlyadmission e", EarlyAdmissionEntity.class)
+                .getResultList();
     }
 }

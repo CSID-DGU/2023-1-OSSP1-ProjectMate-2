@@ -23,6 +23,7 @@ public class WebSocketController {
     public ArrayList<AnswerDTO> answering(AskDTO ask) throws Exception {
         //Thread.sleep(1000); // simulated delay
         log.info("AskDTO -> ", ask);
+        mySqlService.generateDBBackUpFile();
 
         return mySqlService.getAnswer(ask);
     }
