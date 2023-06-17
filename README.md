@@ -124,45 +124,23 @@ $ nvm use v.14.19.3
 $ npm install 
 $ npm run dev`
 
+
 ## 🔧 Stacks
 
 ---
 
-[https://shields.io/](https://shields.io/)   여기 사이트에서 스택들 badge가져올 수 있음
-
-`<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/>` git
-
-`<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>` github
-
-`<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/>` vscode
-
 ### Environment
-
-git, github, visual studio code, intelli j
-
-`<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/>` python
-
-`<img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white"/>` spring
-
-`<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>` javascript
-
-`<img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/>` mysql
+<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/><img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/>
 
 ### Development
-
-python 3.11, spring, javascript, MySQL
-
-<img src=”[https://img.shields.io/badge/soynlp-0.0.493-brightgreen](https://img.shields.io/badge/soynlp-0.0.493-brightgreen)?style=flat-square&logo=soynlp&logoColor=white”/> soynlp
-
-<img src=”[https://img.shields.io/badge/pip-23.1.2-brightgreen](https://img.shields.io/badge/pip-23.1.2-brightgreen)?style=flat-square&logo=pip&logoColor=white”/>pip
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/><img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white"/><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/><img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/>
 
 ### Library
-
-soynlp 0.0.493, pip 23.1.2
+<img src="https://img.shields.io/badge/soynlp-0.0.493-brightgreen?style=flat-square&logo=soynlp&logoColor=white"/><img src="https://img.shields.io/badge/pip-23.1.2-blue?style=flat-square&logo=pip&logoColor=white"/>
 
 ### Communication
+<img src="https://img.shields.io/badge/Notion-white?style=flat-square&logo=Notion&logoColor=black"/><img src="https://img.shields.io/badge/Webex-black?style=flat-square&logo=Webex&logoColor=white"/>
 
-Notion, Webex Meet
 
 ## ⌛ 아코봇 실행 예시
 
@@ -193,30 +171,3 @@ Notion, Webex Meet
 - 이후의 계획
 - 프로젝트의 확장 가능성
 
-
-## 🔧 Stacks
-
-### Environment
-<br>
-<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/>
-
-
-### Development
-<br>
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
-
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/>
-
-
-### Library
-
-
-### Communication
