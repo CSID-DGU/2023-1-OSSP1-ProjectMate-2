@@ -30,6 +30,7 @@ public class Preprocessor {
         while((line = bfr.readLine()) != null){
             lines.add(line);
         }
+        log.info("Preprocessor return lines ->", lines);
 
         return lines;
     }
