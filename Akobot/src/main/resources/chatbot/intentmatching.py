@@ -8,9 +8,9 @@ import json
 usr_input = sys.argv[1]
 
 # reading the data from the file
-with open("db.txt",encoding="utf-8") as f:
+with open("C:/Users/win11/source/repos/2023-1-OPPS1-ProjectMate-2/Akobot/src/main/resources/chatbot/db.txt",encoding="utf-8") as f:
     db = f.read()
-      
+
 # reconstructing the data as a dictionary
 intents = json.loads(db)
 

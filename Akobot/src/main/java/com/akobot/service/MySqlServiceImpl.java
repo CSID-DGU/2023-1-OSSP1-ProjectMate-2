@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.thymeleaf.util.StringUtils.substring;
+
 @Slf4j
 @Service
 //@Transactional(readOnly = true)
@@ -41,32 +43,62 @@ public class MySqlServiceImpl implements MySqlService {
 
         String rt = "{";
         for(EtcEntity etc : etcEntities){
-            rt += "\'" + etc.getDname() + "\':";
+            rt += "\"" + etc.getDname() + "\":";
 
-            String intent = etc.getPks().getDocument();
-            String[] tmp = intent.split("_");
-            rt += "[\'" + tmp[1] + "\'," + etc.getLevel() + "],";
+            if(etc.getLevel() == 1) {
+                String intent = etc.getPks().getDocument();
+                String[] tmp = intent.split("_");
+                rt += "[\"" + tmp[1] + "\",";
+            }
+            else{
+                rt += "[\"" + etc.getPks().getDocument() + "\",";
+            }
+            rt += etc.getLevel() + "],";
         }
         for(KsatEntity ksat : ksatEntities) {
-            rt += "\'" + ksat.getDname() + "\':";
+            rt += "\"" + ksat.getDname() + "\":";
 
-            String intent = ksat.getPks().getDocument();
-            String[] tmp = intent.split("_");
-            rt += "[\'" + tmp[1] + "\'," + ksat.getLevel() + "],";
+            if(ksat.getLevel() == 1) {
+                String intent = ksat.getPks().getDocument();
+                String[] tmp = intent.split("_");
+                rt += "[\"" + tmp[1] + "\",";
+            }
+            else{
+                rt += "[\"" + ksat.getPks().getDocument() + "\",";
+            }
+            rt += ksat.getLevel() + "],";
         }
         for(EarlyAdmissionEntity earlyAdmission : earlyAdmissionEntities){
-            rt += "\'" + earlyAdmission.getDname() + "\':";
+            rt += "\"" + earlyAdmission.getDname() + "\":";
 
-            String intent = earlyAdmission.getPks().getDocument();
-            String[] tmp = intent.split("_");
-            rt += "[\'" + tmp[1] + "\'," + earlyAdmission.getLevel() + "],";
+            if(earlyAdmission.getLevel() == 1) {
+                String intent = earlyAdmission.getPks().getDocument();
+                String[] tmp = intent.split("_");
+                rt += "[\"" + tmp[1] + "\",";
+            }
+            else{
+                rt += "[\"" + earlyAdmission.getPks().getDocument() + "\",";
+            }
+            rt += earlyAdmission.getLevel() + "],";
         }
+        int i = 0;
         for(TestEntity test : testEntities){
-            rt += "\'" + test.getDname() + "\':";
+            rt += "\"" + test.getDname() + "\":";
 
-            String intent = test.getPks().getDocument();
-            String[] tmp = intent.split("_");
-            rt += "[\'" + tmp[1] + "\'," + test.getLevel() + "],";
+            if(test.getLevel() == 1) {
+                String intent = test.getPks().getDocument();
+                String[] tmp = intent.split("_");
+                rt += "[\"" + tmp[1] + "\",";
+            }
+            else{
+                rt += "[\"" + test.getPks().getDocument() + "\",";
+            }
+            rt += test.getLevel() + "]";
+
+            if(i < testEntities.size()-1)
+                rt += ",";
+
+            i++;
         }
         rt += "}";
         //rt = rt.replaceAll(System.getProperty("line.separator"),"");
@@ -134,6 +166,10 @@ public class MySqlServiceImpl implements MySqlService {
             if (tmp.length > 1) {
                 field = tmp[0];
                 doc = intent;
+            }
+            else{
+                field = intent;
+                doc = intent + "_" + intent;
             }
 
             IntentDTO intentDTO = new IntentDTO();
