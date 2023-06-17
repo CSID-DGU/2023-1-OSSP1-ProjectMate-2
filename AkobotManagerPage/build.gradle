@@ -38,8 +38,8 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	/* firebase 개발 환경 설정*/
-	implementation 'com.google.firebase:firebase-admin:7.1.1'
+	/* MySQL 개발 환경 설정*/
+	implementation 'mysql:mysql-connector-java:8.0.32'
 
 	/* DevTool 의존성 주입*/
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
@@ -60,6 +60,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	implementation fileTree(dir: 'libs', include: '*.jar')
 
+	/* COMMONS CODEC */
+	//implementation 'commons-codec:commons-codec:20041127.091804'
 }
 /* JUnit 5 */
 test {

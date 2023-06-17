@@ -4,9 +4,20 @@ plugins {
 	id 'io.spring.dependency-management' version '1.1.0'
 }
 
-group = 'com.example'
+group = 'com.akobot'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+	/* DevTool 의존성 주입을 위해 */
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
 
 repositories {
 	mavenCentral()
@@ -17,11 +28,42 @@ dependencies {
 	implementation 'org.webjars:webjars-locator-core'
 	implementation 'org.webjars:sockjs-client:1.0.2'
 	implementation 'org.webjars:stomp-websocket:2.3.3'
-	implementation 'org.webjars:bootstrap:3.3.7'
-	implementation 'org.webjars:jquery:3.1.1-1'
+	implementation 'org.webjars:bootstrap:3.4.0'
+	implementation 'org.webjars:jquery:3.6.2'
+
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.projectlombok:lombok:1.18.26'
+	testImplementation 'org.projectlombok:lombok:1.18.26'
+	testImplementation 'org.projectlombok:lombok:1.18.26'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	/* DevTool 의존성 주입*/
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
+	/* JUnit 5 */
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+	/* JPA */
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	/* MySQL 개발 환경 설정*/
+	implementation 'mysql:mysql-connector-java:8.0.32'
+
+	/* RDBMS */
+	implementation 'com.h2database:h2'
+
+	/* security + oauth2 */
+	//implementation 'org.springframework.boot:spring-boot-starter-security'
+	//implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+	/* GMAIL 보내기 */
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation fileTree(dir: 'libs', include: '*.jar')
 }
 
-tasks.named('test') {
+/* JUnit 5 */
+test {
 	useJUnitPlatform()
 }

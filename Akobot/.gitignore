@@ -3,6 +3,7 @@ HELP.md
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
+!**/src/main/resources/chatbot/__pycache__
 !**/src/test/**/build/
 
 ### STS ###

@@ -5,20 +5,25 @@ package com.AkobotWeb.domain;
  * Junho Choi
  */
 
-import com.google.cloud.Timestamp;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.ZonedDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class BoardVO {
+    private long school_key;
+    private String field;
     private Long bno;
-    private String content;
+    private String question;
+    private String answer;
+    private String email;
     private String name;
     //private String phone;
-    private String email;
-    private Timestamp regDate;
+    private ZonedDateTime askDate;
+    private ZonedDateTime answerDate;
+    private int isAnswered;
 }

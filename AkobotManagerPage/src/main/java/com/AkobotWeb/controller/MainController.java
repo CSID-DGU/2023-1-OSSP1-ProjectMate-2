@@ -11,7 +11,7 @@ import com.AkobotWeb.domain.DB.UpdateDTO;
 import com.AkobotWeb.domain.Mail.MailDTO;
 import com.AkobotWeb.domain.SMS.SMSDTO;
 import com.AkobotWeb.service.Email.MailService;
-import com.AkobotWeb.service.FirebaseService;
+import com.AkobotWeb.service.MySqlService;
 import com.AkobotWeb.service.SMS.SMSService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +32,7 @@ import java.net.HttpURLConnection;
 public class MainController {
     /*TODO Service 작성 */
     @Autowired
-    private FirebaseService fbservice;
+    private MySqlService mySqlService;
     private final MailService mailService;
     private final HttpSession httpSession;
 
@@ -82,7 +82,7 @@ public class MainController {
 
         log.info("GET Request to tables.html : "+boardVO.toString());
 
-        model.addAttribute("result", fbservice.getBoardVO());
+        model.addAttribute("result", mySqlService.getBoardVO());
         long end = System.nanoTime();
         log.info("Finished GET Request to solve.html --- " + (end-start)/1000000000.0+"sec");
         return "tables";
@@ -110,7 +110,7 @@ public class MainController {
             model.addAttribute("userName",user.getName());
             model.addAttribute("userImg",user.getPicture());
         }
-        model.addAttribute("result", fbservice.read(bno));
+        model.addAttribute("result", mySqlService.read(bno));
         log.info("GET Request to questionDetail.html with parameters bno:"+ bno+ " model:"+model.toString());
     }
 
@@ -126,7 +126,7 @@ public class MainController {
         }
 
         /*TODO 해결질문게시판 서비스 구성*/
-        model.addAttribute("result", fbservice.getSolveVO());
+        model.addAttribute("result", mySqlService.getSolveVO());
         long end = System.nanoTime();
         log.info("Finished GET Request to solve.html --- " + (end-start)/1000000000.0+"sec");
         return "solve";
@@ -140,7 +140,7 @@ public class MainController {
             model.addAttribute("userImg",user.getPicture());
         }
         /*TODO 해결 질문 게시판 조회 서비스 구성*/
-        model.addAttribute("result", fbservice.readSolve(bno));
+        model.addAttribute("result", mySqlService.readSolve(bno));
         log.info("GET Request to questionDetail.html with parameters bno:"+ bno+ " model:"+model.toString());
     }
 
@@ -230,7 +230,7 @@ public class MainController {
     /* 질문 사용자가 직접 등록*/
     @PostMapping("/add")
     public String add(BoardVO board) throws Exception {
-        fbservice.add(board);
+        mySqlService.add(board);
         /*rttr.addFlashAttribute("bno" , board.getBno());*/
         // return "redirect:dongguk"; // dongguk으로 redirect
         return "redirect:http://localhost:8090/"; // 챗봇으로 redirect
@@ -250,7 +250,7 @@ public class MainController {
         SMSService smsService = new SMSService();
         if(smsService.dealingSMS(smsdto) == HttpURLConnection.HTTP_OK){ // HTTP STATUS OK : 200 일 때
             /*TODO 정상처리시 미해결 질문 게시판에서 해결 질문 게시판으로 옮기기*/
-            fbservice.migrateSMS(smsdto, bno);
+            mySqlService.migrateSMS(smsdto, bno);
             log.info("답변 완료 - 미해결 질문 게시판에서 -> 해결 질문 게시판으로 이동 완료");
         }
         else{
@@ -267,8 +267,8 @@ public class MainController {
 
         /* TODO EMAIL */
         try {
-            //mailService.mailSend(mailDTO);    // 23.04.20 mailfault
-            fbservice.migrateEmail(mailDTO, bno);
+            mailService.mailSend(mailDTO);
+            mySqlService.migrateEmail(mailDTO, bno);
             log.info("답변 완료 - 미해결 질문 게시판에서 -> 해결 질문 게시판으로 이동 완료");
         }catch(Exception e){
             log.info("메일 발송 실패 : " + e.getMessage());
@@ -281,16 +281,33 @@ public class MainController {
     @PostMapping("/updateDB")
     public String updateDB(UpdateDTO updateDTO) throws Exception {
         // TODO 파라미터 파싱
-        String collection="";
+        String field ="";
         String doc="";
         log.info("DB update input: " +updateDTO.toString());
         String[] temp = updateDTO.getRadio_input().split("_");
         if(temp.length != 0 ){
-            collection = temp[0];
-            doc = temp[1];
+            field = temp[0];
+            doc = updateDTO.getRadio_input();
         }
         // 호출
-        fbservice.updateCB(collection, doc, updateDTO.getAnswer());
+        mySqlService.updateDB(field, doc, updateDTO.getAnswer());
+        return "manage";
+    }
+
+    /* DB 관리자 사용자 질문에 의한 챗봇 수정 처리*/
+    @PostMapping("/updateDBAtSolvedDetail")
+    public String updateDBAtSolvedDetail(UpdateDTO updateDTO) throws Exception {
+        // TODO 파라미터 파싱
+        String field ="";
+        String doc="";
+        log.info("DB update cause by question input: " +updateDTO.toString());
+        String[] temp = updateDTO.getRadio_input().split("_");
+        if(temp.length != 0 ){
+            field = temp[0];
+            doc = updateDTO.getRadio_input();
+        }
+        // 호출
+        mySqlService.updateDB(field, doc, updateDTO.getAnswer());
         return "redirect:solve";
     }
 }

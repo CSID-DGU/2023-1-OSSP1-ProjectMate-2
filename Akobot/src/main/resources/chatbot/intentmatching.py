@@ -2,6 +2,9 @@
 import pandas as pd
 import extracting # extracting.py import
 import ast
+import sys
+
+usr_input = sys.argv[1]
 
 # user keyword-intent keyword matching with dictionary {key:valuelist}
 '''
@@ -15,7 +18,7 @@ intents={
                 '지원자격유의사항':['note',1],
                 '외국인특별전형':['foreign',1],
                 '전형요소별평가방법':['test',1],
-                '전형일정':['schedule',1],  
+                '전형일정':['schedule',1],
                 #level 3
                 '두드림소프트웨어':['earlyadmission_dodreamsoft',3],
                 '불교추천':['earlyadmission_buddhism',3],
@@ -49,7 +52,8 @@ intents={
                 '정시일정':['schedule_ksat',10],
                 '수시일정':['schedule_earlyadmission',10],
                 #fallback intent
-                '잘못된 입력':['fallback',0]
+                #'잘못된 입력':['fallback',0]
+                '잘못된 입력':['fallback_default',0]
              }
 '''
 
@@ -71,10 +75,18 @@ intent_levels= pd.DataFrame(intent_list)[1].to_list()
 
 # 매칭된 [인텐트 영문명, 인텐트 레벨]를 갖는 2D 리스트
 matchings=[]
+'''
 for user_keyword in extracting.keywords: # extracted keywords from user input
     for intent_keyword in intent_keywords: # intent list from DB
         if intent_keyword in user_keyword: # if extracted keyword contains intent name
             matchings.append(intents[intent_keyword]) 
+            break
+'''
+
+for user_keyword in extracting.extracKeywords(usr_input): # extracted keywords from user input
+    for intent_keyword in intent_keywords: # intent list from DB
+        if intent_keyword in user_keyword: # if extracted keyword contains intent name
+            matchings.append(intents[intent_keyword])
             break
 
 # 매칭된 인텐트 수가 0이면 fallback 발생
