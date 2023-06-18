@@ -29,7 +29,7 @@ public class User extends BaseTimeEntity {
         this.name = name;
         this.email = email;
         this.picture = picture;
-        this.role = role;
+        this.role = role.ROLE_USER;
     }
     public User update(String name, String picture) {
         this.name = name;
@@ -40,3 +40,4 @@ public class User extends BaseTimeEntity {
         return this.role.getKey();
     }
 }
+

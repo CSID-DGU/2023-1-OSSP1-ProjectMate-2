@@ -31,14 +31,24 @@
     <button class="openBtn" onclick="javascript:checkpwd()">접속</button>
     <script>
         function checkpwd(){
-            if(document.getElementById('pwd').value != '980930'){
-                alert("암호가 틀립니다!!")
-                document.getElementById("pwd").value = '';
-            }
-            else{
-                alert("암호가 맞습니다!!")
-                location.href = "index";
-            }
+            var password = document.getElementById('pwd').value;
+            fetch('/checkPassword', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ password: password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.correct) {
+                    alert("암호가 맞습니다!!");
+                    location.href = "index";
+                } else {
+                    alert("암호가 틀립니다!!");
+                    document.getElementById("pwd").value = '';
+                }
+            });
         }
     </script>
 </div>
