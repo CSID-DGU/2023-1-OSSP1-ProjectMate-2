@@ -1,8 +1,9 @@
 **2023-1-OPPS1-ProjectMate-2**
 
-# Akobot **v2.0**
+2023년 1학기 동국대학교 컴퓨터공학과 공개SW프로젝트 2조의 프로젝트입니다 🙂
 
----
+# Akobot *v2.0* 🐘
+
 
 ### 🐘🧡아코봇, 동국대학교 입시정보를 알려줘!
 
@@ -18,7 +19,9 @@
 
 너비를 300정도로 프로젝트 이미지를 넣어준다 
 
-## Akobot **v2.0 🐘**
+
+
+## 프로젝트 소개  💬
 
 > 동국대학교 입학을 원하는 예비 입학생들에게 입시 정보를 보다 빠르고 정확하게 전달하기 위해, 홈페이지 오른쪽 하단에 상시 대기하고 있는 아코봇 !
 > 
@@ -38,15 +41,11 @@
 > 2. 신뢰성: 아코봇은 정확하고 최신의 정보를 기반으로 답변을 제공합니다. 이는 학생들이 신뢰할 수 있는 출처로부터 정보를 얻는 것과 동등한 효과를 가져옵니다. 학교 공식 홈페이지나 입시 관련 담당자와의 통신에 비해 신속하고 일관된 정보를 제공할 수 있으므로, 학생들은 더 큰 신뢰를 가지고 입시 준비에 임할 수 있습니다.
 > 3. 접근성: 아코봇은 PC로 접속하여 사용할 수 있습니다. 이는 누구나 언제 어디서든 챗봇을 이용하여 입시 정보를 얻을 수 있다는 것을 의미합니다. 따라서 지방이나 외국에 거주하거나, 바쁜 일정을 갖고 있는 학생들에게도 입시 정보에 손쉽게 접근할 수 있는 기회를 제공합니다.
 
-## 배포 주소
-
-> 개발 버전 :
-> 
-> 
-> **프론트 서버** : 
-> 
-> **백엔드 서버** : 
-> 
+## Introduction in English 💌
+Our chatbot supports the following component.
+1. The people who want to find the information about our university admission can obtain that information much faster and more accurately by using our chatbot.
+2. You can use our chatbot by connecting university official website and click the chatbot item where positioned lower right of website.
+3. If you can not obtain the result you don’t expect, you can send a e-mail to manager. So you can get an answer that contain the information you need directly.
 
 ## 👥  웹개발팀 소개
 
@@ -59,31 +58,17 @@
 | 김규리 | 2021111998 | Back-end | [@mandar2n](https://github.com/mandar2n) |
 | 김세민 | 2021112017 | User NLP & Rule-based Matching | [@semnisem](https://github.com/semnisem) |
 
-## 💬 프로젝트 소개
+## 배포 주소
 
-2023년 1학기 동국대학교 컴퓨터공학과 공개SW프로젝트 2조의 프로젝트입니다 🙂
-
-### 영어로 간략 소개(방법)
-
-부수적인 것들 소개. 도움이 될만한 했으면 하는 것들. You can take easy-to-understand lectures created by our team, including Scratch and Python. Also, improve your understanding and application skills of programming with exercise questions in the lecture videos.
-
-### 영어로 간략 소개(효과)
-
-아래와 같은 것을 지원해줌을 언급
-
-Our website supports the following component.
-
-1. Various online lectures with detailed descriptions and exercise questions.
-2. Q&A section to ask questions freely.
-3. Function to check the lecture you watched recently.
+> 개발 버전 :
+> 
+> 
+> **프론트 서버** : 
+> 
+> **백엔드 서버** : 
+> 
 
 ## **목차**
-
----
-
-[🚀 아코봇 시작 가이드](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#-아코봇-시작-가이드) 
-
-[🔧 Stacks ](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#-stacks)
 
 [⌛ 아코봇 실행 예시](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#-아코봇-실행-예시) 
 
@@ -91,44 +76,26 @@ Our website supports the following component.
 
 [©️ 라이센스](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#%EF%B8%8F-라이센스) 
 
+[🔧 Stacks ](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#-stacks)
+
 [🗓️ 프로젝트를 마치며](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#%EF%B8%8F-프로젝트를-마치며) 
 
-## 🚀 아코봇 시작 가이드
 
----
+## ⌛ 아코봇 실행 예시
 
-### Requirements
 
-For building and running the application you need:
+실행예시를 넣어준다
 
-- 필요한 버전
-- 애플리케이션버전 작성
+## 🖥️ 아코봇 관리자 페이지 화면 구성
 
-아래는 예시…
+표로 된 화면 구성 이미지를 넣으면 좋을 듯 함
 
-### Installation
+## ©️ 라이센스
 
-`$ git clone https://github.com/Voluntain-SKKU/Voluntain-2nd.git
-$ cd Voluntain-2nd`
-
-### Backend
-
-`$ cd strapi-backend
-$ nvm use v.14.19.3
-$ npm install
-$ npm run develop`
-
-### Frontend
-
-`$ cd voluntain-app
-$ nvm use v.14.19.3
-$ npm install 
-$ npm run dev`
-
+라이센스를 넣어준다
 
 ## 🔧 Stacks
 
----
 
 ### Environment
 <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/><img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/><img src="https://img.shields.io/badge/Intelli%20j-orange?style=flat-square&logo=intellijidea&logoColor=black"/>
@@ -143,30 +110,7 @@ $ npm run dev`
 <img src="https://img.shields.io/badge/Notion-white?style=flat-square&logo=Notion&logoColor=black"/><img src="https://img.shields.io/badge/Webex-black?style=flat-square&logo=Webex&logoColor=white"/>
 
 
-## ⌛ 아코봇 실행 예시
-
----
-
-실행예시를 넣어준다
-
-## 🖥️ 아코봇 관리자 페이지 화면 구성
-
----
-
-표로 된 화면 구성 이미지를 넣으면 좋을 듯 함
-
-- **We spoke to 20 Heads of Customer success and learned that they don't have any custom data tooling built for their use case**
-
-- **We have 10 pilot customers committed to implementing and using us in the next month**
-
-
-## ©️ 라이센스
-
----
-
 ## 🗓️ 프로젝트를 마치며
-
----
 
 - 고집했던 포인트
 - 이후의 계획
