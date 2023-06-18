@@ -5,7 +5,8 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-!**/build/
+!**/Akobot/build/libs/Akobot-0.0.1-SNAPSHOT.jar
+!**/AkobotManagerPage/build/libs/AkobotManagerPage-0.0.1-SNAPSHOT.jar
 *.pem
 
 ### FIREBASE KEY ###
