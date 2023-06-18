@@ -5,8 +5,10 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-!**/Akobot/build/libs/Akobot-0.0.1-SNAPSHOT.jar
-!**/AkobotManagerPage/build/libs/AkobotManagerPage-0.0.1-SNAPSHOT.jar
+!**/Akobot-0.0.1-SNAPSHOT.jar
+!**/AkobotManagerPage-0.0.1-SNAPSHOT.jar
+
+### EC2 KEY ###
 *.pem
 
 ### FIREBASE KEY ###
