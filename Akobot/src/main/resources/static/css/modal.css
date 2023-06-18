@@ -20,7 +20,7 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 #modal .modal-window {
-    background: rgba( 69, 139, 197, 0.70 );
+    background: rgba( 255, 165, 0, 0.70 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 13.5px );
     -webkit-backdrop-filter: blur( 13.5px );
