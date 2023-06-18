@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Hello WebSocket</title>
+    <title>Hello Akobot</title>
 
     <!-- for mobile screens -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--<link href="/main.css" rel="stylesheet">-->
+    <!--<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
     <link href="../static/css/modal.css" rel="stylesheet">
     <link href="../static/css/app.css" rel="stylesheet">
     <link href="../static/css/input.css" rel="stylesheet">
@@ -19,16 +19,14 @@
     <link href="../static/css/setup.css" rel="stylesheet">
     <link href="../static/css/typing.css" rel="stylesheet">
 
-    <script src="/webjars/jquery/jquery.min.js"></script>
-    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
-    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
 
     <style>
         .modal_background {
             background-image: url('../static/img/back.png');
             background-repeat : no-repeat;
             background-size: cover;
-    }
+        }
    /* 이미지의 높이 */
       #btn-modal {
         background: none;
@@ -36,7 +34,7 @@
          padding: 0;
       cursor: pointer;
       outline: none;
-    }
+   }
 
       #btn-modal img {
       width: 100px; /* 이미지의 너비 */
@@ -60,6 +58,7 @@
     position: relative;
     right:8px;
     top: 52px;
+    resize: none;
     }
     #send {
     padding: 0;
@@ -88,26 +87,13 @@
 
 <div id="modal" class="modal-overlay">
     <div class="modal-window">
-        <!--<div cla<a href="#" id="btn-modal"></a>ss="content">-->
         <div class="bubble-container">
             <div class="title">
                 <h2>Akobot</h2>
             </div>
             <div class="close-area">X</div>
-            <!--<div id="main-content" class="content">-->
             <div class="bubble-wrap" id="greetings">
-                <div class="bubble reply reply-freeform say">
-                <span class="bubble-content"> 질문을 해도 될까 수시 정시</span>
-                </div>
-
-                <div class="bubble say">
-                    <span class="bubble-content">재외국민 전형에서는 재외국민과 12년 해외 전교육과정 이수자 및 새터민인 경우 해당하고 인문계열/영화영상학과에서는 1단계 국어 50%, 영어 50%로 6배수를 뽑고 2단계에서는 1단계 성적으로 지원자격심사릃 진행해. 그리고 자연계열에서는 1단계 영어 50%, 수학 50%로 6배수를 뽑고 2단계에서는 1단계 성적으로 지원자격심사를 진행해. 외국인 전형은 부모 모두 외국인인 경우에 대항하고 인문/자연/예능(영화영상)에서는 서류종합평가 100%, 예능(미술/연극)에서는 실기구술 100%로 뽑아
-</span>
-                </div>
-                <div class="bubble say">
-                    <span class="bubble-content">재외국민 전형에서는 재외국민과 12년 해외 전교육과정 이수자 및 새터민인 경우 해당하고 인문계열/영화영상학과에서는 1단계 국어 50%, 영어 50%로 6배수를 뽑고 2단계에서는 1단계 성적으로 지원자격심사릃 진행해. 그리고 자연계열에서는 1단계 영어 50%, 수학 50%로 6배수를 뽑고 2단계에서는 1단계 성적으로 지원자격심사를 진행해. 외국인 전형은 부모 모두 외국인인 경우에 대항하고 인문/자연/예능(영화영상)에서는 서류종합평가 100%, 예능(미술/연극)에서는 실기구술 100%로 뽑아
-</span>
-                </div>
+                <!--질문/답변 내용 출력-->
             </div>
             <div class="input-wrap">
                 <form class="form-inline">
@@ -116,11 +102,13 @@
                 </form>
             </div>
         </div>
-        <!--</div>-->
     </div>
 </div>
 </body>
 
 <script src="../static/js/app.js"></script>
 <script src="../static/js/modal.js"></script>
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>
 </html>

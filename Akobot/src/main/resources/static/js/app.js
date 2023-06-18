@@ -19,7 +19,6 @@ function connect() {
         setConnected(true);
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/answers', function (answering) {
-            //showGreeting(JSON.parse(answering.body));
             showGreeting(JSON.parse(answering.body));
         });
     });
@@ -34,27 +33,22 @@ function disconnect() {
 }
 
 function sendName() {
-    /*$("#greetings").append("<tr style=\"text-align:right\"><td>USER</td></tr>");
-    $("#greetings").append("<tr style=\"text-align:right\"><td>" + $("#ask").val() + "</td></tr>");
-    stompClient.send("/app/question", {}, JSON.stringify({'ask': $("#ask").val()}));*/
 
-    $("#greetings").append("<div class=\"bubble reply reply-freeform say\">");
-    $("#greetings").append("<span class=\"bubble-content\">" + $("#ask").val() + "</span>");
-    $("#greetings").append("</div>");
+    reply = "<div class=\"bubble reply reply-freeform say\">"
+            + "<span class=\"bubble-content\">" + $("#ask").val() + "</span>"
+            + "</div>"
+    $("#greetings").append(reply);
 
     stompClient.send("/app/question", {}, JSON.stringify({'ask': $("#ask").val()}));
 }
 
 function showGreeting(messages) {
-    /*$("#greetings").append("<tr><td>SERVER</td></tr>");
-    for(i = 0; i < messages.length; i++){
-        $("#greetings").append("<tr><td>" + messages[i].says + "</td></tr>");
-    }*/
 
     for(i = 0; i < messages.length; i++){
-        $("#greetings").append("<div class=\"bubble say\">");
-        $("#greetings").append("<span class=\"bubble-content\">" + messages[i].says + "</span>");
-        $("#greetings").append("</div>");
+        str = "<div class=\"bubble say\">"
+                + "<span class=\"bubble-content\">" + messages[i].says + "</span>"
+                + "</div>";
+        $("#greetings").append(str);
     }
 }
 
