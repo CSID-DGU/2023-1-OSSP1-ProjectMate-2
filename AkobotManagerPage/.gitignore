@@ -6,10 +6,18 @@ HELP.md
 !**/src/main/resources/static/app.js
 
 ## EC2에서 필요
-build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+
+!build
+build/classes
+build/generated
+build/reports
+build/resources
+build/test-results
+build/tmp
+build/bootJarMainClassName
 
 ### FIREBASE KEY ###
 serviceAccountKey.json
