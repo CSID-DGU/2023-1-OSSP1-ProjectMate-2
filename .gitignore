@@ -1,10 +1,12 @@
 HELP.md
 .gradle
 ## EC2에서 필요
-build/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+#!**/src/main/**/build/
+#!**/src/test/**/build/
+
+### EC2 KEY ###
+*.pem
 
 ### FIREBASE KEY ###
 serviceAccountKey.json
@@ -48,3 +50,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Python ###
+**/__pycache__/

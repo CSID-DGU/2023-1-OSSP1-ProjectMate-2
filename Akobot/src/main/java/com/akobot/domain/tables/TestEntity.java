@@ -24,4 +24,10 @@ public class TestEntity {
 
     @Column(name="level")
     private int level;
+
+    @Column(name="fname")
+    private String fname;
+
+    @Column(name="dname")
+    private String dname;
 }

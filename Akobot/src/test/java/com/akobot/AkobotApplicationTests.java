@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -42,6 +43,12 @@ class AkoApplicationTests {
 				.build();
 
 		log.info(askSolRepository.save(askSol).toString());
+	}
+
+	@Test
+	public void preprocessor() throws IOException, InterruptedException {
+		Preprocessor preprocessor = new Preprocessor();
+		preprocessor.getMatchedIntents("수시 논술 알려줘");
 	}
 
 }

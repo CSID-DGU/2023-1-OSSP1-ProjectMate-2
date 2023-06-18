@@ -1,11 +1,14 @@
 package com.akobot.repository;
 
 import com.akobot.domain.IntentDTO;
+import com.akobot.domain.tables.KsatEntity;
 import com.akobot.domain.tables.PushLogIntentsPK;
 import com.akobot.domain.tables.TestEntity;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
@@ -40,5 +43,10 @@ public class TestRepository {
         }
 
         return null;
+    }
+
+    public List<TestEntity> findAll() {
+        return em.createQuery("select t from test t", TestEntity.class)
+                .getResultList();
     }
 }

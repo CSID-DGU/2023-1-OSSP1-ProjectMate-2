@@ -7,6 +7,8 @@ import com.akobot.domain.BoardVO;
 import java.util.ArrayList;
 
 public interface MySqlService {
+    public void generateDBBackUpFile() throws Exception;
+
     public ArrayList<AnswerDTO> getAnswer(AskDTO ask) throws Exception;
 
     public void add(BoardVO board) throws Exception;
