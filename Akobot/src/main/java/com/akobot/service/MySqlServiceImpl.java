@@ -185,28 +185,28 @@ public class MySqlServiceImpl implements MySqlService {
                 log.info(intentDTO.getClass() + " -> " + intentDTO);
 
                 if(!intentDTO.getPks().getDocument().equals("fallback_default")) {
-                    tmpStr.add(intentDTO.getMethod());
-                    tmpStr.add(intentDTO.getTarget());
-                    tmpStr.add(intentDTO.getContent());
-                    tmpStr.add(intentDTO.getCondition_text());
-                    tmpStr.add(intentDTO.getPoint());
-                    tmpStr.add(intentDTO.getTest());
-                    tmpStr.add(intentDTO.getElseData());
+                    tmpStr.add("\"" + intentDTO.getMethod() + "\"");
+                    tmpStr.add("\"" + intentDTO.getTarget() + "\"");
+                    tmpStr.add("\"" + intentDTO.getContent() + "\"");
+                    tmpStr.add("\"" + intentDTO.getCondition_text() + "\"");
+                    tmpStr.add("\"" + intentDTO.getPoint() + "\"");
+                    tmpStr.add("\"" + intentDTO.getTest() + "\"");
+                    tmpStr.add("\"" + intentDTO.getElseData() + "\"");
                 }
                 else{
                     log.info("fall-back occurred");
-                    tmpStr.add("음..잘 모르겠어요");
-                    tmpStr.add("아래 링크로 문의 주세요! 이메일로 답변해드립니다!");
-                    tmpStr.add("localhost:8090/ask");
+                    tmpStr.add("\"음..잘 모르겠어요\"");
+                    tmpStr.add("\"아래 링크로 문의 주세요! 이메일로 답변해드립니다!\"");
+                    tmpStr.add("\"localhost:8090/ask\"");
                 }
             }
             else {
                 log.info("intentDTO.getClass() -> null");
 
                 log.info("fall-back occurred");
-                tmpStr.add("음..잘 모르겠어요");
-                tmpStr.add("아래 링크로 문의 주세요! 이메일로 답변해드립니다!");
-                tmpStr.add("localhost:8090/ask");
+                tmpStr.add("\"음..잘 모르겠어요\"");
+                tmpStr.add("\"아래 링크로 문의 주세요! 이메일로 답변해드립니다!\"");
+                tmpStr.add("\"localhost:8090/ask\"");
             }
 
             AnswerDTO answer = new AnswerDTO();
