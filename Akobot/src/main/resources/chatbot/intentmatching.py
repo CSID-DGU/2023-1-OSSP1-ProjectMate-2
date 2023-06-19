@@ -3,12 +3,15 @@ import pandas as pd
 import extracting # extracting.py import
 import sys
 import json
+#import os
+#print(os.getcwd())
 
 # 임시!!!!! usr_input="수시 논술 알려줘"
 usr_input = sys.argv[1]
 
 # reading the data from the file
 with open("./Akobot/src/main/resources/chatbot/db.txt",encoding="utf-8") as f:
+#with open("./src/main/resources/chatbot/db.txt",encoding="utf-8") as f:
     db = f.read()
 
 # reconstructing the data as a dictionary

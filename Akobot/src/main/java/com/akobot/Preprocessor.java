@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,10 +15,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Preprocessor {
     public List<String> getMatchedIntents(String usr_input) throws IOException, InterruptedException {
+        log.info(Paths.get("").toAbsolutePath().toString());
         log.info("USER INPUT -> " + usr_input);
 
         ProcessBuilder pb = new ProcessBuilder("python",
                 "Akobot/src/main/resources/chatbot/intentmatching.py", usr_input);
+                //"src/main/resources/chatbot/intentmatching.py", usr_input);
 
         Process p = pb.start();
 
