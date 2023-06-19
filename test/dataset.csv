@@ -1,0 +1,741 @@
+﻿전체모집요강이 뭐야?,total
+전체모집요강 알려줘,total
+전체모집요강 알려줘,total
+전체모집요강 보여줘,total
+모집 공지 알려줄래?,total
+수시를 알고싶어,earlyadmission
+수시 알려줘,earlyadmission
+수시전형 알려줘,earlyadmission
+수시에 대해서 알고싶어,earlyadmission
+수시전형에 대해서 알고싶어,earlyadmission
+수시 지원하고싶어,earlyadmission
+수시,earlyadmission
+수시 전형,earlyadmission
+정시전형 알려줘,ksat
+정시 알려줘,ksat
+정시에 대해서 알고싶어,ksat
+정시전형에 대해서 알고싶어,ksat
+정시 지원하고싶어,ksat
+정시,ksat
+수능,ksat
+정시전형,ksat
+모집인원이 몇 명이지?,recruit
+모집인원 어때?,recruit
+몇 명 모집해?,recruit
+모집인원 알고싶어,recruit
+모집인원,recruit
+작년도경쟁률은 어때?,competition
+작년도경쟁률 알고싶어,competition
+작년도경쟁률 알려줘,competition
+경쟁률 알려줘,competition
+지원자격유의사항 있어?,note
+지원 시 유의점은 뭐야?,note
+지원자격유의사항 말해줘,note
+지원자격유의사항유의사항,note
+외국인특별전형,foreign
+외국인특별전형 알려줘,foreign
+외국인특별전형 지원할 수 있어?,foreign
+외국인특별전형 지원할 수 있어?,foreign
+외국인은 어떻게 지원해?,foreign
+외국인특별전형 궁금해,foreign
+외국인특별전형은 어때?,foreign
+how to apply,foreign
+전형요소별평가방법 알려줘,test
+전형요소별평가방법 알고싶어,test
+전형요소별평가방법 ,test
+어떻게 평가해?,test
+전형일정 어떻게 돼?,schedule
+전형일정 알려줘,schedule
+전형일정,schedule
+전형일정이 궁금해,schedule
+일반전형 설명해줘,ksat_normal
+일반전형은 뭐야?,ksat_normal
+일반전형,ksat_normal
+정시일반전형,ksat_normal
+일반전형은 어떻지?,ksat_normal
+농어촌전형,ksat_farming
+농어촌전형 설명해줘,ksat_farming
+농어촌전형 알려줘,ksat_farming
+농어촌전형을 설명해줘,ksat_farming
+농어촌전형 알고싶은데,ksat_farming
+특성화고교,ksat_specialized
+특성화고교전형,ksat_specialized
+특성화고교전형 설명해줘,ksat_specialized
+특성화고교전형 알려줘,ksat_specialized
+정시 특성화고교전형,ksat_specialized
+정시 특성화고교전형 설명해줘,ksat_specialized
+정시 특성화고교전형 알려줘,ksat_specialized
+재직자,ksat_incumbent
+재직자전형,ksat_incumbent
+재직자전형 설명해줘,ksat_incumbent
+재직자전형 알려줘,ksat_incumbent
+재직자는 지원가능할까?,ksat_incumbent
+정시 재직자전형 설명해줘,ksat_incumbent
+정시 재직자전형 알려줘,ksat_incumbent
+기초생활수급자,ksat_basic
+기초생활수급자및차상위계층전형은 어때?,ksat_basic
+기초생활수급자및차상위계층도 수능 지원할 수 있어?,ksat_basic
+기초생활수급자및차상위계층,ksat_basic
+기초생활수급자및차상위계층 설명해줘,ksat_basic
+기초생활수급자및차상위계층전형 설명해줘,ksat_basic
+기초생활수급자및차상위계층 지원방법 설명해줘,ksat_basic
+기초생활수급자및차상위계층을 알려줘,ksat_basic
+차상위계층전형 알려줘,ksat_basic
+두드림소프트웨어,earlyadmission_dodreamsoft
+수시 두드림소프트웨어,earlyadmission_dodreamsoft
+두드림소프트웨어 설명해줘,earlyadmission_dodreamsoft
+두드림소프트웨어 알려줘,earlyadmission_dodreamsoft
+두드림소프트웨어가 뭐야,earlyadmission_dodreamsoft
+수시 두드림소프트웨어 설명해줘,earlyadmission_dodreamsoft
+수시 두드림소프트웨어 알려줘,earlyadmission_dodreamsoft
+두드림소프트웨어전형,earlyadmission_dodreamsoft
+불교추천,earlyadmission_buddhism
+불교추천전형,earlyadmission_buddhism
+수시 불교추천,earlyadmission_buddhism
+학교장추천,earlyadmission_principal
+학교장추천전형,earlyadmission_principal
+수시 학교장추천,earlyadmission_principal
+수시 학교장추천전형,earlyadmission_principal
+두드림,earlyadmission_dodream
+두드림전형,earlyadmission_dodream
+수시 두드림전형,earlyadmission_dodream
+수시 두드림,earlyadmission_dodream
+두드림전형 설명해줘,earlyadmission_dodream
+두드림전형 알려줘,earlyadmission_dodream
+수시 두드림전형 설명해줘,earlyadmission_dodream
+두드림전형을 알고싶은데,earlyadmission_dodream
+두드림 알려줄래?,earlyadmission_dodream
+수시 두드림 알려줘,earlyadmission_dodream
+고른기회,earlyadmission_regular
+고른기회전형,earlyadmission_regular
+고른기회가 뭐야?,earlyadmission_regular
+고른기회전형 궁금하다,earlyadmission_regular
+고른기회 설명해줘,earlyadmission_regular
+고른기회 알려줘,earlyadmission_regular
+수시 고른기회 설명해줘,earlyadmission_regular
+수시 고른기회 알려줘,earlyadmission_regular
+수시 고른기회전형 설명해줘,earlyadmission_regular
+수시 고른기회전형 알려줘,earlyadmission_regular
+고른기회전형 설명해줘,earlyadmission_regular
+고른기회전형 알려줘,earlyadmission_regular
+농어촌학생재학거주인정기준,note_farming
+농어촌학생재학거주인정기준이 뭐야?,note_farming
+농어촌학생재학거주인정기준은 어때?,note_farming
+농어촌학생재학거주인정기준 궁금해,note_farming
+농어촌학생재학거주인정기준 알려줘,note_farming
+농어촌,"note_farming,ksat_farming "
+농어촌학생재학거주인정기준을 알려줄래?,note_farming
+특성화고교졸업자동일계열기준학과,note_special
+특성화고교졸업자동일계열기준학과는 어떻지?,note_special
+특성화고교졸업자동일계열기준학과가 궁금해,note_special
+특성화고교졸업자 동일계열 기준학과는 뭐야?,note_special
+특성화고교졸업자동일계열기준학과 알려줘,note_special
+재직기간산정기준,note_incumbent
+재직기간산정기준은 뭐야?,note_incumbent
+재직기간산정기준을 알려줘,note_incumbent
+재직기간산정기준,note_incumbent
+재직기간산정기준은 어떻게 돼?,note_incumbent
+서류종합평가,test_document
+서류종합평가방식,test_document
+서류종합평가의 기준은 뭐야?,test_document
+서류종합평가에는 뭐가 해당돼?,test_document
+서류,test_document
+서류종합평가방식 알려줘,test_document
+서류종합평가를 알려줘,test_document
+서류종합평가 항목이 궁금해,test_document
+면접평가,test_interview
+면접평가는 어떤 식으로 진행돼?,test_interview
+면접평가방식 알려줘,test_interview
+면접평가방법 알려줘,test_interview
+학교생활기록부,test_records
+생기부,test_records
+학교생활기록부 평가,test_records
+학교생활기록부 평가방식,test_records
+학교생활기록부 평가방법,test_records
+학교생활기록부 알려줘,test_records
+학교생활기록부는 어느 전형에 반영되지?,test_records
+학교생활기록부 반영 항목이 뭐야?,test_records
+학교생활기록부 어떻게 평가해?,test_records
+학교생활기록부 평가방법 알려줘,test_records
+대학수학능력시험성적,test_SAT
+대학수학능력시험,test_SAT
+수능,"ksat,test_SAT"
+대학수학능력시험을 점수 반영해?,test_SAT
+대학수학능력시험 평가방법,test_SAT
+대학수학능력시험 평가방식,test_SAT
+대학수학능력시험 평가방법 알려줘,test_SAT
+대학수학능력시험 평가방식 알려줘,test_SAT
+대학수학능력시험평가방법,test_SAT
+대학수학능력시험평가방식,test_SAT
+대학수학능력시험등급,test_SAT
+최저학력기준,fallback_default
+대학수학능력시험 잘쳐야돼?,test_SAT
+최저학력기준 알려줘,fallback_default
+최저 알려줘,test_SAT
+최저학력기준은 어때,fallback_default
+재외국민/외국인일정을 좀 알려주겠어?,schedule_foreigner
+정시일정이 어떻게 돼?,"ksat,schedule_ksat"
+정시일정이 궁금해,"ksat,schedule_ksat"
+정시일정 알려줘,"ksat,schedule_ksat"
+정시일정,"ksat,schedule_ksat"
+수시일정,"earlyadmission,schedule_earlyadmission"
+수시일정은 어때?,"earlyadmission,schedule_earlyadmission"
+수시일정 좀 알려줄래?,"earlyadmission,schedule_earlyadmission"
+수시일정은 언제부터 시작이야?,"earlyadmission,schedule_earlyadmission"
+전체모집요강 알려줘,total
+전체모집요강이 뭐야?,total
+전체모집요강을 알려줘,total
+수시 알려줘,earlyadmission
+수시를 알려줘,earlyadmission
+수시가 궁금해,earlyadmission
+수시에 대해서 알려줘,earlyadmission
+정시 알려줘,ksat
+정시를 알려줘,ksat
+정시가 궁금해,ksat
+정시에 대해서 알려줘,ksat
+모집인원 몇 명?,recruit
+모집인원을 알려줘,recruit
+모집인원이 몇 명이지?,recruit
+모집인원에 대해 알려줘,recruit
+작년도경쟁률은 어때?,competition
+작년도경쟁률을 알려줘,competition
+작년도경쟁률에 대해 말해줘,competition
+작년도경쟁률 알려줘,competition
+지원자격유의사항은 뭐야?,note
+지원자격유의사항을 알려줘,note
+지원자격유의사항에 대해 말해줘,note
+지원자격유의사항이 뭐뭐 있을까,note
+재외국민/외국인특별전형은 어떻게 돼?,foreign
+재외국민/외국인특별전형에 해당되는지 궁금해,foreign
+재외국민/외국인특별전형 알려줘,foreign
+재외국민/외국인특별전형이 궁금해,foreign
+재외국민/외국인특별전형으로 갈 수 있을까?,foreign
+전형요소별평가방법을 알려줘,test
+전형요소별평가방법이 어떻게 진행되는지 알아?,test
+전형요소별평가방법에 대해서 궁금해,test
+전형요소별평가방법으로는 뭐가 있어,test
+전형요소별평가방법은 어떤지 알려줘,test
+전형일정 알려줘,schedule
+전형일정이 궁금해,schedule
+전형일정은 어떻게 돼?,schedule
+전형일정에 대해 알려줘,schedule
+전형일정을 알고싶어,schedule
+두드림소프트웨어 알려줘,earlyadmission_dodream
+두드림소프트웨어가 궁금해,earlyadmission_dodream
+두드림소프트웨어는 어떻게 돼?,earlyadmission_dodream
+두드림소프트웨어에 대해 알려줘,earlyadmission_dodream
+두드림소프트웨어를 알고싶어,earlyadmission_dodream
+두드림을 알려줘,earlyadmission_dodream
+두드림 전형이 궁금해,earlyadmission_dodream
+두드림은 어떻게 돼?,earlyadmission_dodream
+두드림에 대해 알려줘,earlyadmission_dodream
+두드림을 알고싶어,earlyadmission_dodream
+불교추천 전형을 알려줘,earlyadmission_buddhism
+불교추천을 설명해줘,earlyadmission_buddhism
+불교추천이 뭐야?,earlyadmission_buddhism
+불교추천에 대해 알려줘,earlyadmission_buddhism
+불교추천을 알고싶어,earlyadmission_buddhism
+학교장추천 전형을 알려줘,earlyadmission_principal
+학교장추천을 설명해줘,earlyadmission_principal
+학교장추천이 뭐야?,earlyadmission_principal
+학교장추천에 대해 알려줘,earlyadmission_principal
+학교장추천을 알고싶어,earlyadmission_principal
+고른기회 전형이 뭐야?,earlyadmission_regular
+고른기회는 어때?,earlyadmission_regular
+고른기회전형이 뭔지 궁금해,earlyadmission_regular
+고른기회에 해당되는지 알려줘,earlyadmission_regular
+고른기회를 설명해봐,earlyadmission_regular
+논술 전형을 설명해줘,earlyadmission_essay
+논술 언제야?,earlyadmission_essay
+논술에 대해서 알려줘,earlyadmission_essay
+논술은 어떻게 하는거지?,earlyadmission_essay
+논술을 잘 모르겠어,earlyadmission_essay
+일반전형 알려줘,ksat_normal
+일반전형은 어때,ksat_normal
+일반전형이 뭐야,ksat_normal
+일반전형을 알고싶어,ksat_normal
+농어촌전형 알려줘,note_farming
+농어촌전형은 어떻게 돼?,note_farming
+농어촌전형에 해당되는지 궁금해,note_farming
+농어촌전형이 어떤 전형이야?,note_farming
+특성화고교 졸업자 통합계열 기준학과 좀 알려줘,note_special
+특성화고교 전형을 알려줘,note_special
+특성화고는 전형이 따로 있나?,note_special
+재직자인데 관련 전형을 알고 싶어,note_incumbent
+재직자는 어떤 전형이 있을까?,note_incumbent
+재직자 전형 알려줘,note_incumbent
+재직자에 대해 궁금해,note_incumbent
+기초생활수급자및차상위계층 전형 설명해줘,ksat_basic
+기초생활수급자및차상위계층은 어떤 전형에 지원이 가능해?,ksat_basic
+기초생활수급자및차상위계층에 해당돼,ksat_basic
+기초생활수급자및차상위계층이야,ksat_basic
+기초생활수급자및차상위계층을 알려줘,ksat_basic
+농어촌학생재학거주인정기준 어떻게 돼?,note_farming
+농어촌학생재학거주인정기준을 알려줘,note_farming
+특성화고교졸업자통합계열기준학과가 뭐뭐 있지?,note_special
+특성화고교졸업자통합계열기준학과에 해당되는데 유의사항 있을까?,note_special
+재직기간산정기준 있나요?,note_incumbent
+제직기간간정기준이 어떻게 될까,note_incumbent
+서류종합평가 방법이 궁금해,test_document
+서류종합평가 방식을 알려줘,test_document
+서류종합평가는 어떻게 진행돼?,test_document
+수시에서 면접평가 해?,"earlyadmission,test_interview"
+면접평가는 어떻게 돼?,test_interview
+면접평가 기준에 대해서 알려줘,test_interview
+학교생활기록부 반영방법,test_records
+학교생활기록부에 어떤게 반영이 돼?,test_records
+대학수학능력시험 알려줘,test_SAT
+대학수학능력시험에 대해 알고싶어,test_SAT
+특수교육대상자에 해당되는 게 있을까?,earlyadmission_special
+특수교육대상자에게 해당되는 전형이 수시에 있어?,earlyadmission_special
+실기는 어느 전형이야?,earlyadmission_performance
+실기를 준비하고 싶은데 실기에 관련한 정보를 제공해줘,earlyadmission_performance
+수시경쟁률은 어때?,"earlyadmission,competition_earlyadmission"
+수시경쟁률은 어느정도야?,"earlyadmission,competition_earlyadmission"
+수시경쟁률을 보고싶어,"earlyadmission,competition_earlyadmission"
+정시경쟁률은 어때?,"ksat,competition_ksat"
+정시경쟁률은 어느정도야?,"ksat,competition_ksat"
+정시경쟁률을 보고싶어,"ksat,competition_ksat"
+고마워,fallback_default
+알겠어,fallback_default
+전체모집요강이 뭐야?,total
+전체모집요강 알려줘,total
+전체모집요강 알려줘,total
+전체모집요강 보여줘,total
+모집 공지 알려줄래?,total
+수시를 알고싶어,earlyadmission
+수시 알려줘,earlyadmission
+수시전형 알려줘,earlyadmission
+수시에 대해서 알고싶어,earlyadmission
+수시전형에 대해서 알고싶어,earlyadmission
+수시 지원하고싶어,earlyadmission
+수시,earlyadmission
+수시 전형,earlyadmission
+정시전형 알려줘,ksat
+정시 알려줘,ksat
+정시에 대해서 알고싶어,ksat
+정시전형에 대해서 알고싶어,ksat
+정시 지원하고싶어,ksat
+정시,ksat
+수능,ksat
+정시전형,ksat
+모집인원이 몇 명이지?,recruit
+모집인원 어때?,recruit
+몇 명 모집해?,recruit
+모집인원 알고싶어,recruit
+모집인원,recruit
+작년도경쟁률은 어때?,competition
+작년도경쟁률 알고싶어,competition
+작년도경쟁률 알려줘,competition
+경쟁률 알려줘,competition
+지원자격유의사항 있어?,note
+지원 시 유의점은 뭐야?,note
+지원자격유의사항 말해줘,note
+지원자격유의사항유의사항,note
+외국인특별전형,foreign
+외국인특별전형 알려줘,foreign
+외국인특별전형 지원할 수 있어?,foreign
+외국인특별전형 지원할 수 있어?,foreign
+외국인은 어떻게 지원해?,foreign
+외국인특별전형 궁금해,foreign
+외국인특별전형은 어때?,foreign
+how to apply,foreign
+전형요소별평가방법 알려줘,test
+전형요소별평가방법 알고싶어,test
+전형요소별평가방법 ,test
+어떻게 평가해?,test
+전형일정 어떻게 돼?,schedule
+전형일정 알려줘,schedule
+전형일정,schedule
+전형일정이 궁금해,schedule
+일반전형 설명해줘,ksat_normal
+일반전형은 뭐야?,ksat_normal
+일반전형,ksat_normal
+정시일반전형,ksat_normal
+일반전형은 어떻지?,ksat_normal
+농어촌전형,ksat_farming
+농어촌전형 설명해줘,ksat_farming
+농어촌전형 알려줘,ksat_farming
+농어촌전형을 설명해줘,ksat_farming
+농어촌전형 알고싶은데,ksat_farming
+특성화고교,ksat_specialized
+특성화고교전형,ksat_specialized
+특성화고교전형 설명해줘,ksat_specialized
+특성화고교전형 알려줘,ksat_specialized
+정시 특성화고교전형,ksat_specialized
+정시 특성화고교전형 설명해줘,ksat_specialized
+정시 특성화고교전형 알려줘,ksat_specialized
+재직자,ksat_incumbent
+재직자전형,ksat_incumbent
+재직자전형 설명해줘,ksat_incumbent
+재직자전형 알려줘,ksat_incumbent
+재직자는 지원가능할까?,ksat_incumbent
+정시 재직자전형 설명해줘,ksat_incumbent
+정시 재직자전형 알려줘,ksat_incumbent
+기초생활수급자,ksat_basic
+기초생활수급자및차상위계층전형은 어때?,ksat_basic
+기초생활수급자및차상위계층도 수능 지원할 수 있어?,ksat_basic
+기초생활수급자및차상위계층,ksat_basic
+기초생활수급자및차상위계층 설명해줘,ksat_basic
+기초생활수급자및차상위계층전형 설명해줘,ksat_basic
+기초생활수급자및차상위계층 지원방법 설명해줘,ksat_basic
+기초생활수급자및차상위계층을 알려줘,ksat_basic
+차상위계층전형 알려줘,ksat_basic
+두드림소프트웨어,earlyadmission_dodreamsoft
+수시 두드림소프트웨어,earlyadmission_dodreamsoft
+두드림소프트웨어 설명해줘,earlyadmission_dodreamsoft
+두드림소프트웨어 알려줘,earlyadmission_dodreamsoft
+두드림소프트웨어가 뭐야,earlyadmission_dodreamsoft
+수시 두드림소프트웨어 설명해줘,earlyadmission_dodreamsoft
+수시 두드림소프트웨어 알려줘,earlyadmission_dodreamsoft
+두드림소프트웨어전형,earlyadmission_dodreamsoft
+불교추천,earlyadmission_buddhism
+불교추천전형,earlyadmission_buddhism
+수시 불교추천,earlyadmission_buddhism
+학교장추천,earlyadmission_principal
+학교장추천전형,earlyadmission_principal
+수시 학교장추천,earlyadmission_principal
+수시 학교장추천전형,earlyadmission_principal
+두드림,earlyadmission_dodream
+두드림전형,earlyadmission_dodream
+수시 두드림전형,earlyadmission_dodream
+수시 두드림,earlyadmission_dodream
+두드림전형 설명해줘,earlyadmission_dodream
+두드림전형 알려줘,earlyadmission_dodream
+수시 두드림전형 설명해줘,earlyadmission_dodream
+두드림전형을 알고싶은데,earlyadmission_dodream
+두드림 알려줄래?,earlyadmission_dodream
+수시 두드림 알려줘,earlyadmission_dodream
+고른기회,earlyadmission_regular
+고른기회전형,earlyadmission_regular
+고른기회가 뭐야?,earlyadmission_regular
+고른기회전형 궁금하다,earlyadmission_regular
+고른기회 설명해줘,earlyadmission_regular
+고른기회 알려줘,earlyadmission_regular
+수시 고른기회 설명해줘,earlyadmission_regular
+수시 고른기회 알려줘,earlyadmission_regular
+수시 고른기회전형 설명해줘,earlyadmission_regular
+수시 고른기회전형 알려줘,earlyadmission_regular
+고른기회전형 설명해줘,earlyadmission_regular
+고른기회전형 알려줘,earlyadmission_regular
+농어촌학생재학거주인정기준,note_farming
+농어촌학생재학거주인정기준이 뭐야?,note_farming
+농어촌학생재학거주인정기준은 어때?,note_farming
+농어촌학생재학거주인정기준 궁금해,note_farming
+농어촌학생재학거주인정기준 알려줘,note_farming
+농어촌,"note_farming,ksat_farming "
+농어촌학생재학거주인정기준을 알려줄래?,note_farming
+특성화고교졸업자동일계열기준학과,note_special
+특성화고교졸업자동일계열기준학과는 어떻지?,note_special
+특성화고교졸업자동일계열기준학과가 궁금해,note_special
+특성화고교졸업자 동일계열 기준학과는 뭐야?,note_special
+특성화고교졸업자동일계열기준학과 알려줘,note_special
+재직기간산정기준,note_incumbent
+재직기간산정기준은 뭐야?,note_incumbent
+재직기간산정기준을 알려줘,note_incumbent
+재직기간산정기준,note_incumbent
+재직기간산정기준은 어떻게 돼?,note_incumbent
+서류종합평가,test_document
+서류종합평가방식,test_document
+서류종합평가의 기준은 뭐야?,test_document
+서류종합평가에는 뭐가 해당돼?,test_document
+서류,test_document
+서류종합평가방식 알려줘,test_document
+서류종합평가를 알려줘,test_document
+서류종합평가 항목이 궁금해,test_document
+면접평가,test_interview
+면접평가는 어떤 식으로 진행돼?,test_interview
+면접평가방식 알려줘,test_interview
+면접평가방법 알려줘,test_interview
+학교생활기록부,test_records
+생기부,test_records
+학교생활기록부 평가,test_records
+학교생활기록부 평가방식,test_records
+학교생활기록부 평가방법,test_records
+학교생활기록부 알려줘,test_records
+학교생활기록부는 어느 전형에 반영되지?,test_records
+학교생활기록부 반영 항목이 뭐야?,test_records
+학교생활기록부 어떻게 평가해?,test_records
+학교생활기록부 평가방법 알려줘,test_records
+대학수학능력시험성적,test_SAT
+대학수학능력시험,test_SAT
+수능,"ksat,test_SAT"
+대학수학능력시험을 점수 반영해?,test_SAT
+대학수학능력시험 평가방법,test_SAT
+대학수학능력시험 평가방식,test_SAT
+대학수학능력시험 평가방법 알려줘,test_SAT
+대학수학능력시험 평가방식 알려줘,test_SAT
+대학수학능력시험평가방법,test_SAT
+대학수학능력시험평가방식,test_SAT
+대학수학능력시험등급,test_SAT
+최저학력기준,fallback_default
+대학수학능력시험 잘쳐야돼?,test_SAT
+최저학력기준 알려줘,fallback_default
+최저 알려줘,test_SAT
+최저학력기준은 어때,fallback_default
+재외국민/외국인일정을 좀 알려주겠어?,schedule_foreigner
+정시일정이 어떻게 돼?,"ksat,schedule_ksat"
+정시일정이 궁금해,"ksat,schedule_ksat"
+정시일정 알려줘,"ksat,schedule_ksat"
+정시일정,"ksat,schedule_ksat"
+수시일정,"earlyadmission,schedule_earlyadmission"
+수시일정은 어때?,"earlyadmission,schedule_earlyadmission"
+수시일정 좀 알려줄래?,"earlyadmission,schedule_earlyadmission"
+수시일정은 언제부터 시작이야?,"earlyadmission,schedule_earlyadmission"
+전체모집요강 알려줘,total
+전체모집요강이 뭐야?,total
+전체모집요강을 알려줘,total
+수시 알려줘,earlyadmission
+수시를 알려줘,earlyadmission
+수시가 궁금해,earlyadmission
+수시에 대해서 알려줘,earlyadmission
+정시 알려줘,ksat
+정시를 알려줘,ksat
+정시가 궁금해,ksat
+정시에 대해서 알려줘,ksat
+모집인원 몇 명?,recruit
+모집인원을 알려줘,recruit
+모집인원이 몇 명이지?,recruit
+모집인원에 대해 알려줘,recruit
+작년도경쟁률은 어때?,competition
+작년도경쟁률을 알려줘,competition
+작년도경쟁률에 대해 말해줘,competition
+작년도경쟁률 알려줘,competition
+지원자격유의사항은 뭐야?,note
+지원자격유의사항을 알려줘,note
+지원자격유의사항에 대해 말해줘,note
+지원자격유의사항이 뭐뭐 있을까,note
+재외국민/외국인특별전형은 어떻게 돼?,foreign
+재외국민/외국인특별전형에 해당되는지 궁금해,foreign
+재외국민/외국인특별전형 알려줘,foreign
+재외국민/외국인특별전형이 궁금해,foreign
+재외국민/외국인특별전형으로 갈 수 있을까?,foreign
+전형요소별평가방법을 알려줘,test
+전형요소별평가방법이 어떻게 진행되는지 알아?,test
+전형요소별평가방법에 대해서 궁금해,test
+전형요소별평가방법으로는 뭐가 있어,test
+전형요소별평가방법은 어떤지 알려줘,test
+전형일정 알려줘,schedule
+전형일정이 궁금해,schedule
+전형일정은 어떻게 돼?,schedule
+전형일정에 대해 알려줘,schedule
+전형일정을 알고싶어,schedule
+두드림소프트웨어 알려줘,earlyadmission_dodream
+두드림소프트웨어가 궁금해,earlyadmission_dodream
+두드림소프트웨어는 어떻게 돼?,earlyadmission_dodream
+두드림소프트웨어에 대해 알려줘,earlyadmission_dodream
+두드림소프트웨어를 알고싶어,earlyadmission_dodream
+두드림을 알려줘,earlyadmission_dodream
+두드림 전형이 궁금해,earlyadmission_dodream
+두드림은 어떻게 돼?,earlyadmission_dodream
+두드림에 대해 알려줘,earlyadmission_dodream
+두드림을 알고싶어,earlyadmission_dodream
+불교추천 전형을 알려줘,earlyadmission_buddhism
+불교추천을 설명해줘,earlyadmission_buddhism
+불교추천이 뭐야?,earlyadmission_buddhism
+불교추천에 대해 알려줘,earlyadmission_buddhism
+불교추천을 알고싶어,earlyadmission_buddhism
+학교장추천 전형을 알려줘,earlyadmission_principal
+학교장추천을 설명해줘,earlyadmission_principal
+학교장추천이 뭐야?,earlyadmission_principal
+학교장추천에 대해 알려줘,earlyadmission_principal
+학교장추천을 알고싶어,earlyadmission_principal
+고른기회 전형이 뭐야?,earlyadmission_regular
+고른기회는 어때?,earlyadmission_regular
+고른기회전형이 뭔지 궁금해,earlyadmission_regular
+고른기회에 해당되는지 알려줘,earlyadmission_regular
+고른기회를 설명해봐,earlyadmission_regular
+논술 전형을 설명해줘,earlyadmission_essay
+논술 언제야?,earlyadmission_essay
+논술에 대해서 알려줘,earlyadmission_essay
+논술은 어떻게 하는거지?,earlyadmission_essay
+논술을 잘 모르겠어,earlyadmission_essay
+일반전형 알려줘,ksat_normal
+일반전형은 어때,ksat_normal
+일반전형이 뭐야,ksat_normal
+일반전형을 알고싶어,ksat_normal
+농어촌전형 알려줘,note_farming
+농어촌전형은 어떻게 돼?,note_farming
+농어촌전형에 해당되는지 궁금해,note_farming
+농어촌전형이 어떤 전형이야?,note_farming
+특성화고교 졸업자 통합계열 기준학과 좀 알려줘,note_special
+특성화고교 전형을 알려줘,note_special
+특성화고는 전형이 따로 있나?,note_special
+재직자인데 관련 전형을 알고 싶어,note_incumbent
+재직자는 어떤 전형이 있을까?,note_incumbent
+재직자 전형 알려줘,note_incumbent
+재직자에 대해 궁금해,note_incumbent
+기초생활수급자및차상위계층 전형 설명해줘,ksat_basic
+기초생활수급자및차상위계층은 어떤 전형에 지원이 가능해?,ksat_basic
+기초생활수급자및차상위계층에 해당돼,ksat_basic
+기초생활수급자및차상위계층이야,ksat_basic
+기초생활수급자및차상위계층을 알려줘,ksat_basic
+농어촌학생재학거주인정기준 어떻게 돼?,note_farming
+농어촌학생재학거주인정기준을 알려줘,note_farming
+특성화고교졸업자통합계열기준학과가 뭐뭐 있지?,note_special
+특성화고교졸업자통합계열기준학과에 해당되는데 유의사항 있을까?,note_special
+재직기간산정기준 있나요?,note_incumbent
+제직기간간정기준이 어떻게 될까,note_incumbent
+서류종합평가 방법이 궁금해,test_document
+서류종합평가 방식을 알려줘,test_document
+서류종합평가는 어떻게 진행돼?,test_document
+수시에서 면접평가 해?,"earlyadmission,test_interview"
+면접평가는 어떻게 돼?,test_interview
+면접평가 기준에 대해서 알려줘,test_interview
+학교생활기록부 반영방법,test_records
+학교생활기록부에 어떤게 반영이 돼?,test_records
+대학수학능력시험 알려줘,test_SAT
+대학수학능력시험에 대해 알고싶어,test_SAT
+특수교육대상자에 해당되는 게 있을까?,earlyadmission_special
+특수교육대상자에게 해당되는 전형이 수시에 있어?,earlyadmission_special
+실기는 어느 전형이야?,earlyadmission_performance
+실기를 준비하고 싶은데 실기에 관련한 정보를 제공해줘,earlyadmission_performance
+수시경쟁률은 어때?,"earlyadmission,competition_earlyadmission"
+수시경쟁률은 어느정도야?,"earlyadmission,competition_earlyadmission"
+수시경쟁률을 보고싶어,"earlyadmission,competition_earlyadmission"
+정시경쟁률은 어때?,"ksat,competition_ksat"
+정시경쟁률은 어느정도야?,"ksat,competition_ksat"
+정시경쟁률을 보고싶어,"ksat,competition_ksat"
+고마워,fallback_default
+알겠어,fallback_default
+전체모집요강이 뭐야?,total
+전체모집요강 알려줘,total
+전체모집요강 알려줘,total
+전체모집요강 보여줘,total
+모집 공지 알려줄래?,total
+수시를 알고싶어,earlyadmission
+수시 알려줘,earlyadmission
+수시전형 알려줘,earlyadmission
+수시에 대해서 알고싶어,earlyadmission
+수시전형에 대해서 알고싶어,earlyadmission
+수시 지원하고싶어,earlyadmission
+수시,earlyadmission
+수시 전형,earlyadmission
+정시전형 알려줘,ksat
+정시 알려줘,ksat
+정시에 대해서 알고싶어,ksat
+정시전형에 대해서 알고싶어,ksat
+정시 지원하고싶어,ksat
+정시,ksat
+수능,ksat
+정시전형,ksat
+모집인원이 몇 명이지?,recruit
+모집인원 어때?,recruit
+몇 명 모집해?,recruit
+모집인원 알고싶어,recruit
+모집인원,recruit
+작년도경쟁률은 어때?,competition
+작년도경쟁률 알고싶어,competition
+작년도경쟁률 알려줘,competition
+경쟁률 알려줘,competition
+지원자격유의사항 있어?,note
+지원 시 유의점은 뭐야?,note
+지원자격유의사항 말해줘,note
+지원자격유의사항유의사항,note
+외국인특별전형,foreign
+외국인특별전형 알려줘,foreign
+외국인특별전형 지원할 수 있어?,foreign
+외국인특별전형 지원할 수 있어?,foreign
+외국인은 어떻게 지원해?,foreign
+외국인특별전형 궁금해,foreign
+외국인특별전형은 어때?,foreign
+how to apply,foreign
+전형요소별평가방법 알려줘,test
+전형요소별평가방법 알고싶어,test
+전형요소별평가방법 ,test
+어떻게 평가해?,test
+전형일정 어떻게 돼?,schedule
+전형일정 알려줘,schedule
+전형일정,schedule
+전형일정이 궁금해,schedule
+일반전형 설명해줘,ksat_normal
+일반전형은 뭐야?,ksat_normal
+일반전형,ksat_normal
+정시일반전형,ksat_normal
+일반전형은 어떻지?,ksat_normal
+농어촌전형,ksat_farming
+농어촌전형 설명해줘,ksat_farming
+농어촌전형 알려줘,ksat_farming
+농어촌전형을 설명해줘,ksat_farming
+농어촌전형 알고싶은데,ksat_farming
+특성화고교,ksat_specialized
+특성화고교전형,ksat_specialized
+특성화고교전형 설명해줘,ksat_specialized
+특성화고교전형 알려줘,ksat_specialized
+정시 특성화고교전형,ksat_specialized
+정시 특성화고교전형 설명해줘,ksat_specialized
+정시 특성화고교전형 알려줘,ksat_specialized
+재직자,ksat_incumbent
+재직자전형,ksat_incumbent
+재직자전형 설명해줘,ksat_incumbent
+재직자전형 알려줘,ksat_incumbent
+재직자는 지원가능할까?,ksat_incumbent
+정시 재직자전형 설명해줘,ksat_incumbent
+정시 재직자전형 알려줘,ksat_incumbent
+기초생활수급자,ksat_basic
+기초생활수급자및차상위계층전형은 어때?,ksat_basic
+기초생활수급자및차상위계층도 수능 지원할 수 있어?,ksat_basic
+기초생활수급자및차상위계층,ksat_basic
+기초생활수급자및차상위계층 설명해줘,ksat_basic
+기초생활수급자및차상위계층전형 설명해줘,ksat_basic
+기초생활수급자및차상위계층 지원방법 설명해줘,ksat_basic
+기초생활수급자및차상위계층을 알려줘,ksat_basic
+차상위계층전형 알려줘,ksat_basic
+두드림소프트웨어,earlyadmission_dodreamsoft
+수시 두드림소프트웨어,earlyadmission_dodreamsoft
+두드림소프트웨어 설명해줘,earlyadmission_dodreamsoft
+두드림소프트웨어 알려줘,earlyadmission_dodreamsoft
+두드림소프트웨어가 뭐야,earlyadmission_dodreamsoft
+수시 두드림소프트웨어 설명해줘,earlyadmission_dodreamsoft
+수시 두드림소프트웨어 알려줘,earlyadmission_dodreamsoft
+두드림소프트웨어전형,earlyadmission_dodreamsoft
+불교추천,earlyadmission_buddhism
+불교추천전형,earlyadmission_buddhism
+수시 불교추천,earlyadmission_buddhism
+학교장추천,earlyadmission_principal
+학교장추천전형,earlyadmission_principal
+수시 학교장추천,earlyadmission_principal
+수시 학교장추천전형,earlyadmission_principal
+두드림,earlyadmission_dodream
+두드림전형,earlyadmission_dodream
+수시 두드림전형,earlyadmission_dodream
+수시 두드림,earlyadmission_dodream
+두드림전형 설명해줘,earlyadmission_dodream
+두드림전형 알려줘,earlyadmission_dodream
+수시 두드림전형 설명해줘,earlyadmission_dodream
+두드림전형을 알고싶은데,earlyadmission_dodream
+두드림 알려줄래?,earlyadmission_dodream
+수시 두드림 알려줘,earlyadmission_dodream
+고른기회,earlyadmission_regular
+고른기회전형,earlyadmission_regular
+고른기회가 뭐야?,earlyadmission_regular
+고른기회전형 궁금하다,earlyadmission_regular
+고른기회 설명해줘,earlyadmission_regular
+고른기회 알려줘,earlyadmission_regular
+수시 고른기회 설명해줘,earlyadmission_regular
+수시 고른기회 알려줘,earlyadmission_regular
+수시 고른기회전형 설명해줘,earlyadmission_regular
+수시 고른기회전형 알려줘,earlyadmission_regular
+고른기회전형 설명해줘,earlyadmission_regular
+고른기회전형 알려줘,earlyadmission_regular
+농어촌학생재학거주인정기준,note_farming
+농어촌학생재학거주인정기준이 뭐야?,note_farming
+농어촌학생재학거주인정기준은 어때?,note_farming
+농어촌학생재학거주인정기준 궁금해,note_farming
+농어촌학생재학거주인정기준 알려줘,note_farming
+농어촌,"note_farming,ksat_farming "
+농어촌학생재학거주인정기준을 알려줄래?,note_farming
+특성화고교졸업자동일계열기준학과,note_special
+특성화고교졸업자동일계열기준학과는 어떻지?,note_special
+특성화고교졸업자동일계열기준학과가 궁금해,note_special
+특성화고교졸업자 동일계열 기준학과는 뭐야?,note_special
+특성화고교졸업자동일계열기준학과 알려줘,note_special
+재직기간산정기준,note_incumbent
+재직기간산정기준은 뭐야?,note_incumbent
+재직기간산정기준을 알려줘,note_incumbent
+재직기간산정기준,note_incumbent
+재직기간산정기준은 어떻게 돼?,note_incumbent
+서류종합평가,test_document
+서류종합평가방식,test_document
+서류종합평가의 기준은 뭐야?,test_document
+서류종합평가에는 뭐가 해당돼?,test_document

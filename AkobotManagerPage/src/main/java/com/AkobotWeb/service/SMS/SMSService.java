@@ -11,9 +11,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-//import java.util.Base64;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.http.HttpStatus;
+import java.util.Base64;
 
 @Slf4j
 public class SMSService {
@@ -118,8 +116,8 @@ public class SMSService {
     public static String base64Encode(String str) throws IOException {
         //0613 테스트
         /* base64 encoding */
-        byte[] encodedBytes = Base64.encodeBase64(str.getBytes()); /* base64 decoding */
-        byte[] decodedBytes = Base64.decodeBase64(encodedBytes);
+        byte[] encodedBytes = Base64.getEncoder().encode(str.getBytes()); /* base64 decoding */
+        byte[] decodedBytes = Base64.getEncoder().encode(encodedBytes);
         /*Base64.encodeBase encoder = null;
         byte[] strByte = str.getBytes();
         assert encoder != null;

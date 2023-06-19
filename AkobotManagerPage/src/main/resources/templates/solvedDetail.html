@@ -37,7 +37,7 @@
                         <!-- 질문 끌어올것 -->
                         <div class="form-group">
                             <h6 class="m-0 font-weight-bold text-primary">질문 답변 시간</h6>
-                            <input type="text" class="form-control" name="regDate" th:value="${result.regDate}" readonly>
+                            <input type="text" class="form-control" name="regDate" th:value="${result.answerDate}" readonly>
                         </div>
                         <!--<td th:text="${#temporals.format(result.regDate, 'yyyy-MM-dd HH:mm')}"></td>-->
                         <!--<p th:text="${#temporals.formatISO(result.regDate)}"></p>-->
@@ -63,8 +63,16 @@
                     </div>
                     <div class = "card-body">
                         <!-- TODO 해결 질문 게시판, DB 구조 보여주기 -->
+                        <form method="post" name="updateForm" action="/updateDBAtSolvedDetail">
                         <h3> DB 수정하기 </h3>
                         <th:block th:replace="~{DB/showDB.html}"></th:block>
+                        <div class="form-group">
+                            <label>DB 수정</label>
+                            <textarea class="form-control" name="Answer" rows="15" cols="100" id="Answer" style="width:100%;" placeholder="수정 내용 입력"></textarea></div>
+                        <button type="submit" id="submit" class="btn btn-outline-primary">수정</button>
+                        <button type="reset" class="btn btn-outline-secondary">리셋</button>
+                        <button type="button" class="btn btn-outline-success"><a style="text-decoration:none" href="/solve">취소</a></button>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+
+    <!-- for mobile screens -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="/main.css" rel="stylesheet">-->
+    <link href="/static/css/modal.css" rel="stylesheet">
+    <link href="/static/css/app.css" rel="stylesheet">
+    <link href="/static/css/input.css" rel="stylesheet">
+    <link href="/static/css/reply.css" rel="stylesheet">
+    <link href="/static/css/says.css" rel="stylesheet">
+    <link href="/static/css/setup.css" rel="stylesheet">
+    <link href="/static/css/typing.css" rel="stylesheet">
+
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+    <style>
+        .modal_background {
+            background-image: url('../static/img/back.png');
+            background-repeat : no-repeat;
+            background-size: cover;
+
+        }
+    </style>
+
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<button type="button" id="btn-modal">connect</button>
+<div class="modal_background"></div>
+
+<div id="modal" class="modal-overlay">
+    <div class="modal-window">
+        <div class="title">
+            <h2>Akobot</h2>
+        </div>
+        <div class="close-area">X</div>
+        <!--<div id="main-content" class="content">-->
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="connect">WebSocket connection:</label>
+                            <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                            <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="ask">What is your name?</label>
+                            <input type="text" id="ask" class="form-control" placeholder="Your name here...">
+                        </div>
+                        <button id="send" class="btn btn-default" type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="conversation" class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Greetings</th>
+                        </tr>
+                        </thead>
+                        <tbody id="greetings">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/modal.js"></script>
+</html>

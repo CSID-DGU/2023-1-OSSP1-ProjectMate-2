@@ -1,6 +1,7 @@
 package com.akobot.domain;
 
-import com.akobot.domain.tables.PushLogPK;
+import com.akobot.domain.tables.PushLogIntentsPK;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ public class IntentDTO {
     private String field;
     private String document;
     */
-    private PushLogPK pks;
+    private PushLogIntentsPK pks;
 
     private String method;
     private String target;

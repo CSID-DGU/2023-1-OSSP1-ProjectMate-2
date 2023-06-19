@@ -2,10 +2,13 @@ package com.akobot.repository;
 
 import com.akobot.domain.IntentDTO;
 import com.akobot.domain.tables.EtcEntity;
-import com.akobot.domain.tables.PushLogPK;
+import com.akobot.domain.tables.PushLogIntentsPK;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
@@ -21,7 +24,7 @@ public class EtcRepository {
     }
 
     public IntentDTO findOne(int school_key, String field, String document){
-        PushLogPK pk = new PushLogPK();
+        PushLogIntentsPK pk = new PushLogIntentsPK();
         pk.setSchool_key(school_key);
         pk.setField(field);
         pk.setDocument(document);
@@ -39,5 +42,10 @@ public class EtcRepository {
         }
 
         return null;
+    }
+
+    public List<EtcEntity> findAll() {
+        return em.createQuery("select e from etc e", EtcEntity.class)
+                .getResultList();
     }
 }

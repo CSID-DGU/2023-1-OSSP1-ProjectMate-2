@@ -70,6 +70,8 @@ Our chatbot supports the following component.
 
 ## **목차**
 
+[Database](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#Database)
+
 [⌛ 아코봇 실행 예시](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#-아코봇-실행-예시) 
 
 [🖥️ 아코봇 관리자 페이지 화면 구성](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#%EF%B8%8F-아코봇-관리자-페이지-화면-구성) 
@@ -80,6 +82,15 @@ Our chatbot supports the following component.
 
 [🗓️ 프로젝트를 마치며](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/blob/main/README.md#%EF%B8%8F-프로젝트를-마치며) 
 
+## Database
+
+- 챗봇의 질문 흐름도
+
+![DB_level_diagram](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/assets/101847471/9528a3dd-a832-487f-876d-61c873629b2e)
+
+- ER Diagram
+
+![ERD](https://github.com/CSID-DGU/2023-1-OPPS1-ProjectMate-2/assets/101847471/c0578255-cf04-4349-91bf-77c63257dd3f)
 
 ## ⌛ 아코봇 실행 예시
 
@@ -115,4 +126,3 @@ Our chatbot supports the following component.
 - 고집했던 포인트
 - 이후의 계획
 - 프로젝트의 확장 가능성
-

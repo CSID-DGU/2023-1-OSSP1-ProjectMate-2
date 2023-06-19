@@ -1,9 +1,19 @@
 HELP.md
 .gradle
-build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+
+**/src/main/resources/chatbot/__pycache__/
+
+!build
+build/classes
+build/generated
+build/reports
+build/resources
+build/test-results
+build/tmp
+build/resolvedMainClassName
 
 ### STS ###
 .apt_generated
