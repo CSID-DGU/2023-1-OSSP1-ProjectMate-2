@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Hello WebSocket</title>
+    <title>Hello Akobot</title>
 
     <!-- for mobile screens -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--<link href="/main.css" rel="stylesheet">-->
+    <!--<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
     <link href="../static/css/modal.css" rel="stylesheet">
     <link href="../static/css/app.css" rel="stylesheet">
     <link href="../static/css/input.css" rel="stylesheet">
@@ -19,16 +19,14 @@
     <link href="../static/css/setup.css" rel="stylesheet">
     <link href="../static/css/typing.css" rel="stylesheet">
 
-    <script src="/webjars/jquery/jquery.min.js"></script>
-    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
-    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
 
     <style>
         .modal_background {
             background-image: url('../static/img/back.png');
             background-repeat : no-repeat;
             background-size: cover;
-    }
+        }
    /* 이미지의 높이 */
       #btn-modal {
         background: none;
@@ -36,7 +34,7 @@
          padding: 0;
       cursor: pointer;
       outline: none;
-    }
+   }
 
       #btn-modal img {
       width: 100px; /* 이미지의 너비 */
@@ -56,11 +54,27 @@
     textarea#ask {
      /* 기존 스타일 */
      width: 300px; /* 원하는 가로 크기로 조정 */
-    height: 25px; /* 원하는 세로 크기로 조정 */
+    height: 30px; /* 원하는 세로 크기로 조정 */
     position: relative;
     right:8px;
-    top: 22px;
+    top: 52px;
+    resize: none;
     }
+    #send {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+    #send img {
+    width: 50px; /* 이미지의 너비 */
+    height: 50px; /* 이미지의 높이 */
+    position: relative;
+    left: 5px; /* 원하는 만큼 가로로 이동할 값 */
+    top: 15px; /* 원하는 만큼 세로로 이동할 값 */;
+    border-radius: 10px;
+}
 </style>
 
 </head>
@@ -73,27 +87,28 @@
 
 <div id="modal" class="modal-overlay">
     <div class="modal-window">
-        <!--<div cla<a href="#" id="btn-modal"></a>ss="content">-->
         <div class="bubble-container">
             <div class="title">
                 <h2>Akobot</h2>
             </div>
             <div class="close-area">X</div>
-            <!--<div id="main-content" class="content">-->
-            <div class="bubble-wrap" id="greetings">
-
+            <div class="bubble-wrap" id="greetings" style="padding-bottom: 100px;">
+                <!--질문/답변 내용 출력-->
             </div>
             <div class="input-wrap">
                 <form class="form-inline">
                     <textarea id="ask" placeholder="질문을 입력하세요..." data-dl-input-translation="true"></textarea>
-                    <button id="send" class="btn btn-default" type="submit">Send</button>
+                    <button id="send" class="btn btn-default" type="submit"><img src='../static/img/send.png' alt="Send"></button>
                 </form>
             </div>
         </div>
-        <!--</div>-->
     </div>
 </div>
 </body>
-<script src="../static/js/app.js"></script>
+
 <script src="../static/js/modal.js"></script>
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+<script src="../static/js/app.js"></script>
 </html>
