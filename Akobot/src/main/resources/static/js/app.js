@@ -45,11 +45,20 @@ function sendName() {
 function showGreeting(messages) {
 
     for(i = 0; i < messages.length; i++){
-        str = "<div class=\"bubble say\">"
-                + "<span class=\"bubble-content\">" + messages[i].says + "</span>"
-                + "</div>";
-        $("#greetings").append(str);
-    }
+            for(j = 0; j < messages[i].says.length; j++){
+                if(messages[i].says[j] === null) continue;
+                if(messages[i].says[j] === "\"\"") continue;
+                if(messages[i].says[j] === "") continue;
+
+                messageToken = messages[i].says[j].split('\\n')
+                for(k = 0; k < messageToken.length; k++){
+                    str = "<div class=\"bubble say\">"
+                        + "<span class=\"bubble-content\">" + messageToken[k] + "</span>"
+                        + "</div>";
+                    $("#greetings").append(str);
+                }
+            }
+        }
 }
 
 $(function () {
